@@ -6,6 +6,7 @@ CONFIG -= qt
 SOURCES += main.cpp \
     hero.cpp \
     critter.cpp \
+    monstr.cpp \
     warrior.cpp \
     berserk.cpp
 
@@ -17,5 +18,6 @@ HEADERS += \
     critter.h \
     warrior.h \
     stats.h \
+    monstr.h \
     berserk.h
 

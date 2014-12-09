@@ -5,6 +5,7 @@ class Berserk : public Warrior
 {
 public:
     Berserk();
+
 };
 
 #endif // BERSERK_H
