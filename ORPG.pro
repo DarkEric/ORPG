@@ -8,13 +8,7 @@ SOURCES += main.cpp \
     critter.cpp \
     monstr.cpp \
     warriormob.cpp \
-    Armor.cpp \
-    DblHWeapon.cpp \
-    items.cpp \
-    Leather.cpp \
-    Plate.cpp \
-    Robe.cpp \
-    Weapon.cpp
+    berserk.cpp
 
 include(deployment.pri)
 qtcAddDeployment()

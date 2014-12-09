@@ -5,14 +5,10 @@
 #include "Weapon.h"
 
 
-class DblWeapon :
-
-public Weapon
+class DblWeapon : public Weapon
 {
 public:
-	DblWeapon();
-	DblWeapon(std::string name,std::string type, int dmg) : Weapon(name, type, dmg){};
-	~DblWeapon();
+    DblWeapon(std::string name,std::string type, int dmg) : Weapon(name, type, dmg){}
 };
 
 #endif
