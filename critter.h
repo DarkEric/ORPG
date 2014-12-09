@@ -29,6 +29,7 @@ public:
     bool Status_Life()const;
 
     virtual void Move(int n);
+    virtual void Attack(Critter* who,Critter* whom);
 private:
     int HP,MAX_HP,
         dmg,

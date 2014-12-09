@@ -21,7 +21,7 @@ void Critter::Get_dmg(int n){
     HP=HP-n;
     if(HP<1)life=false;
 }
-void Critter::move(int n){
+void Critter::Move(int n){
     switch (n) {
     case 1:
         y++;
@@ -45,4 +45,9 @@ void Critter::Heal(int n){
 }
 bool Critter::Status_Life()const{
     return life;
+}
+void Attack(Critter* who,Critter* whom){
+    if(whom->Status_Life()==true){
+        whom->Get_dmg(who->Get_attack());
+    }
 }
