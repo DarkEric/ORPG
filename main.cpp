@@ -1,4 +1,6 @@
 #include <iostream>
+#include "hero.h"
+
 
 using namespace std;
 
