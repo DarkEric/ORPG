@@ -1,0 +1,19 @@
+﻿Сборка начата 09.12.2014 20:55:54.
+     1>Проект "C:\Users\Artyr\Documents\Visual Studio 2013\Projects\ORPG\ORPG\ORPG.vcxproj" в узле 2 (целевые объекты Build).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\ORPG.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt DblHWeapon.cpp ORPG.cpp Weapon.cpp
+         ORPG.cpp
+     1>c:\users\artyr\documents\visual studio 2013\projects\orpg\orpg\orpg.cpp(19): error C2039: Attack: не является членом "items"
+                 c:\users\artyr\documents\visual studio 2013\projects\orpg\orpg\items.h(9): см. объявление "items"
+         Создание кода...
+         Компиляция...
+         DblHWeapon.cpp
+         Создание кода...
+         Компиляция...
+         Weapon.cpp
+         Создание кода...
+     1>Сборка проекта "C:\Users\Artyr\Documents\Visual Studio 2013\Projects\ORPG\ORPG\ORPG.vcxproj" завершена (целевые объекты Build) с ошибкой.
+
+Ошибка сборки.
+
+Затраченное время: 00:00:04.37
