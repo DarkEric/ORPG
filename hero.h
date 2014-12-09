@@ -4,7 +4,7 @@
 class Hero:public Critter
 {
 public:
-    Hero();
+    Hero(int MAX_HP,int dmg,int p_resist,int x,int y,int EXP=0,int Level=1);
 
 
     void Set_EXP(int n);
