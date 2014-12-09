@@ -8,7 +8,8 @@ SOURCES += main.cpp \
     critter.cpp \
     monstr.cpp \
     warrior.cpp \
-    berserk.cpp
+    berserk.cpp \
+    warriormob.cpp
 
 include(deployment.pri)
 qtcAddDeployment()
@@ -19,5 +20,6 @@ HEADERS += \
     warrior.h \
     stats.h \
     monstr.h \
-    berserk.h
+    berserk.h \
+    warriormob.h
 
