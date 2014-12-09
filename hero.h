@@ -1,35 +1,24 @@
 #ifndef HERO_H
 #define HERO_H
-
-class Hero
+#include "critter.h"
+class Hero:public Critter
 {
 public:
     Hero();
 
-    void Set_HP(int n);
-    int Get_HP();
 
-    void Set_dmg(int n);
-    int Get_dmg();
+    void Set_EXP(int n);
+    int Get_EXP()const;
+    void Add_EXP(int n);
+    void Lose_EXP(int n);
 
-    void Set_XP(int n);
-    int Get_XP();
-
-    void Set_m_resist(int n);
-    int Get_m_resist();
-
-    void Set_p_resist(int n);
-    int Get_p_resist();
 
     void Set_Level(int n);
-    int Get_Level();
+    int Get_Level()const;
+    void LevelUp();
 
 private:
-    int HP,
-        dmg,
-        XP,
-        m_resist,
-        p_resist,
+    int EXP,
         Level;
 };
 
