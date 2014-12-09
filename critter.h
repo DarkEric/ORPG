@@ -4,21 +4,21 @@
 class Critter
 {
 public:
-    Critter(int MAX_HP,int dmg,int p_resist,int x,int y);
+    Critter(int MAX_HP,int dmg,int p_resist,int x,int y); //конструктор существа
 
-    void Set_HP(int n);
-    int Get_HP()const;
-    void Get_dmg(int n);
-    void Heal(int n);
+    void Set_HP(int n); //установка здоровья на определённый уровень(чит)
+    int Get_HP()const; //вернуть текущее здоровье
+    void Get_dmg(int n);//получить урон
+    void Heal(int n);//излечение
 
-    void Set_attack(int n);
-    int Get_attack()const;
+    void Set_attack(int n);//установить силу атаки
+    int Get_attack()const;//узнать силу атаки
 
 //    void Set_m_resist(int n);
 //    int Get_m_resist();
 
-    void Set_p_resist(int n);
-    int Get_p_resist()const;
+    void Set_p_resist(int n);//установить уровень защиты
+    int Get_p_resist()const;//узнать уровень защиты
 
     void Set_x(int n);
     int Get_x()const;

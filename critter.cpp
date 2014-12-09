@@ -48,6 +48,6 @@ bool Critter::Status_Life()const{
 }
 void Attack(Critter* who,Critter* whom){
     if(whom->Status_Life()==true){
-        whom->Get_dmg(who->Get_attack());
+        whom->Get_dmg(who->Get_attack()-whom->Get_p_resist());
     }
 }
