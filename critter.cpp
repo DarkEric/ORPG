@@ -1,6 +1,6 @@
 #include "critter.h"
 
-Critter::Critter(int MAX_HP, int dmg, int p_resist, int x, int y)
+Critter::Critter(int MAX_HP, int dmg, int p_resist, int x, int y, int Level)
 {
     this->HP=MAX_HP;
     this->MAX_HP=MAX_HP;
@@ -8,6 +8,7 @@ Critter::Critter(int MAX_HP, int dmg, int p_resist, int x, int y)
     this->p_resist=p_resist;
     this->x=x;
     this->y=y;
+    this->Level=Level;
     this->life=true;
 }
 //void Hero::Set_m_resist(int n)const{m_resist=n;}

@@ -4,10 +4,9 @@
 class Hero:public Critter
 {
 public:
-    Hero(int MAX_HP, int dmg, int p_resist, int x, int y, int EXP, int Level):Critter(MAX_HP,dmg,p_resist,x,y)
+    Hero(int MAX_HP, int dmg, int p_resist, int x, int y):Critter(MAX_HP,dmg,p_resist,x,y,1)
     {
-        this->EXP=EXP;
-        this->Level=Level;
+        this->EXP=0;
     }
 
     void Set_EXP(int n);

@@ -4,7 +4,7 @@
 class Critter
 {
 public:
-    Critter(int MAX_HP,int dmg,int p_resist,int x,int y); //конструктор существа
+    Critter(int MAX_HP,int dmg,int p_resist,int x,int y,int Level); //конструктор существа
 
     void Set_HP(int n); //установка здоровья на определённый уровень(чит)
     int Get_HP()const; //вернуть текущее здоровье
@@ -32,7 +32,7 @@ public:
     virtual void Attack(Critter* whom);
 private:
     int HP,MAX_HP,
-        dmg,
+        dmg,Level,
 //      m_resist,
         p_resist,
         x,y;
