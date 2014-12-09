@@ -1,10 +1,5 @@
 #include "hero.h"
 
-Hero::Hero(int MAX_HP, int dmg, int p_resist, int x, int y, int EXP, int Level):Critter(MAX_HP,dmg,p_resist,x,y)
-{
-    this->EXP=EXP;
-    this->Level=Level;
-}
 
 void Hero::Set_EXP(int n){EXP=n;}
 int Hero::Get_Level()const{return Level;}
