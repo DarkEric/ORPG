@@ -1,10 +1,11 @@
 #ifndef CRITTER_H
 #define CRITTER_H
-
+#include <string>
+#include <stdlib.h>
 class Critter
 {
 public:
-    Critter(int MAX_HP,int dmg,int p_resist,int x,int y,int Level); //конструктор существа
+    Critter(std::string name,int type,char sumbol,int MAX_HP,int dmg,int p_resist,int x,int y,int Level); //конструктор существа
 
     void Set_HP(int n); //установка здоровья на определённый уровень(чит)
     int Get_HP()const; //вернуть текущее здоровье
@@ -37,6 +38,9 @@ private:
         p_resist,
         x,y;
     bool life;
+    std::string name;
+    int type;
+    char sumbol;
 };
 
 #endif // CRITTER_H

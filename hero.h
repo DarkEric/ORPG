@@ -4,7 +4,7 @@
 class Hero:public Critter
 {
 public:
-    Hero(int MAX_HP, int dmg, int p_resist, int x, int y):Critter(MAX_HP,dmg,p_resist,x,y,1)
+    Hero(std::string name,int type,char sumbol,int MAX_HP, int dmg, int p_resist, int x, int y):Critter(name,type,sumbol,MAX_HP,dmg,p_resist,x,y,1)
     {
         this->EXP=0;
     }
