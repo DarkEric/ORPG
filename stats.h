@@ -69,4 +69,12 @@ static const int CUIRASS_ATTACK = 0;
 static const int CUIRASS_DEFENSE = 3;
 
 //-------------------------------------------------------------------------------------
+
+static const int MOB_START_HP = 100;
+static const int MOB_PATTACK = 3;
+static const int MOB_MATTACK = 3;
+static const int MOB_PDEFENSE = 3;
+static const int MOB_MDEFENSE = 3;
+
+//-------------------------------------------------------------------------------------
 #endif // STATS_H
