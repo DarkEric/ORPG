@@ -17,6 +17,8 @@ public:
     int Get_Level()const;
     void LevelUp();
 
+    virtual void Move(int h);
+
 private:
     int EXP,
         Level;

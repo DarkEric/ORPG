@@ -6,7 +6,8 @@ CONFIG -= qt
 SOURCES += main.cpp \
     hero.cpp \
     warrior.cpp \
-    critter.cpp
+    critter.cpp \
+    monstr.cpp
 
 include(deployment.pri)
 qtcAddDeployment()
@@ -14,5 +15,6 @@ qtcAddDeployment()
 HEADERS += \
     hero.h \
     warrior.h \
-    critter.h
+    critter.h \
+    monstr.h
 

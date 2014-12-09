@@ -26,7 +26,7 @@ public:
     void Set_y(int n);
     int Get_y()const;
 
-    void move(int n);
+    virtual void Move(int n);
 private:
     int HP,MAX_HP,
         dmg,
