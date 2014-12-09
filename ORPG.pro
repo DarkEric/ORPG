@@ -8,6 +8,7 @@ SOURCES += main.cpp \
     critter.cpp \
     monstr.cpp \
     warriormob.cpp \
+    warrior.cpp \
     berserk.cpp
 
 include(deployment.pri)

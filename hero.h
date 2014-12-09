@@ -15,13 +15,8 @@ public:
     void Lose_EXP(int n);
 
 
-    void Set_Level(int n);
-    int Get_Level()const;
-    void LevelUp();
-
 private:
-    int EXP,
-        Level;
+    int EXP;
 };
 
 #endif // HERO_H

@@ -29,6 +29,10 @@ public:
 
     bool Status_Life()const;
 
+
+    void Set_Level(int n);
+    int Get_Level()const;
+    void LevelUp();
     virtual void Move(int n);
     virtual void Attack(Critter* whom);
 private:

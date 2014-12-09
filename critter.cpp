@@ -58,3 +58,11 @@ void Critter::Attack(Critter* whom){
         whom->Get_dmg((this->Get_attack())-whom->Get_p_resist());
     }
 }
+int Critter::Get_Level()const{return Level;}
+
+void Critter::Set_Level(int n){Level=n;}
+
+
+void Critter::LevelUp(){
+    Level++;
+}

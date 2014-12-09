@@ -12,7 +12,8 @@ public:
     void Set_str(int n){str=n;}
     int Get_str(){return str;}
     Plate* Get_armor()const{return Armor;}
-    void Set_armor(Plate* Armor){this->Armor=Armor;}
+    void Set_armor(Plate* Armor);
+    void Unset_armor(Plate* Armor);
 private:
     int str;
     Plate* Armor;

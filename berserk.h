@@ -7,7 +7,8 @@ class Berserk : public Warrior
 public:
     Berserk(std::string name,int type,char sumbol):Warrior(name,type,sumbol){}
     DblWeapon* Get_weapon()const{return THWeap;}
-    void Set_weapon(DblWeapon* THWeap){this->THWeap=THWeap;}
+    void Set_weapon(DblWeapon* THWeap);
+    void Unset_weapon(DblWeapon* THWeap);
     void Attack(Critter *whom);
 private:
     DblWeapon* THWeap;
