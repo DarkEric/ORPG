@@ -4,7 +4,7 @@
 class Monstr:public Critter
 {
 public:
-    Monstr(int MAX_HP,int dmg,int p_resist,int x,int y):Critter(MAX_HP,dmg,p_resist,x,y)
+    Monstr(std::string name,int type,char sumbol,int MAX_HP,int dmg,int p_resist,int x,int y,int Level):Critter(name,type,sumbol,MAX_HP,dmg,p_resist,x,y,Level)
     {
         this->heroin=0;
         this->agrrange=0;
@@ -12,7 +12,9 @@ public:
 
     void Set_agrrange(int n);
     int Get_agrrange();
+    void Change_heroin();
 
+    int Get_heroin();
 private:
     int heroin,
         agrrange;
