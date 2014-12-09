@@ -1,7 +1,14 @@
 #include "critter.h"
 
-Critter::Critter()
+Critter::Critter(int MAX_HP, int dmg, int p_resist, int x, int y)
 {
+    this->HP=MAX_HP;
+    this->MAX_HP=MAX_HP;
+    this->dmg=dmg;
+    this->p_resist=p_resist;
+    this->x=x;
+    this->y=y;
+    this->life=true;
 }
 //void Hero::Set_m_resist(int n)const{m_resist=n;}
 void Critter::Set_p_resist(int n){p_resist=n;}
@@ -10,9 +17,9 @@ int Critter::Get_x()const{return x;}
 int Critter::Get_y()const{return y;}
 void Critter::Set_x(int n){x=n;}
 void Critter::Set_y(int n){y=n;}
-int Critter::Get_dmg(int n){
+void Critter::Get_dmg(int n){
     HP=HP-n;
-    return Get_HP();
+    if(HP<1)life=false;
 }
 void Critter::move(int n){
     switch (n) {
@@ -31,4 +38,11 @@ void Critter::move(int n){
     default:
         break;
     }
+}
+void Critter::Heal(int n){
+    HP=HP+n;
+    if(HP>MAX_HP)HP=MAX_HP;
+}
+bool Critter::Status_Life()const{
+    return life;
 }

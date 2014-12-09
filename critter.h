@@ -4,12 +4,12 @@
 class Critter
 {
 public:
-    Critter();
+    Critter(int MAX_HP,int dmg,int p_resist,int x,int y);
 
     void Set_HP(int n);
     int Get_HP()const;
-    int Get_dmg(int n);
-
+    void Get_dmg(int n);
+    void Heal(int n);
 
     void Set_attack(int n);
     int Get_attack()const;
@@ -26,6 +26,8 @@ public:
     void Set_y(int n);
     int Get_y()const;
 
+    bool Status_Life()const;
+
     virtual void Move(int n);
 private:
     int HP,MAX_HP,
@@ -33,6 +35,7 @@ private:
 //      m_resist,
         p_resist,
         x,y;
+    bool life;
 };
 
 #endif // CRITTER_H
