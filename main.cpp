@@ -13,4 +13,3 @@ int main()
     MyChap->Attack(NewEnemy);
     return 0;
 }
-

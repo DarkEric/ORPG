@@ -8,16 +8,18 @@ public:
     {
         this->heroin=0;
         this->agrrange=0;
+        this->exp_reward=10;
     }
 
     void Set_agrrange(int n);
     int Get_agrrange();
-    void Change_heroin();
 
+    void Change_heroin();
     int Get_heroin();
 private:
     int heroin,
-        agrrange;
+        agrrange,
+        exp_reward;
 };
 
 #endif // MONSTR_H
