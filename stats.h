@@ -2,6 +2,9 @@
 #define STATS_H
 // Stats.h
 
+static const int ID_TYPE_WARRIOR=21;
+//-------------------------------------------------------------------------------------
+
 static const int WARRIOR_START_HP = 100;
 static const int HERO_START_LOC_X = 0;
 static const int HERO_START_LOC_Y = 0;

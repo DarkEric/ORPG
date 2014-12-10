@@ -10,7 +10,7 @@ private :
 	int stat;
 	std::string type_stat;
 public:
-	Armor(std::string name, std::string type,int p_resist,std::string type_stat , int stat ) : items(name,type)
+    Armor(std::string name, int type,int p_resist,std::string type_stat , int stat ) : items(name,type)
 	{
 		this->p_resist = p_resist;
 		this->stat = stat;

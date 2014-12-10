@@ -12,7 +12,7 @@ class Weapon :
 public:
 	int dmg;
 public:	
-	Weapon(std::string name ,std::string type, int dmg) : items(name,type)
+    Weapon(std::string name ,int type, int dmg) : items(name,type)
 	{
 		this->dmg = dmg;
     }

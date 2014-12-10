@@ -8,7 +8,7 @@
 class DblWeapon : public Weapon
 {
 public:
-    DblWeapon(std::string name,std::string type, int dmg) : Weapon(name, type, dmg){}
+    DblWeapon(std::string name,int type, int dmg) : Weapon(name, type, dmg){}
 };
 
 #endif
