@@ -35,13 +35,13 @@ public:
     void LevelUp();
     virtual void Move(int n);
     virtual void Attack(Critter* whom);
-    virtual void SP1(Critter* whom){}
-    virtual void SP2(Critter* whom){}
-    virtual void SP3(Critter* whom){}
-    virtual void SP4(Critter* whom){}
-    virtual void SP5(Critter* whom){}
-    virtual void SP6(Critter* whom){}
-    virtual void SP7(Critter* whom){}
+    virtual void SP1(Critter* whom){whom->Get_dmg(0);}
+    virtual void SP2(Critter* whom){whom->Get_dmg(0);}
+    virtual void SP3(Critter* whom){whom->Get_dmg(0);}
+    virtual void SP4(Critter* whom){whom->Get_dmg(0);}
+    virtual void SP5(Critter* whom){whom->Get_dmg(0);}
+    virtual void SP6(Critter* whom){whom->Get_dmg(0);}
+    virtual void SP7(Critter* whom){whom->Get_dmg(0);}
 private:
     int HP,MAX_HP,
         dmg,Level,
