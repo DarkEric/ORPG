@@ -1,4 +1,4 @@
-#pragma once
+
 #include "NPC.h"
 class BUM:public NPC
 {

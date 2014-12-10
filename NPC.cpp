@@ -1,17 +1,9 @@
-#include "stdafx.h"
+ 
 #include "NPC.h"
 
 
-NPC::NPC()
-{
-}
 
-
-NPC::~NPC()
-{
-}
-
-void NPC::Dialog(){};
+void NPC::Dialog(){}
 void NPC::Set_x(int n){
 	x = n;
 }

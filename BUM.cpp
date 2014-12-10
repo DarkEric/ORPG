@@ -1,4 +1,4 @@
-#include "stdafx.h"
+
 #include "BUM.h"
 #include <time.h>
 #include <stdlib.h>
@@ -6,14 +6,7 @@
 #include <iostream>
 
 
-BUM::BUM()
-{
-}
 
-
-BUM::~BUM()
-{
-}
 void BUM::Dialog(/*что то*/){
 	srand(time(0));
 	int i = rand() % 4 + 1;

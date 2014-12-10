@@ -1,4 +1,4 @@
-#pragma once
+
 #include "BUM.h"
 class COMPOTE:public BUM
 {

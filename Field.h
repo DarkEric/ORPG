@@ -1,21 +1,47 @@
-#include "stdafx.h"
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
 #include <conio.h>
+#include <windows.h>
 
+
+void SetConsoleText2(int m){
+    if (m == 1){
+        HANDLE hwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+        SetConsoleTextAttribute(hwnd, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    }
+    else
+        if (m == 2){
+        HANDLE hwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+        SetConsoleTextAttribute(hwnd, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+        }
+        else if (m==3){
+            HANDLE hwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+            SetConsoleTextAttribute(hwnd, 0 | FOREGROUND_INTENSITY);
+        }else if(m==4){
+            HANDLE hwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+            SetConsoleTextAttribute(hwnd, FOREGROUND_RED|FOREGROUND_GREEN|FOREGROUND_INTENSITY);
+        }
+
+}
 char mas[60][302];
 //выввод карты
 void WriteField(int x, int y)
 {
-	int a = 0, b = 0;
-	for (int j = 1; j <= 73; j++)printf("*");
+    for (int j = 1; j <= 73; j++)printf("*");
 	printf("\n");
 
 	for (int i = x - 8; i <= x + 8; i++){
 		printf("*");
 		for (int j = y - 35; j <= y + 35; j++)
+            if (mas[i][j]=='H'){
+                SetConsoleText2(4);
+                std::cout<<mas[i][j];
+                //printf("%c", mas[i][j]);
+                SetConsoleText2(3);
+            }else
 			printf("%c", mas[i][j]);
 		printf("*\n");
 	}
@@ -28,8 +54,6 @@ void WriteField(int x, int y)
 void ReadField(){
 	freopen("1.txt", "r", stdin);
 	for (int i = 1; i <= 40; i++){
-		int j = 1;
-
 		for (int j = 1; j <= 214; j++)
 			scanf("%c", &mas[i][j]);
 	}

@@ -1,15 +1,8 @@
-#include "stdafx.h"
+ 
 #include "COMPOTE.h"
 
 
-COMPOTE::COMPOTE()
-{
-}
 
-
-COMPOTE::~COMPOTE()
-{
-}
 void COMPOTE::Sopport(){
 
 }

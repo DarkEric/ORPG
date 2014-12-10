@@ -1,4 +1,4 @@
-﻿#include "stdafx.h"
+﻿ 
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -27,10 +27,13 @@ void SetConsoleText(int m){
 		HANDLE hwnd = GetStdHandle(STD_OUTPUT_HANDLE);
 		SetConsoleTextAttribute(hwnd, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
 		}
-		else {
+        else if (m==3){
 			HANDLE hwnd = GetStdHandle(STD_OUTPUT_HANDLE);
 			SetConsoleTextAttribute(hwnd, 0 | FOREGROUND_INTENSITY);
-		}
+        }else if(m==4){
+            HANDLE hwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+            SetConsoleTextAttribute(hwnd, FOREGROUND_RED|FOREGROUND_INTENSITY);
+        }
 
 }
 
@@ -97,7 +100,7 @@ void MENU(){
 			break;
 		}
 		case 13:{
-			SetConsoleText(5);
+            SetConsoleText(3);
 			//system("cls");
 			SetConsoleFont(6);
 			system("mode con cols=80 lines=30");

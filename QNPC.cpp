@@ -1,18 +1,10 @@
-#include "stdafx.h"
+ 
 #include "QNPC.h"
 #include <time.h>
 #include <stdlib.h>
 #include <iostream>
 #include <conio.h>
 
-QNPC::QNPC()
-{
-}
-
-
-QNPC::~QNPC()
-{
-}
 bool QNPC::Dialog(char** mas){
 	bool a;
 	std::cout << mas[1] << std::endl;

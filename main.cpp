@@ -1,14 +1,9 @@
-#include <iostream>
-#include "hero.h"
-#include "berserk.h"
-#include "stats.h"
-#include "warriormob.h"
-#include "string"
-using namespace std;
+    #include "Menu.h"
 
-int main()
-{
-
-
-    return 0;
-}
+    int main()
+    {
+        setlocale(LC_ALL, "ru");
+        system("mode con cols=60 lines=30");
+        MENU();
+        return 0;
+    }
