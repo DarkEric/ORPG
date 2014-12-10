@@ -80,28 +80,22 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Armor.h" />
-    <ClInclude Include="DblHWeapon.h" />
+    <ClInclude Include="Twohand_Weapon.h" />
     <ClInclude Include="items.h" />
-    <ClInclude Include="Leather.h" />
-    <ClInclude Include="Plate.h" />
-    <ClInclude Include="Robe.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="Weapon.h" />
+    <ClInclude Include="Onehand_Weapon.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Armor.cpp" />
-    <ClCompile Include="DblHWeapon.cpp" />
+    <ClCompile Include="Twohand_Weapon.cpp" />
     <ClCompile Include="items.cpp" />
-    <ClCompile Include="Leather.cpp" />
     <ClCompile Include="ORPG.cpp" />
-    <ClCompile Include="Plate.cpp" />
-    <ClCompile Include="Robe.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Weapon.cpp" />
+    <ClCompile Include="Onehand_Weapon.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

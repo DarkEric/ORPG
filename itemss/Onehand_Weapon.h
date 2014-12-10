@@ -5,20 +5,19 @@
 
 #include "items.h"
 
-class Weapon :
+class Onehand_Weapon :
 	public items
 {
-
 public:
 	int dmg;
 public:	
-	Weapon();
-	Weapon(std::string name ,std::string type, int dmg) : items(name,type)
+	Onehand_Weapon();
+	Onehand_Weapon(std::string name, int type, int dmg, int color) : items(name, type, color)
 	{
 		this->dmg = dmg;
 	}
 	int Attack(){ return dmg; };
-	~Weapon();
+	~Onehand_Weapon();
 };
 
 #endif

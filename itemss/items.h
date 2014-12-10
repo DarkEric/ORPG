@@ -9,18 +9,21 @@ class items
 {
 private:
 	std::string name;
-	std::string type;
+	int color;
+	int type;
 
 public:
 	items();
-	items(std::string name, std::string type)
+	items(std::string name, int type ,int color)
 	{
+		this->name = color;
 		this->name = name;
 		this->type = type;
 	}
 	
 	std::string Get_name(){ return name; };
-	std::string Get_type(){ return type; };
+	int Get_color(){ return color; };
+	int Get_type(){ return type; };
 	~items();
 };
 
