@@ -5,7 +5,7 @@
 class Berserk : public Warrior
 {
 public:
-    Berserk(std::string name,int type):Warrior(name,type){}
+    Berserk(std::string name):Warrior(name,ID_TYPE_BERSERK){}
     DblWeapon* Get_weapon()const{return THWeap;}
     void Set_weapon(DblWeapon* THWeap);
     void Unset_weapon(DblWeapon* THWeap);

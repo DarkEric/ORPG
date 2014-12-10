@@ -2,6 +2,7 @@
 #define CRITTER_H
 #include <string>
 #include <stdlib.h>
+#include <stats.h>
 class Critter
 {
 public:
@@ -11,6 +12,9 @@ public:
     int Get_HP()const; //вернуть текущее здоровье
     void Get_dmg(int n);//получить урон
     void Heal(int n);//излечение
+
+    void Set_MAX_HP(int n){MAX_HP=n;}
+    int Get_MAX_HP()const{return MAX_HP;}
 
     void Set_attack(int n);//установить силу атаки
     int Get_attack()const;//узнать силу атаки
@@ -27,8 +31,14 @@ public:
     void Set_y(int n);
     int Get_y()const;
 
-    bool Status_Life()const;
+    void Set_name(std::string n){name=n;}
+    std::string Get_name()const{return name;}
 
+    bool Status_Life()const;
+    void Set_Life(bool n){life=n;}
+
+    void Set_type(int n){type=n;}
+    int Get_type()const{return type;}
 
     void Set_Level(int n);
     int Get_Level()const;

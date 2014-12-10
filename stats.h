@@ -2,7 +2,7 @@
 #define STATS_H
 // Stats.h
 
-static const int ID_TYPE_WARRIOR=21;
+static const int ID_TYPE_BERSERK=21;
 //-------------------------------------------------------------------------------------
 
 static const int WARRIOR_START_HP = 100;
