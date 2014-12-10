@@ -42,7 +42,7 @@ public:
 
     void Set_Level(int n);
     int Get_Level()const;
-    void LevelUp();
+    virtual void LevelUp();
     virtual void Move(int n);
     virtual void Attack(Critter* whom);
     virtual void SP1(Critter* whom){whom->Get_dmg(0);}
