@@ -11,6 +11,7 @@ SOURCES += main.cpp \
     warrior.cpp \
     berserk.cpp \
     BUM.cpp \
+    troll.cpp \
     COMPOTE.cpp \
     NPC.cpp \
     QNPC.cpp
@@ -27,6 +28,7 @@ HEADERS += \
     berserk.h \
     warriormob.h \
     Armor.h \
+    troll.h \
     DblHWeapon.h \
     items.h \
     Leather.h \

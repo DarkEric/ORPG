@@ -16,6 +16,9 @@ public:
 
     void Change_heroin();
     int Get_heroin();
+
+    void Set_exp_reward(int n);
+    int Get_exp_reward();
 private:
     int heroin,
         agrrange,
