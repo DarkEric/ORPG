@@ -1,10 +1,10 @@
 #ifndef TROLL_H
 #define TROLL_H
-#include "monstr.h"
-class Troll : public Warriormob
+#include "warriormob.h"
+class Troll : public WarriorMob
 {
 public:
-    Troll(std::string name,int type):Warriormob(name,type,MOB_START_HP,MOB_PATTACK,MOB_PDEFENSE,x,y,Level){
+    Troll(std::string name,int type,int x,int y,int Level):WarriorMob(name,type,TROLL_START_HP,TROLL_PATTACK,TROLL_PDEFENSE,x,y,Level){
         this->Set_exp_reward(TROLL_EXPERIENCE);
     }
     void Attack(Critter *whom);
