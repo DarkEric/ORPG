@@ -8,12 +8,12 @@ int Fight(Critter* character,Critter* mob)
 {
     setlocale(LC_ALL, "ru");
     system("mode con cols=31 lines=80");
-    string n1=character->name;
-    string n2=mob->name;
-    int ln1=strlen(n1);
-    string hp_char=character->Get_HP();
-    string hp_mob=mob->Get_HP();
-    HANDLE hw = GetStdHandle(STD_OUTPUT_HANDLE);
+    string n1=character->Get_name();
+    string n2=mob->Get_name();
+//    int ln1=strlen(n1); //ПШЕ
+//    string hp_char=character->Get_HP(); // HP В INT
+//    string hp_mob=mob->Get_HP();
+//    HANDLE hw = GetStdHandle(STD_OUTPUT_HANDLE);
     while ((character->Status_Life())||(mob->Status_Life())){
         system("cls");
         for (int i=1;i<=31;i++)printf("*");
@@ -28,9 +28,9 @@ int Fight(Critter* character,Critter* mob)
         for (int i=1;i<=31;i++)printf("*");
         printf("\n\n");
         
-        printf("%s",n1); 
-        for (int i=ln1+1;i<=16;i++)printf(" ");
-        printf("%s\n",n2);
+ //       printf("%s",n1);
+ //       for (int i=ln1+1;i<=16;i++)printf(" ");
+  //      printf("%s\n",n2);
         
         //SetConsoleCursorPosition(hw,)
         

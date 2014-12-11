@@ -4,7 +4,7 @@
 #ifndef WINDOWS_H
 #define WINDOWS_H
 #endif
-void Fight(Critter* Character,Critter* Mob);
+int Fight(Critter* Character,Critter* Mob);
 
 
 

@@ -42,6 +42,8 @@ HEADERS += \
     COMPOTE.h \
     NPC.h \
     QNPC.h \
+    Consol.h \
+    CreateHero.h \
     FightWindow.h \
     Weapon.h
 

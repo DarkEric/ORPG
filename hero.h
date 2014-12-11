@@ -15,8 +15,8 @@ public:
     int Get_EXP()const;
     void Add_EXP(int n);
     void Lose_EXP(int n);
-    virtual void Set_stat(int n){ }
-    virtual int Get_stat(){ }
+    virtual void Set_stat(int n){}
+    virtual int Get_stat(){}
     virtual Armor* Get_armor()const{ }
     virtual void Set_armor(Armor* Arm){}
     virtual void Unset_armor(Armor* Arm){}
