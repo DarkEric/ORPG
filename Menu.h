@@ -69,7 +69,7 @@ void MENU(){
 			//system("cls");
 			SetConsoleFont(6);
 			system("mode con cols=80 lines=30");
-            if (f == 1)Select();
+            if (f == 1)CreateHero();
 			ff = 1;
 			break; }
 		default:break;

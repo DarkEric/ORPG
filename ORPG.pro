@@ -14,8 +14,7 @@ SOURCES += main.cpp \
     troll.cpp \
     COMPOTE.cpp \
     NPC.cpp \
-    QNPC.cpp \
-    Weapon.cpp
+    QNPC.cpp
 
 include(deployment.pri)
 qtcAddDeployment()

@@ -1,4 +1,4 @@
-
+#pragma once
 #include "items.h"
 
 
@@ -8,17 +8,15 @@ class Armor :
 private :
 	int p_resist;
 	int stat;
-	std::string type_stat;
 public:
-    Armor(std::string name, int type,int p_resist,std::string type_stat , int stat ) : items(name,type)
+	Armor();
+	Armor(std::string name, int type, int p_resist,int stat, int color) : items(name, type,color)
 	{
 		this->p_resist = p_resist;
 		this->stat = stat;
-		this->type_stat = type_stat;
 	}
-    int Get_armor(){ return p_resist; }
-    std::string Get_type_stat(){ return type_stat; }
-    int Get_stat(){ return stat; }
-
+	int Get_armor(){ return p_resist; };
+	int Get_stat(){ return stat; };
+	~Armor();
 };
 

@@ -19,7 +19,8 @@ Hero* NewHero(int n,std::string name){
 std::string EnterName(){
     std::string name;
     std::cout<<"\n\n\tEnter name: ";
-    return std::cin>>name;
+    std::getline(std::cin,name);
+    return name;
 
 }
 

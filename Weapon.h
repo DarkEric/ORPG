@@ -12,7 +12,7 @@ public:
 	int dmg;
 public:	
     Weapon();
-    Weapon(std::string name, int type, int dmg, int color) : items(name, type,)
+    Weapon(std::string name, int type, int dmg, int color) : items(name, type,color)
 	{
 		this->dmg = dmg;
 	}
@@ -20,4 +20,4 @@ public:
     ~Weapon();
 };
 
-#endif
+#endif.
