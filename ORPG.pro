@@ -7,6 +7,7 @@ SOURCES += main.cpp \
     hero.cpp \
     critter.cpp \
     monstr.cpp \
+    warriormob.cpp \
     warrior.cpp \
     berserk.cpp \
     BUM.cpp \
@@ -26,6 +27,7 @@ HEADERS += \
     stats.h \
     monstr.h \
     berserk.h \
+    warriormob.h \
     Armor.h \
     troll.h \
     DblHWeapon.h \
@@ -40,11 +42,5 @@ HEADERS += \
     COMPOTE.h \
     NPC.h \
     QNPC.h \
-<<<<<<< HEAD
     FightWindow.h
-=======
-    CreateHero.h \
-    Consol.h \
-    Weapon.h
->>>>>>> origin/master
 

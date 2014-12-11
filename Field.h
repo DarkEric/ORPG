@@ -5,9 +5,27 @@
 #include <iostream>
 #include <conio.h>
 #include <windows.h>
-#include "Consol.h"
 
 
+void SetConsoleText2(int m){
+    if (m == 1){
+        HANDLE hwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+        SetConsoleTextAttribute(hwnd, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    }
+    else
+        if (m == 2){
+        HANDLE hwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+        SetConsoleTextAttribute(hwnd, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+        }
+        else if (m==3){
+            HANDLE hwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+            SetConsoleTextAttribute(hwnd, 0 | FOREGROUND_INTENSITY);
+        }else if(m==4){
+            HANDLE hwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+            SetConsoleTextAttribute(hwnd, FOREGROUND_RED|FOREGROUND_GREEN|FOREGROUND_INTENSITY);
+        }
+
+}
 char mas[60][302];
 //выввод карты
 void WriteField(int x, int y)
@@ -19,10 +37,10 @@ void WriteField(int x, int y)
 		printf("*");
 		for (int j = y - 35; j <= y + 35; j++)
             if (mas[i][j]=='H'){
-                SetConsoleText(4);
+                SetConsoleText2(4);
                 std::cout<<mas[i][j];
                 //printf("%c", mas[i][j]);
-                SetConsoleText(3);
+                SetConsoleText2(3);
             }else
 			printf("%c", mas[i][j]);
 		printf("*\n");

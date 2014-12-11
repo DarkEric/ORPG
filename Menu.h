@@ -1,6 +1,41 @@
-﻿#include "Field.h"
-#include "Consol.h"
-#include "CreateHero.h"
+﻿ 
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <conio.h>
+#include <windows.h>
+#include "Field.h"
+
+void SetConsoleFont(int m)
+{
+	typedef BOOL(WINAPI *SETCONSOLEFONT)(HANDLE, DWORD);
+	SETCONSOLEFONT SetConsoleFont;
+	HMODULE hmod = GetModuleHandleA("KERNEL32.DLL");
+	SetConsoleFont = (SETCONSOLEFONT)GetProcAddress(hmod, "SetConsoleFont");
+	if (!SetConsoleFont)  exit(1);//íóæíî ïîäîáðàòü ðàçìåð øðèôòà - Win7x64 = 9
+	SetConsoleFont(GetStdHandle(STD_OUTPUT_HANDLE), m);
+}
+
+void SetConsoleText(int m){
+	if (m == 1){
+		HANDLE hwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+		SetConsoleTextAttribute(hwnd, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+	}
+	else
+		if (m == 2){
+		HANDLE hwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+		SetConsoleTextAttribute(hwnd, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+		}
+        else if (m==3){
+			HANDLE hwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+			SetConsoleTextAttribute(hwnd, 0 | FOREGROUND_INTENSITY);
+        }else if(m==4){
+            HANDLE hwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+            SetConsoleTextAttribute(hwnd, FOREGROUND_RED|FOREGROUND_INTENSITY);
+        }
+
+}
 
 void MENU(){
 	for (int i = 1; i <= 5; i++)std::cout << "\n";
@@ -8,7 +43,7 @@ void MENU(){
 	SetConsoleText(1);
 	std::cout << "\tNew game\n";
 	SetConsoleText(2);
-    std::cout << "\tLoad game(alpha)\n";
+	std::cout << "\tLoad game\n";
 	std::cout << "\tExit\n";
 	int f = 1, ff = 0;
 	int c = _getch();
@@ -69,7 +104,7 @@ void MENU(){
 			//system("cls");
 			SetConsoleFont(6);
 			system("mode con cols=80 lines=30");
-            if (f == 1)CreateHero();
+			if (f == 1)ReadField();
 			ff = 1;
 			break; }
 		default:break;
