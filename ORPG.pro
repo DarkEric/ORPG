@@ -22,6 +22,7 @@ qtcAddDeployment()
 HEADERS += \
     hero.h \
     critter.h \
+    warrior.h \
     stats.h \
     monstr.h \
     berserk.h \

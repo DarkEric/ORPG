@@ -6,3 +6,10 @@ void Berserk::Attack(Critter *whom){
         std::cout<<"III"<<std::endl;
     }
 }
+void Berserk::Set_weapon(DblWeapon* THWeap){
+    this->Set_attack(this->Get_attack()+THWeap->Attack());
+}
+
+void Berserk::Unset_weapon(DblWeapon* THWeap){
+    this->Set_attack(this->Get_attack()-THWeap->Attack());
+}
