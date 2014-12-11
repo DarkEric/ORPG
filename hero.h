@@ -1,6 +1,8 @@
 #ifndef HERO_H
 #define HERO_H
 #include "critter.h"
+#include "Weapon.h"
+#include "Armor.h"
 class Hero:public Critter
 {
 public:
@@ -13,8 +15,14 @@ public:
     int Get_EXP()const;
     void Add_EXP(int n);
     void Lose_EXP(int n);
-
-
+    virtual void Set_stat(int n){ }
+    virtual int Get_stat(){ }
+    virtual Armor* Get_armor()const{ }
+    virtual void Set_armor( );
+    virtual void Unset_armor( );
+    virtual Weapon* Get_weapon()const{}
+    virtual void Set_weapon(Weapon* THWeap){}
+    virtual void Unset_weapon(Weapon* THWeap){}
 private:
     int EXP;
 };
