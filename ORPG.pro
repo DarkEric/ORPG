@@ -40,11 +40,8 @@ HEADERS += \
     COMPOTE.h \
     NPC.h \
     QNPC.h \
-<<<<<<< HEAD
     FightWindow.h
-=======
     CreateHero.h \
     Consol.h \
     Weapon.h
->>>>>>> origin/master
 
