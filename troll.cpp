@@ -1,7 +1,7 @@
 #include "troll.h"
 #include <iostream>
 #include <math.h>
-#include "warriormob.h"
+#include "monstr.h"
 void Troll::Attack(Critter *whom){
     if(whom->Status_Life()==true){
         whom->Get_dmg(this->Get_attack()-whom->Get_p_resist());
