@@ -110,7 +110,10 @@ int SelectNewHero(){
 }
 
 void CreateHero(){
-    NewHero(SelectNewHero(),EnterName());
+    int a=SelectNewHero()
+            ;
+    std::string b=EnterName();
+    NewHero(a,b);
 }
 
 
