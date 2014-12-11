@@ -18,8 +18,8 @@ public:
     virtual void Set_stat(int n){ }
     virtual int Get_stat(){ }
     virtual Armor* Get_armor()const{ }
-    virtual void Set_armor(Armor* Arm){}
-    virtual void Unset_armor(Armor* Arm){}
+    virtual void Set_armor( );
+    virtual void Unset_armor( );
     virtual Weapon* Get_weapon()const{}
     virtual void Set_weapon(Weapon* THWeap){}
     virtual void Unset_weapon(Weapon* THWeap){}
