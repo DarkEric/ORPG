@@ -14,7 +14,8 @@ SOURCES += main.cpp \
     troll.cpp \
     COMPOTE.cpp \
     NPC.cpp \
-    QNPC.cpp
+    QNPC.cpp \
+    FightWindow.cpp
 
 include(deployment.pri)
 qtcAddDeployment()
@@ -40,5 +41,6 @@ HEADERS += \
     BUM.h \
     COMPOTE.h \
     NPC.h \
-    QNPC.h
+    QNPC.h \
+    FightWindow.h
 
