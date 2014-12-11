@@ -11,11 +11,13 @@ class Weapon :
 public:
 	int dmg;
 public:	
+    Weapon();
     Weapon(std::string name, int type, int dmg, int color) : items(name, type,color)
 	{
 		this->dmg = dmg;
 	}
-    int Attack(){ return dmg; }
+	int Attack(){ return dmg; };
+    ~Weapon();
 };
 
 #endif.
