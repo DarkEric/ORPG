@@ -14,7 +14,8 @@ SOURCES += main.cpp \
     troll.cpp \
     COMPOTE.cpp \
     NPC.cpp \
-    QNPC.cpp
+    QNPC.cpp \
+    Weapon.cpp
 
 include(deployment.pri)
 qtcAddDeployment()
@@ -40,5 +41,8 @@ HEADERS += \
     BUM.h \
     COMPOTE.h \
     NPC.h \
-    QNPC.h
+    QNPC.h \
+    CreateHero.h \
+    Consol.h \
+    Weapon.h
 
