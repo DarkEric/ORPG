@@ -5,7 +5,7 @@
 class Warrior : public Hero
 {
 public:
-    Warrior(std::string name,int type):Hero(name,type,WARRIOR_START_HP,WARRIOR_ATTACK_1,WARRIOR_DEFENSE_1,HERO_START_LOC_X,HERO_START_LOC_Y){
+    Warrior(std::string name,int type):Hero(name,type,WARRIOR_START_HP,WARRIOR_ATTACK_1,WARRIOR_DEFENSE_1,HERO_START_POS_X,HERO_START_POS_Y){
         this->str=WARRIOR_START_STR;
     }
     void Set_stat(int n){str=n;}
