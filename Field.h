@@ -7,13 +7,16 @@
 #include <string.h>
 #include <Consol.h>
 #include "CheckMob.h"
+#include "FightWindow.h"
+#include "hero.h"
 char Field[50][215];
-int q=0,s=0;
+int q=0,s=0,t=0;
 int quest[5][3];
 int citizens[5][3];
+int troll[5][3];
 QNPC* Quest;
 BUM* Bum;
-
+Critter* Trolls[15];
 void CreateQuest(int d){
     Quest=new QNPC[d+2];
     for (int i=1;i<=d;i++){
@@ -28,11 +31,21 @@ void CreateBum(int d){
         Bum[i].Set_y(citizens[i][2]);
     }
 }
+void CreateTroll(int d){
+    for(int i=0;i<15;i++){
+        Trolls[i]=new Troll();
+    }
+    std::cout<<Trolls[1]->Get_name();
+    for (int i=1;i<=d;i++){
+        Trolls[i]->Set_x(troll[i][1]);
+        Trolls[i]->Set_y(troll[i][2]);
+    }
+}
 void WriteField(int x, int y,int n,int m)
 {
     for (int j = 1; j <= 119; j++)printf("*");
 	printf("\n");
-
+    if (m>=100)m=100;
     for (int i = 1; i <= n; i++){
 		printf("*");
         for (int j = 1; j <= m; j++)
@@ -56,9 +69,9 @@ void ReadField(std::string TownMap,int& n,int& m ){
 
 
     scanf("%d %d",&n,&m);
-    for (int i=1;i<=n;i++){
+    for (int i=1;i<=49;i++){
         //Field[i]=new char[m+2];
-        for (int j=1;j<=m;j++)Field[i][j]=' ';
+        for (int j=1;j<=214;j++)Field[i][j]=' ';
     }
 
     for (int i=1;i<=n;i++)
@@ -76,19 +89,25 @@ void ReadField(std::string TownMap,int& n,int& m ){
                ++s;
                citizens[s][1]=i;
                citizens[s][2]=j;
-            }else Field[i][j]=c;
+            }else if (c=='T'){
+                Field[i][j]='T';
+                ++t;
+                troll[t][1]=i;
+                troll[t][2]=j;
+             }else Field[i][j]=c;
         }
 
     CreateQuest(q);
     CreateBum(s);
+    CreateTroll(t);
     system("cls");
 }
 
 
-void MoveHero(std::string TownMap){
+void MoveHero(std::string TownMap,Hero* Player){
     int n,m;
     ReadField(TownMap,n,m);
-    int x = 6, y = 9;
+    int x = 9, y = 12;
     Field[x][y] = 'H';
     WriteField(x, y,n,m);
 	fclose(stdin);
@@ -106,6 +125,12 @@ void MoveHero(std::string TownMap){
                     system("cls");
                     int numBum=FindBum(x-1,y,Bum,s);
                     Bum[numBum].Dialog(numBum/*номер гражд*/);
+                    system("cls");
+                    WriteField(x, y,n,m);
+                }else if (Field[x - 1][y]=='T'){
+                    system("cls");
+                    int numTroll=FindTroll(x-1,y,Trolls,t);
+                    Fight(Player,Trolls[numTroll]);
                     system("cls");
                     WriteField(x, y,n,m);
                 }else{
@@ -181,7 +206,7 @@ void MoveHero(std::string TownMap){
                     WriteField(x, y,n,m);
                 }
 			}
-        }else MoveHero("Field");
+        }else if (c==32) MoveHero("Field.txt",Player);
 		c = getch();
 	}
 }
