@@ -1,20 +1,21 @@
 #include "FightWindow.h"
 
 
+
 using namespace std;
 
 void PrintPictures(){
     system("cls");
-    for (int i=1;i<=31;i++)printf("*");
+    for (int i=1;i<=62;i++)printf("*");
     printf("\n");
-    for (int i=2;i<=39;i++){
+    for (int i=2;i<=29;i++){
         printf("*");
-        for (int j=2;j<=14;j++) printf("0");
-        printf("*");
-        for (int j=16;j<=30;j++) printf("0");
+        for (int j=2;j<=30;j++) printf("0");
+        printf("**");
+        for (int j=33;j<=61;j++) printf("0");
         printf("*\n");
     }
-    for (int i=1;i<=31;i++)printf("*");
+    for (int i=1;i<=62;i++)printf("*");
     return;
 }
 
@@ -26,70 +27,48 @@ void IntToChar(int a,char* mas,int p){
         b/=10;
     }
     while (a>0){
-        mas[l+p-1]=a%10+48;
+        mas[l+p-1]=a%10;
         a/=10;
-    }
-}
-
-void FormStatsMas(Critter* character, Critter* mob, char** mas){
-
-    int hp_char=character->Get_HP(),hp_mob=mob->Get_HP();
-    int energy_char=character->Get_energy();
-    int energy_mob=mob->Get_energy();
-    IntToChar(hp_char,mas[2],1); //–í–ø–∏—Å—ã–≤–∞–µ–º
-    IntToChar(hp_mob,mas[2],16);
-    IntToChar(energy_char,mas[3],1);
-    IntToChar(energy_mob,mas[3],16);
-
-}
-
-void PrintStats(char** mas){
-    for (int i=1;i<=3;i++){
-        for (int j=1;j<=31;j++) printf("%c",mas[i][j]);
-        printf("\n");
     }
 }
 
 int Fight(Critter* character,Critter* mob)
 {
-    system("mode con cols=31 lines=80");
+    system("mode con cols=91 lines=50");
     int prior=1;
-    char** mas=new char*[4];
-    for (int i=0;i<4;i++){
-        mas[i]=new char[32];
-    }
     string n1=character->Get_name();
     string n2=mob->Get_name();
-    int ln1=n1.size();
-    int ln2=n2.size();
-    for (int i=1;i<=ln1;i++) mas[1][i]=n1[i-1];
-    for (int i=16;i<=16+ln2;i++) mas[1][i]=n2[i-1];
+    int hp_prev_c=character->Get_MAX_HP(),hp_prev_m=mob->Get_MAX_HP();
+    int razn_c=0,razn_m=0;
     while ((character->Status_Life())&&(mob->Status_Life())){
         PrintPictures();
         printf("\n\n");
-        FormStatsMas(character,mob,mas);
-        PrintStats(mas);
-        if (prior){
+        cout << n1 << "                  " <<n2<<endl;
+        cout << character->Get_HP() << " ( " << razn_c << " )" <<"            " << mob->Get_HP()<< " ( " << razn_m << " )" <<endl;
+      //  cout << character->Get_energy()<<"             "<<mob->Get_energy()<<endl;
+        if (prior==1){
             character->Attack(mob);
-            prior+=1; // –°–º–µ–Ω–∞ –ø—Ä–∏–æ—Ä–∏—Ç–µ—Ç–∞
+            razn_c=hp_prev_c-character->Get_HP();
+            hp_prev_c=character->Get_HP();
+            prior+=1; // —ÏÂÌ‡ ÔËÓËÚÂÚ‡
             prior%=2; //
-            Sleep(2);
+            Sleep(1000);
             if (mob->Get_HP()<0) {
                 mob->Set_Life(false);
-                system("cls");
-                cout<< mob->Get_name() <<" –ø–æ–±–µ–∂–¥–µ–Ω!!";
+                cout << mob->Get_name() << " ÔÓ·ÂÊ‰ÂÌ!!";
                 break;
             }
         }
-        if (prior){
+        else if (prior==0){
             mob->Attack(character);
-            Sleep(2);
+            razn_m=hp_prev_m-mob->Get_HP();
+            hp_prev_m=mob->Get_HP();
+            Sleep(1000);
             prior+=1;
             prior%=2;
             if (character->Get_HP()<0) {
                 character->Set_Life(false);
-                system("cls");
-                printf("–í—ã –ø–æ–≥–∏–±–ª–∏...–ò–≥—Ä–∞ –æ–∫–æ–Ω—á–µ–Ω–∞");
+                cout << "¬˚ ÔÓ„Ë·ÎË...»„‡ ÓÍÓÌ˜ÂÌ‡";
                 break;
             }
         }

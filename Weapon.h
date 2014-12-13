@@ -15,7 +15,7 @@ public:
 	{
 		this->dmg = dmg;
 	}
-	int Attack(){ return dmg; };
+    int Attack(){ return dmg; }
 };
 
 #endif
