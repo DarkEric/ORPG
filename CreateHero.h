@@ -1,7 +1,6 @@
 #ifndef CREATEHERO_H
 #define CREATEHERO_H
 #include "berserk.h"
-//#include "Consol.h"
 #include "Field.h"
 
 Hero* NewHero(int n,std::string name){
@@ -114,8 +113,9 @@ int SelectNewHero(){
 void CreateHero(){
     int a=SelectNewHero();
     std::string b=EnterName();
-    Hero* Pleyer=NewHero(a,b);
-
+    NewHero(a,b);
+    SetConsoleFont(6);
+    system("mode con cols=120 lines=50");
     MoveHero("City.txt");
 }
 

@@ -1,4 +1,5 @@
-
+#ifndef NPC_H
+#define NPC_H
 class NPC
 {
 	public:
@@ -13,3 +14,5 @@ private:
 	int x;
 	int y;
 };
+
+#endif

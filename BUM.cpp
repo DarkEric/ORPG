@@ -4,16 +4,22 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <iostream>
+BUM::BUM(){
+    x=0;
+    y=0;
+
+}
+BUM::~BUM(){
+
+}
 
 
+void BUM::Dialog(int i){
 
-void BUM::Dialog(/*что то*/){
-	srand(time(0));
-	int i = rand() % 4 + 1;
 	switch (i){
-	case 1:{
-		//вывод фраз
-		std::cout << "Есть закурить?";
+    case 1:{
+
+        std::cout << "Спасибо Вам,что защищаете нас!";
 		_getch();
 		break;
 	}

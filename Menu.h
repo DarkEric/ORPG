@@ -1,4 +1,5 @@
-﻿ 
+﻿#ifndef MENU_H
+#define MENU_H
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -72,10 +73,10 @@ void MENU(){
 		}
 		case 13:{
             SetConsoleText(3);
-			//system("cls");
-			SetConsoleFont(6);
-			system("mode con cols=80 lines=30");
-			if (f == 1)CreateHero();;
+            system("cls");
+            //system("mode con cols=120 lines=50");
+            system("mode con cols=80 lines=40");
+            if (f == 1)CreateHero();;
 			ff = 1;
 			break; }
 		default:break;
@@ -83,3 +84,4 @@ void MENU(){
 		c = _getch();
 	}
 }
+#endif

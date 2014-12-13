@@ -1,4 +1,5 @@
-
+#ifndef COMPOTE_H
+#define COMPOTE_H
 #include "BUM.h"
 class COMPOTE:public BUM
 {
@@ -15,3 +16,4 @@ private:
 	int y;
 };
 
+#endif
