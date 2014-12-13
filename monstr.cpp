@@ -22,7 +22,7 @@ int Monstr::Get_heroin(){return heroin;}
         }
         char c= mas[this->Get_x()][this->Get_y()];
 
-    }
+}
     else{
         BFS(this->Get_x(),this->Get_y()); Нужно найти кротчайший путь до героя
         PATH();   восстановить его
