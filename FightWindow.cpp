@@ -1,20 +1,21 @@
-#include "FightWindow.h"
+﻿#include "FightWindow.h"
+
 
 
 using namespace std;
 
 void PrintPictures(){
     system("cls");
-    for (int i=1;i<=31;i++)printf("*");
+    for (int i=1;i<=61;i++)printf("*");
     printf("\n");
-    for (int i=2;i<=39;i++){
+    for (int i=2;i<=29;i++){
         printf("*");
-        for (int j=2;j<=14;j++) printf("0");
-        printf("*");
-        for (int j=16;j<=30;j++) printf("0");
+        for (int j=2;j<=30;j++) printf("0");
+        printf("**");
+        for (int j=33;j<=61;j++) printf("0");
         printf("*\n");
     }
-    for (int i=1;i<=31;i++)printf("*");
+    for (int i=1;i<=61;i++)printf("*");
     return;
 }
 
@@ -26,7 +27,7 @@ void IntToChar(int a,char* mas,int p){
         b/=10;
     }
     while (a>0){
-        mas[l+p-1]=a%10+48;
+        mas[l+p-1]=a%10;
         a/=10;
     }
 }
@@ -52,7 +53,7 @@ void PrintStats(char** mas){
 
 int Fight(Critter* character,Critter* mob)
 {
-    system("mode con cols=80 lines=40");
+    system("mode con cols=61 lines=60");
     int prior=1;
     char** mas=new char*[4];
     for (int i=0;i<4;i++){
@@ -73,7 +74,7 @@ int Fight(Critter* character,Critter* mob)
             character->Attack(mob);
             prior+=1; // Смена приоритета
             prior%=2; //
-            Sleep(2);
+            Sleep(1);
             if (mob->Get_HP()<0) {
                 mob->Set_Life(false);
                 system("cls");
@@ -83,7 +84,7 @@ int Fight(Critter* character,Critter* mob)
         }
         if (prior){
             mob->Attack(character);
-            Sleep(2);
+            Sleep(1);
             prior+=1;
             prior%=2;
             if (character->Get_HP()<0) {

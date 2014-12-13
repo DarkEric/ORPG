@@ -3,6 +3,7 @@
 // Stats.h
 
 static const int ID_TYPE_BERSERK=21;
+static const int ID_TYPE_TROLL=1;
 //-------------------------------------------------------------------------------------
 
 static const int WARRIOR_START_HP = 100;
@@ -54,6 +55,7 @@ static const int TROLL_PDEFENSE = 2;
 static const int TROLL_SIGHT_RADIUS = 3;
 static const int TROLL_EXPERIENCE = 200;
 static const int TROLL_START_HP = 150;
+static const int TROLL_LEVEL=5;
 
 static const int WIZARD_HITS = 10;
 static const int WIZARD_ATTACK = 4;

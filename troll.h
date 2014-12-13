@@ -4,7 +4,7 @@
 class Troll : public Monstr
 {
 public:
-    Troll(std::string name,int type,int x,int y,int Level):Monstr(name,type,TROLL_START_HP,TROLL_PATTACK,TROLL_PDEFENSE,x,y,Level){
+    Troll(int x,int y):Monstr("Troll",ID_TYPE_TROLL,TROLL_START_HP,TROLL_PATTACK,TROLL_PDEFENSE,x,y,TROLL_LEVEL){
         this->Set_exp_reward(TROLL_EXPERIENCE);
     }
     void Attack(Critter *whom);
