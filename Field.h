@@ -46,9 +46,9 @@ void WriteField(int x, int y,int n,int m)
     for (int j = 1; j <= 119; j++)printf("*");
 	printf("\n");
     if (m>=100)m=100;
-    for (int i = 1; i <= n; i++){
+    for (int i = x-15; i <= x+15; i++){
 		printf("*");
-        for (int j = 1; j <= m; j++)
+        for (int j = y-30; j <= y+80; j++)
             if (Field[i][j]=='H'){
                 SetConsoleText(4);
                 printf("%c", Field[i][j]);
@@ -107,7 +107,7 @@ void ReadField(std::string TownMap,int& n,int& m ){
 void MoveHero(std::string TownMap,Hero* Player){
     int n,m;
     ReadField(TownMap,n,m);
-    int x = 9, y = 12;
+    int x = 17, y = 11;
     Field[x][y] = 'H';
     WriteField(x, y,n,m);
 	fclose(stdin);
