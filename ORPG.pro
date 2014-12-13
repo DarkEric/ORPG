@@ -2,6 +2,7 @@ TEMPLATE = app
 CONFIG += console
 CONFIG -= app_bundle
 CONFIG -= qt
+CONFIG += c++11
 
 SOURCES += main.cpp \
     hero.cpp \
@@ -15,7 +16,7 @@ SOURCES += main.cpp \
     NPC.cpp \
     QNPC.cpp \
     FightWindow.cpp
-
+    
 include(deployment.pri)
 qtcAddDeployment()
 
