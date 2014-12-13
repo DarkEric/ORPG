@@ -1,11 +1,9 @@
 #ifndef FIGHTWINDOW_H
 #define FIGHTWINDOW_H
+#include <windows.h>
+#include <time.h>
 #include "critter.h"
-#ifndef WINDOWS_H
-#define WINDOWS_H
-#endif
+#include <iostream>
 int Fight(Critter* Character,Critter* Mob);
-
-
 
 #endif // FIGHTWINDOW_H
