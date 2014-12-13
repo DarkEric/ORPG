@@ -1,0 +1,56 @@
+                         1                      
+                        / \                     
+       1               /   \                    
+      / \             <_____>                   
+     /   \           __[_8_]__                  
+    <_____>          ]-I-I-I-[                  
+   __[_8_]__          \-I-I-/                   
+   ]-I-I-I-[          I     I                   
+    \-I-I-/ \         I     I                   
+     I   I___>        I     I                   
+     I ^ I8_]_        I []  I           1       
+     II III-I-I-      I     I          / \      
+     II_II-I-I-/      I     I         /   \     
+     I   I    I       I  [] I        <_____>    
+     I ^ I    I       I     I       __[_8_]__   
+     II II=========   I     I       ]-I-I-I-[   
+     II_III-I-I-I-I   I []  I        \-I-I-/    
+     I   II-I-I-I-/   I     I         I   I     
+  ===========    I    I     I         I   I     
+  I-I-I-I-I-I    I =============      I   I          
+   \-I-I-I-/     I I-I-I-I-I-I-I      I   I          
+    I     I      I \-\-I-I-I-/-/      I ^ I     
+    I  [] I      I  I         I       II II     
+    I[]   I      I  I  _______I       II_II     
+===============  I  I /vvvvvvv\       I   I     
+I-I-I-I-I-I-I-I  I  I/vvvvvvvvv\      I   I     
+\-\---I-I---/-/  I  <===========>  ===========          
+  I         I    I  II []  []  I   I-I-I-I-I-I                 
+  I         I    I  II         I   \-I-I-I-I-/               
+  I         I=======================I       I   
+  I         I=I-I-I-I-I-I-I-I-I-I-I=I    [] I   
+  I    ^    I=======================I       I   
+  I   I I   I                       I       I   
+  I   I_I   I           / \         I       I   
+  I         I           I I         I       I   
+_/I         I\__________I I________/I       I\ _
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
