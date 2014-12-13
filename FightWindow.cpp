@@ -52,7 +52,7 @@ void PrintStats(char** mas){
 
 int Fight(Critter* character,Critter* mob)
 {
-    system("mode con cols=31 lines=80");
+    system("mode con cols=80 lines=40");
     int prior=1;
     char** mas=new char*[4];
     for (int i=0;i<4;i++){
@@ -65,7 +65,7 @@ int Fight(Critter* character,Critter* mob)
     for (int i=1;i<=ln1;i++) mas[1][i]=n1[i-1];
     for (int i=16;i<=16+ln2;i++) mas[1][i]=n2[i-1];
     while ((character->Status_Life())&&(mob->Status_Life())){
-        PrintPictures();
+        //PrintPictures();
         printf("\n\n");
         FormStatsMas(character,mob,mas);
         PrintStats(mas);
