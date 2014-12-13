@@ -4,8 +4,8 @@
 #include <stdlib.h>
 #include <iostream>
 #include <conio.h>
-#include "Field.h"
-#include "Consol.h"
+//#include "Field.h"
+//#include "Consol.h"
 #include "CreateHero.h"
 
 void MENU(){
