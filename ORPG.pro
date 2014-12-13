@@ -7,7 +7,6 @@ SOURCES += main.cpp \
     hero.cpp \
     critter.cpp \
     monstr.cpp \
-    warriormob.cpp \
     warrior.cpp \
     berserk.cpp \
     BUM.cpp \
@@ -27,7 +26,6 @@ HEADERS += \
     stats.h \
     monstr.h \
     berserk.h \
-    warriormob.h \
     Armor.h \
     troll.h \
     DblHWeapon.h \
