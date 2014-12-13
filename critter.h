@@ -45,6 +45,10 @@ public:
 
     void Set_Level(int n);
     int Get_Level()const;
+
+    void Set_name_SP(int n,std::string name){name_SP[n]=name;}
+    std::string Get_name_SP(int n)const{return name_SP[n];}
+
     virtual void LevelUp();
     virtual void Move(int n);
     virtual void Attack(Critter* whom);
@@ -65,6 +69,7 @@ private:
     std::string name;
     int type;
     int energy;
+    std::string name_SP[7];
 };
 
 #endif // CRITTER_H
