@@ -22,6 +22,7 @@ int Critter::Get_y()const{return y;}
 void Critter::Set_x(int n){x=n;}
 void Critter::Set_y(int n){y=n;}
 void Critter::Get_dmg(int n){
+    if (n<0) n=0;
     HP=HP-n;
     if(HP<1)life=false;
 }

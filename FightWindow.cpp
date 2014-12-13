@@ -1,5 +1,5 @@
 #include "FightWindow.h"
-#include <string.h>
+
 
 using namespace std;
 
@@ -34,8 +34,12 @@ void IntToChar(int a,char* mas,int p){
 void FormStatsMas(Critter* character, Critter* mob, char** mas){
 
     int hp_char=character->Get_HP(),hp_mob=mob->Get_HP();
+    int energy_char=character->Get_energy();
+    int energy_mob=mob->Get_energy();
     IntToChar(hp_char,mas[2],1); //Вписываем
     IntToChar(hp_mob,mas[2],16);
+    IntToChar(energy_char,mas[3],1);
+    IntToChar(energy_mob,mas[3],16);
 
 }
 
@@ -49,6 +53,7 @@ void PrintStats(char** mas){
 int Fight(Critter* character,Critter* mob)
 {
     system("mode con cols=31 lines=80");
+    int prior=1;
     char** mas=new char*[4];
     for (int i=0;i<4;i++){
         mas[i]=new char[32];
@@ -59,11 +64,35 @@ int Fight(Critter* character,Critter* mob)
     int ln2=n2.size();
     for (int i=1;i<=ln1;i++) mas[1][i]=n1[i-1];
     for (int i=16;i<=16+ln2;i++) mas[1][i]=n2[i-1];
-    while ((character->Status_Life())||(mob->Status_Life())){
+    while ((character->Status_Life())&&(mob->Status_Life())){
         PrintPictures();
         printf("\n\n");
         FormStatsMas(character,mob,mas);
         PrintStats(mas);
+        if (prior){
+            character->Attack(mob);
+            prior+=1; // Смена приоритета
+            prior%=2; //
+            Sleep(2);
+            if (mob->Get_HP()<0) {
+                mob->Set_Life(false);
+                system("cls");
+                cout<< mob->Get_name() <<" побежден!!";
+                break;
+            }
+        }
+        if (prior){
+            mob->Attack(character);
+            Sleep(2);
+            prior+=1;
+            prior%=2;
+            if (character->Get_HP()<0) {
+                character->Set_Life(false);
+                system("cls");
+                printf("Вы погибли...Игра окончена");
+                break;
+            }
+        }
     }
         
     return 0;
