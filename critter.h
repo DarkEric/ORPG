@@ -28,6 +28,9 @@ public:
     void Set_x(int n);
     int Get_x()const;
 
+    void Set_energy(int n){energy=n;}
+    int Get_energy()const{return energy;}
+
     void Set_y(int n);
     int Get_y()const;
 
@@ -61,6 +64,7 @@ private:
     bool life;
     std::string name;
     int type;
+    int energy;
 };
 
 #endif // CRITTER_H
