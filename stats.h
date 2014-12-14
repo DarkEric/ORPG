@@ -49,12 +49,12 @@ static const int SKELETON_DEFENSE = 1;
 static const int SKELETON_SIGHT_RADIUS = 3;
 static const int SKELETON_EXPERIENCE = 60;
 
-static const int TROLL_HITS = 8;
-static const int TROLL_PATTACK = 5;
-static const int TROLL_PDEFENSE = 2;
+static const int TROLL_PATTACK = 25;
+static const int TROLL_PDEFENSE = 10;
+static const int TROLL_MDEFENSE = 2;
 static const int TROLL_SIGHT_RADIUS = 3;
 static const int TROLL_EXPERIENCE = 200;
-static const int TROLL_START_HP = 150;
+static const int TROLL_START_HP = 200;
 static const int TROLL_LEVEL=5;
 
 static const int WIZARD_HITS = 10;

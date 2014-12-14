@@ -19,22 +19,10 @@ void PrintPictures(){
     return;
 }
 
-void IntToChar(int a,char* mas,int p){
-    int b=a;
-    int l=0;
-    while (b>0){
-        l++;
-        b/=10;
-    }
-    while (a>0){
-        mas[l+p-1]=a%10;
-        a/=10;
-    }
-}
-
-int Fight(Critter* character,Critter* mob)
+int Fight(Hero* character,Monstr* mob)
 {
     system("mode con cols=91 lines=50");
+    srand(time(NULL));
     int prior=1;
     string n1=character->Get_name();
     string n2=mob->Get_name();
@@ -56,11 +44,22 @@ int Fight(Critter* character,Critter* mob)
             if (mob->Get_HP()<0) {
                 mob->Set_Life(false);
                 cout << mob->Get_name() << " побежден!!";
+                character->Add_EXP(mob->Get_exp_reward());
                 break;
             }
         }
         else if (prior==0){
-            mob->Attack(character);
+            int r=rand()%10;
+            if (mob->Get_HP() > mob->Get_MAX_HP()*0.1){
+                if (r>2) mob->Attack(character);
+                else mob->SP1(character);
+            }
+            else{
+                if (r>8) mob->Attack(character);
+                else if (r>5) mob->SP1(character);
+                else mob->SP2(character);
+            }
+
             razn_m=hp_prev_m-mob->Get_HP();
             hp_prev_m=mob->Get_HP();
             Sleep(1000);
@@ -69,6 +68,7 @@ int Fight(Critter* character,Critter* mob)
             if (character->Get_HP()<0) {
                 character->Set_Life(false);
                 cout << "Вы погибли...Игра окончена";
+                character->Lose_EXP(mob->Get_exp_reward()*5);
                 break;
             }
         }

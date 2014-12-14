@@ -69,7 +69,7 @@ private:
     std::string name;
     int type;
     int energy;
-    std::string name_SP[7];
+    std::string name_SP[8];
 };
 
 #endif // CRITTER_H
