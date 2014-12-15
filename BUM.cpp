@@ -15,23 +15,22 @@ BUM::~BUM(){
 
 
 void BUM::Dialog(int i){
-
+    i=1;
 	switch (i){
     case 1:{
-
-        std::cout << "Спасибо Вам,что защищаете нас!";
+        std::cout << "?ярёшсю ?рь,ўЄю чр?ш?рхЄх эрё!";
 		_getch();
 		break;
 	}
 	case 2:{
-		//вывод фраз
-		std::cout << "Пошалим?";
+		//т?тюф ЇЁрч
+		std::cout << "?ю°рышь?";
 		_getch();
 		break;
 	}
 	case 3:{
-		//вывод фраз
-		std::cout << "Проваливай!";
+		//т?тюф ЇЁрч
+		std::cout << "?Ёютрыштрщ!";
 		_getch();
 		break;
 	}
