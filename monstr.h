@@ -4,7 +4,7 @@
 class Monstr:public Critter
 {
 public:
-    Monstr(std::string name,int type,int MAX_HP,int dmg,int p_resist,int x,int y,int Level):Critter(name,type,MAX_HP,dmg,p_resist,x,y,Level)
+    Monstr(std::string name,int type,int MAX_HP,int dmg,int p_resist,int x,int y,int Level,int MAX_energy,int m_resist):Critter(name,type,MAX_HP,dmg,p_resist,x,y,Level,MAX_energy,m_resist)
     {
         this->heroin=0;
         this->agrrange=0;

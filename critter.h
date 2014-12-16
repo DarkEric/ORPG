@@ -6,7 +6,7 @@
 class Critter
 {
 public:
-    Critter(std::string name,int type,int MAX_HP,int dmg,int p_resist,int x,int y,int Level); //конструктор существа
+    Critter(std::string name,int type,int MAX_HP,int dmg,int p_resist,int x,int y,int Level,int MAX_energy,int m_resist); //конструктор существа
 
     void Set_HP(int n); //установка здоровья на определённый уровень(чит)
     int Get_HP()const; //вернуть текущее здоровье
@@ -62,13 +62,13 @@ public:
 private:
     int HP,MAX_HP,
         dmg,Level,
-//      m_resist,
+        m_resist,
         p_resist,
         x,y;
     bool life;
     std::string name;
     int type;
-    int energy;
+    int energy,MAX_energy;
     std::string name_SP[8];
 };
 

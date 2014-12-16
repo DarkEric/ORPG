@@ -7,6 +7,7 @@ static const int ID_TYPE_TROLL=1;
 //-------------------------------------------------------------------------------------
 
 static const int WARRIOR_START_HP = 100;
+static const int WARRIOR_ENERGY_MAX=100;
 static const int HERO_START_POS_X = 7;
 static const int HERO_START_POS_Y = 16;
 static const int WARRIOR_START_STR = 10;
@@ -55,6 +56,7 @@ static const int TROLL_MDEFENSE = 2;
 static const int TROLL_SIGHT_RADIUS = 3;
 static const int TROLL_EXPERIENCE = 200;
 static const int TROLL_START_HP = 200;
+static const int TROLL_START_ENERGY = 50;
 static const int TROLL_LEVEL=5;
 
 static const int WIZARD_HITS = 10;

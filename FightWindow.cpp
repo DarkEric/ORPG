@@ -4,6 +4,21 @@
 
 using namespace std;
 
+void PrintPictures(){
+    system("cls");
+    for (int i=1;i<=62;i++)printf("*");
+    printf("\n");
+    for (int i=2;i<=29;i++){
+        printf("*");
+        for (int j=2;j<=30;j++) printf("0");
+        printf("**");
+        for (int j=33;j<=61;j++) printf("0");
+        printf("*\n");
+    }
+    for (int i=1;i<=62;i++)printf("*");
+    return;
+}
+
 //void PrintPictures(){
 //    for (int i=1;i<=62;i++)printf("*");
 //    printf("\n");
@@ -31,13 +46,17 @@ void printMob(char** mobp,int a2, int b2){
         for (int j=1;j<=b2;j++)
             cout<<mobp[i][j];
         cout<<endl;
-    }
-}
 
 int Fight(Hero* character,Monstr* mob)
 {
     system("mode con cols=91 lines=50");
     srand(time(NULL));
+    int prior=1;
+    string n1=character->Get_name();
+    string n2=mob->Get_name();
+    int hp_prev_c=character->Get_MAX_HP(),hp_prev_m=mob->Get_MAX_HP();
+    int razn_c=0,razn_m=0;
+    while ((character->Status_Life())&&(mob->Status_Life())){
 //    char** herop,mobp;
 //    int a1,b1,a2,b2;
 //    file* f=fopen(character->picture,"r");
@@ -57,12 +76,6 @@ int Fight(Hero* character,Monstr* mob)
 //            cin>>herop[i][j];
 //    fclose(f1);
 
-    int prior=1;
-    string n1=character->Get_name();
-    string n2=mob->Get_name();
-    int hp_prev_c=character->Get_MAX_HP(),hp_prev_m=mob->Get_MAX_HP();
-    int razn_c=0,razn_m=0;
-    while ((character->Status_Life())&&(mob->Status_Life())){
         system("cls");
         //PrintPictures();
 
@@ -90,7 +103,6 @@ int Fight(Hero* character,Monstr* mob)
 //        cout<<endl;
 //        cout<<character->Get_energy()<<endl;
 
-
         if (prior==1){
             character->Attack(mob);
             razn_c=hp_prev_c-character->Get_HP();
@@ -108,12 +120,11 @@ int Fight(Hero* character,Monstr* mob)
         else if (prior==0){
             int r=rand()%10;
             if (mob->Get_HP() > mob->Get_MAX_HP()*0.1){
-                if (r>2) mob->Attack(character);
+                if ((r>2)||(mob->Get_energy()<5)) mob->Attack(character);
                 else mob->SP1(character);
             }
             else{
-                if (r>8) mob->Attack(character);
-                else if (r>5) mob->SP1(character);
+                if ((r>8)||(mob->Get_energy()<15)) mob->Attack(character);
                 else mob->SP2(character);
             }
 
