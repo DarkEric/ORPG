@@ -13,7 +13,7 @@ public:
     void Unset_weapon(Weapon* THWeap);
     void Attack(Critter *whom);
     void SP1(Critter *whom);
-    void SP2(Critter *whom);
+    void SP2(Critter *whom){}
 private:
     Weapon* THWeap;
 };

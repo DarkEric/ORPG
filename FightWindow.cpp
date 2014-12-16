@@ -46,6 +46,8 @@ void printMob(char** mobp,int a2, int b2){
         for (int j=1;j<=b2;j++)
             cout<<mobp[i][j];
         cout<<endl;
+    }
+}
 
 int Fight(Hero* character,Monstr* mob)
 {
@@ -80,36 +82,37 @@ int Fight(Hero* character,Monstr* mob)
         //PrintPictures();
 
 //        printMob(mobp,a2,b2);
-//        cout <<endl<< n2<<endl;
-//        cout << mob->Get_HP();
-//        if (razn_m!=0){
-//            cout<< " ( ";
-//            if (razn_m<0) cout<<"-";
-//            else if (razn_m>0) cout<<"+";
-//            cout<< razn_m << " )";
-//        }
-//        cout<<endl;
-//        cout<<mob->Get_energy()<<endl<<endl;
+        cout <<endl<< n2<<endl;
+        cout <<"HP: "<< mob->Get_HP();
+        if (razn_m!=0){
+            cout<< " ( ";
+            if (razn_m>0) cout<<"-";
+            else if (razn_m<0) cout<<"+";
+            cout<< razn_m << " )";
+        }
+        cout<<endl;
+        cout<<"Energy: "<< mob->Get_energy()<<endl<<endl;
 
 //        printHero(herop,a1,b1);
-//        cout<<endl<<n1<<endl;
-//        cout<<character->Get_HP();
-//        if (razn_c!=0){
-//            cout<< " ( ";
-//            if (razn_c<0) cout<<"-";
-//            else if (razn_c>0) cout<<"+";
-//            << razn_c << " )";
-//        }
-//        cout<<endl;
-//        cout<<character->Get_energy()<<endl;
+        cout<<endl<<n1<<endl;
+        cout<<"HP: "<< character->Get_HP();
+        if (razn_c!=0){
+            cout<< " ( ";
+            if (razn_c>0) cout<<"-";
+            else if (razn_c<0) cout<<"+";
+            cout<< razn_c << " )";
+        }
+        cout<<endl;
+        cout<<"Energy: "<< character->Get_energy()<<endl;
 
         if (prior==1){
             character->Attack(mob);
             razn_c=hp_prev_c-character->Get_HP();
             hp_prev_c=character->Get_HP();
+            razn_m=0;
             prior+=1; // Смена приоритета
             prior%=2; //
-            Sleep(1000);
+            Sleep(2000);
             if (mob->Get_HP()<0) {
                 mob->Set_Life(false);
                 cout << mob->Get_name() << " побежден!!";
@@ -130,7 +133,8 @@ int Fight(Hero* character,Monstr* mob)
 
             razn_m=hp_prev_m-mob->Get_HP();
             hp_prev_m=mob->Get_HP();
-            Sleep(1000);
+            razn_c=0;
+            Sleep(2000);
             prior+=1;
             prior%=2;
             if (character->Get_HP()<0) {
