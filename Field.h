@@ -1,12 +1,10 @@
 #ifndef FIELD_H
 #define FIELD_H
-//#include <stdlib.h>
-//#include <stdio.h>
-//#include <iostream>
-//#include <conio.h>
+
 #include <string.h>
 #include <Consol.h>
 #include "CheckMob.h"
+
 char Field[50][215];
 int q=0,s=0;
 int quest[5][3];
@@ -21,6 +19,7 @@ void CreateQuest(int d){
         Quest[i].Set_y(quest[i][2]);
     }
 }
+
 void CreateBum(int d){
     Bum=new BUM[d+2];
     for (int i=1;i<=d;i++){
