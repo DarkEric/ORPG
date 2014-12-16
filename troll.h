@@ -4,7 +4,7 @@
 class Troll : public Monstr
 {
 public:
-    Troll():Monstr("Troll",ID_TYPE_TROLL,TROLL_START_HP,TROLL_PATTACK,TROLL_PDEFENSE,1,1,TROLL_LEVEL){
+    Troll():Monstr("Troll",ID_TYPE_TROLL,TROLL_START_HP,TROLL_PATTACK,TROLL_PDEFENSE,1,1,TROLL_LEVEL,TROLL_START_ENERGY,TROLL_MDEFENSE){
         this->Set_exp_reward(TROLL_EXPERIENCE);
         for (int i=1;i<=7;i++) {
             this->Set_name_SP(i,"0");

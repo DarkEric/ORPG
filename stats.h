@@ -56,6 +56,7 @@ static const int TROLL_MDEFENSE = 2;
 static const int TROLL_SIGHT_RADIUS = 3;
 static const int TROLL_EXPERIENCE = 200;
 static const int TROLL_START_HP = 200;
+static const int TROLL_START_ENERGY = 50;
 static const int TROLL_LEVEL=5;
 
 static const int WIZARD_HITS = 10;

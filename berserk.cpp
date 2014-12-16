@@ -15,6 +15,6 @@ void Berserk::Unset_weapon(Weapon *THWeap){
 }
 
 void Berserk::SP1(Critter *whom){
-    whom-Get_dmg(floor(this->Get_MAX_HP()-this->Get_HP()));
+    whom->Get_dmg(floor(this->Get_MAX_HP()-this->Get_HP()));
     this->Get_dmg(this->Get_HP()*0.5);
 }
