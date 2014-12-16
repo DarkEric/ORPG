@@ -9,6 +9,7 @@ public:
         for (int i=1;i<=7;i++) {
             this->Set_name_SP(i,"0");
             this->Set_energy_coast(i,0);
+            this->Set_filename("pictures/dragonnoob.txt");
         }
         this->Set_name_SP(1,"1");
         this->Set_energy_coast(1,5);
