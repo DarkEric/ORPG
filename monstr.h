@@ -17,6 +17,8 @@ public:
     void Change_heroin();
     int Get_heroin();
 
+    void Move(char** mas);
+
     void Set_exp_reward(int n);
     int Get_exp_reward();
 private:
