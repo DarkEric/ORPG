@@ -7,6 +7,7 @@ static const int ID_TYPE_TROLL=1;
 //-------------------------------------------------------------------------------------
 
 static const int WARRIOR_START_HP = 100;
+static const int WARRIOR_ENERGY_MAX=100;
 static const int HERO_START_POS_X = 7;
 static const int HERO_START_POS_Y = 16;
 static const int WARRIOR_START_STR = 10;

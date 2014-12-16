@@ -6,7 +6,7 @@
 class Critter
 {
 public:
-    Critter(std::string name,int type,int MAX_HP,int dmg,int p_resist,int x,int y,int Level); //конструктор существа
+    Critter(std::string name,int type,int MAX_HP,int dmg,int p_resist,int x,int y,int Level,int MAX_energy,int m_resist); //конструктор существа
 
     void Set_HP(int n); //установка здоровья на определённый уровень(чит)
     int Get_HP()const; //вернуть текущее здоровье
@@ -19,8 +19,8 @@ public:
     void Set_attack(int n);//установить силу атаки
     int Get_attack()const;//узнать силу атаки
 
-//    void Set_m_resist(int n);
-//    int Get_m_resist();
+     void Set_m_resist(int n);
+     int Get_m_resist();
 
     void Set_p_resist(int n);//установить уровень защиты
     int Get_p_resist()const;//узнать уровень защиты
@@ -30,6 +30,9 @@ public:
 
     void Set_energy(int n){energy=n;}
     int Get_energy()const{return energy;}
+
+    void Set_MAX_energy(int n){MAX_energy=n;}
+    int Get_MAX_energy()const{return MAX_energy;}
 
     void Set_y(int n);
     int Get_y()const;
@@ -49,6 +52,9 @@ public:
     void Set_name_SP(int n,std::string name){name_SP[n]=name;}
     std::string Get_name_SP(int n)const{return name_SP[n];}
 
+    void Set_filename(std::string n){filename=n;}
+    std::string Get_filename()const{return filename;}
+
     virtual void LevelUp();
     virtual void Move(int n);
     virtual void Attack(Critter* whom);
@@ -62,14 +68,15 @@ public:
 private:
     int HP,MAX_HP,
         dmg,Level,
-//      m_resist,
+        m_resist,
         p_resist,
         x,y;
     bool life;
     std::string name;
     int type;
-    int energy;
+    int energy,MAX_energy;
     std::string name_SP[8];
+    std::string filename;
 };
 
 #endif // CRITTER_H
