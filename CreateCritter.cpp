@@ -17,7 +17,7 @@ BUM* CreateBum(int d, BUM* Bum, int** citizens){
     return Bum;
 }
 
-void CreateTroll(int d,Critter** Trolls,int** troll){
+void CreateTroll(int d, Monstr **Trolls, int** troll){
     for(int i=0;i<15;i++){
         Trolls[i]=new Troll();
     }

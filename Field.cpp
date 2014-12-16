@@ -10,7 +10,7 @@ int q=0,s=0,t=0;
 
 QNPC* Quest;
 BUM* Bum;
-Critter* Trolls[15];
+Monstr* Trolls[15];
 
 void WriteField(int x, int y,int n,int m)
 {
@@ -97,13 +97,13 @@ void MoveHero(std::string TownMap,Hero* Player){
                 if (Field[x - 1][y]=='Q'){
                     system("cls");
                     int numQuest=FindQuest(x-1,y,Quest,q);
-                    Quest[numQuest].Dialog(numQuest/*номер квестовика*/);
+                    Quest[numQuest].Dialog(numQuest/*номер квестовик */);
                     system("cls");
                     WriteField(x, y,n,m);
                 }else if (Field[x - 1][y]=='C'){
                     system("cls");
                     int numBum=FindBum(x-1,y,Bum,s);
-                    Bum[numBum].Dialog(numBum/*номер гражд*/);
+                    Bum[numBum].Dialog(numBum/*номер гр жд*/);
                     system("cls");
                     WriteField(x, y,n,m);
                 }else if (Field[x - 1][y]=='T'){
@@ -131,7 +131,7 @@ void MoveHero(std::string TownMap,Hero* Player){
                 }else if (Field[x][y - 1]=='C'){
                     system("cls");
                     int numBum=FindBum(x,y-1,Bum,s);
-                    Bum[numBum].Dialog(numBum/*номер гражд*/);
+                    Bum[numBum].Dialog(numBum/*номер гр жд*/);
                     system("cls");
                     WriteField(x, y,n,m);
                 }else if (Field[x][y - 1]=='T'){
@@ -159,7 +159,7 @@ void MoveHero(std::string TownMap,Hero* Player){
                 }else if (Field[x + 1][y]=='C'){
                     system("cls");
                     int numBum=FindBum(x+1,y,Bum,s);
-                    Bum[numBum].Dialog(numBum/*номер гражд*/);
+                    Bum[numBum].Dialog(numBum/*номер гр жд*/);
                     system("cls");
                     WriteField(x, y,n,m);
                 }else if (Field[x + 1][y]=='T'){
@@ -187,7 +187,7 @@ void MoveHero(std::string TownMap,Hero* Player){
                 }else if (Field[x][y+1]=='C'){
                     system("cls");
                     int numBum=FindBum(x,y+1,Bum,s);
-                    Bum[numBum].Dialog(numBum/*номер гражд*/);
+                    Bum[numBum].Dialog(numBum/*номер гр жд*/);
                     system("cls");
                     WriteField(x, y,n,m);
                 }else if (Field[x][y + 1]=='T'){

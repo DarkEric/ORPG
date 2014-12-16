@@ -5,6 +5,6 @@
 #include "BUM.h"
 QNPC *CreateQuest(int ,QNPC* ,int** );
 BUM *CreateBum(int , BUM * , int** );
-void CreateTroll(int ,Critter** ,int** );
+void CreateTroll(int ,Monstr** ,int** );
 
 #endif // CREATECRITTER_H
