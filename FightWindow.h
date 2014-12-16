@@ -2,10 +2,12 @@
 #define FIGHTWINDOW_H
 #include <windows.h>
 #include <time.h>
-#include "critter.h"
+#include "monstr.h"
+#include "hero.h"
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
-int Fight(Critter* Character,Critter* Mob);
+
+int Fight(Hero* Character,Monstr* Mob);
 
 #endif // FIGHTWINDOW_H

@@ -23,3 +23,4 @@ void Troll::SP2(Critter *whom){
         whom->Get_dmg(damage);
     }
 }
+

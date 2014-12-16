@@ -27,12 +27,9 @@ bool QNPC::Dialog(int n){
 
 
     char file[20]={'q','u','e','s','t',n+48,'.','t','x','t',0};
-//    if (n==1) file="quest1.txt";
-//    else if (n==2)file="quest2.txt";
     freopen(file,"r",stdin);
     char mas[4][30];
     for (int i=1;i<=4;i++) gets(mas[i]);
-    //for (int i=1;i<=4;i++) std::cout<<file;
 
     if (status==false){
         status=true;

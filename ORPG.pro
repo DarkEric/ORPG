@@ -16,7 +16,10 @@ SOURCES += main.cpp \
     NPC.cpp \
     QNPC.cpp \
     FightWindow.cpp \
-    CheckMob.cpp
+    CheckMob.cpp \
+    Field.cpp \
+    CreateCritter.cpp \
+    Consol.cpp
 
 include(deployment.pri)
 qtcAddDeployment()
@@ -46,5 +49,6 @@ HEADERS += \
     CreateHero.h \
     FightWindow.h \
     Weapon.h \
-    CheckMob.h
+    CheckMob.h \
+    CreateCritter.h
 
