@@ -1,8 +1,10 @@
 #include "critter.h"
 
-Critter::Critter(std::string name, int type, int MAX_HP, int dmg, int p_resist, int x, int y, int Level)
+Critter::Critter(std::string name, int type, int MAX_HP, int dmg, int p_resist, int x, int y, int Level, int MAX_energy, int m_resist)
 {
-
+    this->MAX_energy=MAX_energy;
+    this->energy=MAX_energy;
+    this->m_resist=m_resist;
     this->type=type;
     this->name=name;
     this->HP=MAX_HP;
