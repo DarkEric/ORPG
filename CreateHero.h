@@ -113,10 +113,10 @@ int SelectNewHero(){
 void CreateHero(){
     int a=SelectNewHero();
     std::string b=EnterName();
-    NewHero(a,b);
+    Hero* Player=NewHero(a,b);
     SetConsoleFont(6);
     system("mode con cols=120 lines=50");
-    MoveHero("City.txt");
+    MoveHero("City.txt",Player);
 }
 
 
