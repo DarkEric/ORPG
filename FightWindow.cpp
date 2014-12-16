@@ -1,8 +1,96 @@
 #include "FightWindow.h"
-
-
+#include "Consol.h"
+#include "conio.h"
 
 using namespace std;
+
+void infoPrint(Hero* character,Monstr* mob,string n1,string n2,int razn_c,int razn_m){
+//        printMob(mobp,a2,b2);
+        cout <<endl<< n2<<endl;
+        cout <<"HP: "<< mob->Get_HP();
+        if (razn_m!=0){
+            cout<< " ( ";
+            if (razn_m>0) cout<<"-";
+            else if (razn_m<0) cout<<"+";
+            cout<< razn_m << " )";
+        }
+        cout<<endl;
+        cout<<"Energy: "<< mob->Get_energy()<<endl<<endl;
+
+//        printHero(herop,a1,b1);
+        cout<<endl<<n1<<endl;
+        cout<<"HP: "<< character->Get_HP();
+        if (razn_c!=0){
+            cout<< " ( ";
+            if (razn_c>0) cout<<"-";
+            else if (razn_c<0) cout<<"+";
+            cout<< razn_c << " )";
+        }
+        cout<<endl;
+        cout<<"Energy: "<< character->Get_energy()<<endl;
+}
+
+
+void SkillChoice(Hero* character,Monstr* mob,string n1,string n2,int razn_c,int razn_m){
+    std::string mas[6];
+    setlocale(LC_ALL, "rus");
+//    int status[6];
+//    for(int i=1;i<=5;i++)status[i]=0;
+    string s="Атака";
+    mas[1]=s;
+    for(int i=2;i<=4;i++)mas[i]=character->Get_name_SP(i-1);
+    infoPrint(character,mob,n1,n2,razn_c,razn_m);
+    SetConsoleText(1);
+    cout<<mas[1]<<"\n";
+    SetConsoleText(2);
+    for (int i=2;i<=5;i++)cout<<mas[i]<<"\n";
+    int f=1,ff=0;
+    char c=_getch();
+    while(1){
+        switch (c) {
+        case 72:
+            if (f!=1){
+                f--;
+                ff=1;
+
+            }
+            break;
+        case 80:
+            if (f!=4){
+                f++;
+                ff=1;
+            }
+            break;
+        case 13:
+            //атака
+            SetConsoleText(3);
+            cout<<"атака, использ скил "<<f;
+            return;
+            _getch();
+            break;
+        default:
+            break;
+        }
+        if (ff){
+            system("cls");
+            SetConsoleText(3);
+            infoPrint(character,mob,n1,n2,razn_c,razn_m);
+            SetConsoleText(2);
+        for (int i=1;i<=5;i++)
+            if (f==i){
+                SetConsoleText(1);
+                cout<<mas[i]<<"\n";
+                SetConsoleText(2);
+                ff=0;
+            }else {cout<<mas[i]<<"\n";ff=1;}
+        }
+        c=_getch();
+    }
+
+
+}
+
+
 
 void PrintPictures(){
     system("cls");
@@ -81,38 +169,17 @@ int Fight(Hero* character,Monstr* mob)
         system("cls");
         //PrintPictures();
 
-//        printMob(mobp,a2,b2);
-        cout <<endl<< n2<<endl;
-        cout <<"HP: "<< mob->Get_HP();
-        if (razn_m!=0){
-            cout<< " ( ";
-            if (razn_m>0) cout<<"-";
-            else if (razn_m<0) cout<<"+";
-            cout<< razn_m << " )";
-        }
-        cout<<endl;
-        cout<<"Energy: "<< mob->Get_energy()<<endl<<endl;
-
-//        printHero(herop,a1,b1);
-        cout<<endl<<n1<<endl;
-        cout<<"HP: "<< character->Get_HP();
-        if (razn_c!=0){
-            cout<< " ( ";
-            if (razn_c>0) cout<<"-";
-            else if (razn_c<0) cout<<"+";
-            cout<< razn_c << " )";
-        }
-        cout<<endl;
-        cout<<"Energy: "<< character->Get_energy()<<endl;
-
         if (prior==1){
+
+
+            SkillChoice(character,mob,n1,n2,razn_c,razn_m);
             character->Attack(mob);
             razn_c=hp_prev_c-character->Get_HP();
             hp_prev_c=character->Get_HP();
             razn_m=0;
             prior+=1; // Смена приоритета
             prior%=2; //
-            Sleep(2000);
+            //Sleep(2000);
             if (mob->Get_HP()<0) {
                 mob->Set_Life(false);
                 cout << mob->Get_name() << " побежден!!";
@@ -134,7 +201,7 @@ int Fight(Hero* character,Monstr* mob)
             razn_m=hp_prev_m-mob->Get_HP();
             hp_prev_m=mob->Get_HP();
             razn_c=0;
-            Sleep(2000);
+           // Sleep(2000);
             prior+=1;
             prior%=2;
             if (character->Get_HP()<0) {

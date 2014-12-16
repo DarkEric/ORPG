@@ -1,5 +1,7 @@
 #include "Field.h"
 #include "CreateCritter.h"
+#include "Consol.h"
+#include <conio.h>
 
 char Field[50][215];
 
@@ -17,9 +19,9 @@ void WriteField(int x, int y,int n,int m)
     for (int j = 1; j <= 119; j++)printf("*");
     printf("\n");
     if (m>=100)m=100;
-    for (int i = x-15; i <= x+15; i++){
+    for (int i =1; i <= 30; i++){
         printf("*");
-        for (int j = y-30; j <= y+80; j++)
+        for (int j = 1; j <= 115; j++)
             if (Field[i][j]=='H'){
                 SetConsoleText(4);
                 printf("%c", Field[i][j]);
