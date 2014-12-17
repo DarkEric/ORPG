@@ -3,7 +3,8 @@
 // Stats.h
 
 static const int ID_TYPE_BERSERK=21;
-static const int ID_TYPE_TROLL=1;
+static const int ID_TYPE_TROLL=84;
+static const int ID_TYPE_DRAGON=68;
 //-------------------------------------------------------------------------------------
 
 static const int WARRIOR_START_HP = 100;
@@ -50,14 +51,23 @@ static const int SKELETON_DEFENSE = 1;
 static const int SKELETON_SIGHT_RADIUS = 3;
 static const int SKELETON_EXPERIENCE = 60;
 
-static const int TROLL_PATTACK = 25;
+static const int TROLL_PATTACK = 15;
 static const int TROLL_PDEFENSE = 10;
 static const int TROLL_MDEFENSE = 2;
 static const int TROLL_SIGHT_RADIUS = 3;
-static const int TROLL_EXPERIENCE = 200;
+static const int TROLL_EXPERIENCE = 50;
 static const int TROLL_START_HP = 200;
 static const int TROLL_START_ENERGY = 50;
 static const int TROLL_LEVEL=5;
+
+static const int DRAGON_PATTACK = 25;
+static const int DRAGON_PDEFENSE = 12;
+static const int DRAGON_MDEFENSE = 16;
+static const int DRAGON_SIGHT_RADIUS = 3;
+static const int DRAGON_EXPERIENCE = 100;
+static const int DRAGON_START_HP = 215;
+static const int DRAGON_START_ENERGY = 85;
+static const int DRAGON_LEVEL=10;
 
 static const int WIZARD_HITS = 10;
 static const int WIZARD_ATTACK = 4;

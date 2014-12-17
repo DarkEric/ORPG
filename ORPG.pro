@@ -20,7 +20,8 @@ SOURCES += main.cpp \
     Field.cpp \
     CreateCritter.cpp \
     Consol.cpp \
-    Dungeon.cpp
+    Dungeon.cpp \
+    dragon.cpp
 
 include(deployment.pri)
 qtcAddDeployment()
@@ -52,5 +53,6 @@ HEADERS += \
     Weapon.h \
     CheckMob.h \
     CreateCritter.h \
-    Dungeon.h
+    Dungeon.h \
+    dragon.h
 

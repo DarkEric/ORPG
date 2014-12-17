@@ -56,6 +56,7 @@ bool Critter::Status_Life()const{
 void Critter::Set_attack(int n){dmg=n;}
 int Critter::Get_attack()const{return dmg;}
 int Critter::Get_p_resist()const{return p_resist;}
+int Critter::Get_m_resist()const{return m_resist;}
 void Critter::Attack(Critter* whom){
     if(whom->Status_Life()==true){
         whom->Get_dmg((this->Get_attack())-whom->Get_p_resist());
