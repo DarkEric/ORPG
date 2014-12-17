@@ -9,7 +9,7 @@ class Weapon :
 public:
 	int dmg;
 public:	
-    Weapon(std::string name, int type, int dmg,int color) : items(name, type,color)
+    Weapon(std::string name, int type, int dmg,int color) : items(name,type,color)
 	{
 		this->dmg = dmg;
 	}
