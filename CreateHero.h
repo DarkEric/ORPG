@@ -2,6 +2,7 @@
 #define CREATEHERO_H
 #include "berserk.h"
 #include "Field.h"
+#include "Consol.h"
 
 Hero* NewHero(int n,std::string name){
     Hero* a;
