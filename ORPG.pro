@@ -22,6 +22,8 @@ SOURCES += main.cpp \
     Consol.cpp \
     Dungeon.cpp \
     controller.cpp
+    dragon.cpp \
+
 
 include(deployment.pri)
 qtcAddDeployment()
@@ -55,4 +57,5 @@ HEADERS += \
     CreateCritter.h \
     Dungeon.h \
     controller.h
+    dragon.h
 

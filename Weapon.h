@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef WEAPON_H
 #define WEAPON_H
 
@@ -11,7 +9,7 @@ class Weapon :
 public:
 	int dmg;
 public:	
-    Weapon(std::string name, int type, int dmg, int color) : items(name, type)
+    Weapon(std::string name, int type, int dmg,int color) : items(name,type,color)
 	{
 		this->dmg = dmg;
 	}

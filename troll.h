@@ -8,9 +8,12 @@ public:
         this->Set_exp_reward(TROLL_EXPERIENCE);
         for (int i=1;i<=7;i++) {
             this->Set_name_SP(i,"0");
+            this->Set_energy_coast(i,0);
         }
-        this->Set_name_SP(1,"Hammer Crush");
-        this->Set_name_SP(2,"Crush of Doom");
+        this->Set_name_SP(1,"1");
+        this->Set_energy_coast(1,10);
+        this->Set_name_SP(2,"1");
+        this->Set_energy_coast(1,25);
     }
     void Attack(Critter *whom);
     void SP1(Critter *whom);

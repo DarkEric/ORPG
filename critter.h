@@ -20,7 +20,7 @@ public:
     int Get_attack()const;//узнать силу атаки
 
      void Set_m_resist(int n);
-     int Get_m_resist();
+     int Get_m_resist()const;
 
     void Set_p_resist(int n);//установить уровень защиты
     int Get_p_resist()const;//узнать уровень защиты
@@ -52,6 +52,9 @@ public:
     void Set_name_SP(int n,std::string name){name_SP[n]=name;}
     std::string Get_name_SP(int n)const{return name_SP[n];}
 
+    void Set_energy_coast(int n,int a){energy_coast[n]=a;}
+    int Get_energy_coast(int n)const{return energy_coast[n];}
+
     void Set_filename(std::string n){filename=n;}
     std::string Get_filename()const{return filename;}
 
@@ -77,6 +80,7 @@ private:
     int energy,MAX_energy;
     std::string name_SP[8];
     std::string filename;
+    int energy_coast[8];
 };
 
 #endif // CRITTER_H
