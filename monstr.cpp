@@ -1,7 +1,12 @@
 #include "monstr.h"
 
-void Monstr::Set_agrrange(int n){agrrange=n;}
-int Monstr::Get_agrrange(){return agrrange;}
+void Monstr::Set_next_step(int value_x, int value_y){
+    next_x=value_x;
+    next_y=value_y;
+}
+
+int Monstr::Get_next_x(){return next_x;}
+int Monstr::Get_next_y(){return next_y;}
 
 void Monstr::Change_heroin(){
     heroin++;

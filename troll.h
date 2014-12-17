@@ -14,6 +14,7 @@ public:
         this->Set_energy_coast(1,10);
         this->Set_name_SP(2,"1");
         this->Set_energy_coast(1,25);
+        this->Set_filename("pictures/troll.txt");
     }
     void Attack(Critter *whom);
     void SP1(Critter *whom);
