@@ -14,6 +14,7 @@ public:
 		this->dmg = dmg;
 	}
     int Attack(){ return dmg; }
+    void Set_dmg(int n){this->dmg=n;}
 };
 
 #endif
