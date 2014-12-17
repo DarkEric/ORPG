@@ -7,7 +7,7 @@ public:
     Monstr(std::string name,int type,int MAX_HP,int dmg,int p_resist,int x,int y,int Level,int MAX_energy,int m_resist):Critter(name,type,MAX_HP,dmg,p_resist,x,y,Level,MAX_energy,m_resist)
     {
         this->heroin=0;
-        this->agrrange=0;
+        this->agrrange=0;+
         this->exp_reward=10;
     }
 

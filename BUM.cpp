@@ -12,8 +12,6 @@ BUM::BUM(){
 BUM::~BUM(){
 
 }
-
-
 void BUM::Dialog(int i){
     i=1;
 	switch (i){

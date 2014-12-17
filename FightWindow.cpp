@@ -36,7 +36,7 @@ void SkillChoice(Hero* character,Monstr* mob,string n1,string n2,int razn_c,int 
     setlocale(LC_ALL, "rus");
 //    int status[6];
 //    for(int i=1;i<=5;i++)status[i]=0;
-    string s="Атака";
+    string s="?Єрър";
     mas[1]=s;
     for(int i=2;i<=4;i++)mas[i]=character->Get_name_SP(i-1);
     infoPrint(character,mob,n1,n2,razn_c,razn_m);
@@ -62,9 +62,9 @@ void SkillChoice(Hero* character,Monstr* mob,string n1,string n2,int razn_c,int 
             }
             break;
         case 13:
-            //атака
+            //рЄрър
             SetConsoleText(3);
-            cout<<"атака, использ скил "<<f;
+            cout<<"рЄрър, шёяюы№ч ёъшы "<<f;
             return;
             _getch();
             break;
@@ -139,7 +139,7 @@ void printMob(char** mobp,int a2, int b2){
 
 int Fight(Hero* character,Monstr* mob)
 {
-    system("mode con cols=91 lines=50");
+    system("mode con cols=120 lines=50");
     srand(time(NULL));
     int prior=1;
     string n1=character->Get_name();
@@ -177,12 +177,12 @@ int Fight(Hero* character,Monstr* mob)
             razn_c=hp_prev_c-character->Get_HP();
             hp_prev_c=character->Get_HP();
             razn_m=0;
-            prior+=1; // Смена приоритета
+            prior+=1; // ?ьхэр яЁшюЁшЄхЄр
             prior%=2; //
             //Sleep(2000);
             if (mob->Get_HP()<0) {
                 mob->Set_Life(false);
-                cout << mob->Get_name() << " побежден!!";
+                cout << mob->Get_name() << " яюсхцфхэ!!";
                 character->Add_EXP(mob->Get_exp_reward());
                 break;
             }
@@ -206,7 +206,7 @@ int Fight(Hero* character,Monstr* mob)
             prior%=2;
             if (character->Get_HP()<0) {
                 character->Set_Life(false);
-                cout << "Вы погибли...Игра окончена";
+                cout << "?? яюушсыш...?уЁр юъюэўхэр";
                 character->Lose_EXP(mob->Get_exp_reward()*5);
                 break;
             }
