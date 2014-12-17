@@ -3,6 +3,7 @@
 #include "critter.h"
 #include "Weapon.h"
 #include "Armor.h"
+#include "monstr.h"
 class Hero:public Critter
 {
 public:
@@ -10,7 +11,7 @@ public:
     {
         this->EXP=0;
     }
-
+    void SearchMob(Monstr **mob , int n, char** Field);
     void Set_EXP(int n);
     int Get_EXP()const;
     void Add_EXP(int n);
