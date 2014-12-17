@@ -2,6 +2,7 @@
 #include "CreateCritter.h"
 #include "Consol.h"
 #include <conio.h>
+#include "Dungeon.h"
 
 char Field[50][215];
 
@@ -205,7 +206,7 @@ void MoveHero(std::string TownMap,Hero* Player){
                     WriteField(x, y,n,m);
                 }
             }
-        }//else if (c==32) MoveHero("Field.txt",Player);
+        }else if (c==32) DungeonMap("Field.txt",Player);
         c = getch();
     }
 }

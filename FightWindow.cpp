@@ -74,9 +74,8 @@ void SkillChoice(Hero* character,Monstr* mob,string n1,string n2,int razn_c,int 
             }
             break;
         case 13:
-            //атака
             SetConsoleText(3);
-            cout<<"атака, использ скил "<<f;
+            cout<<"использован скилл "<<f;
             return;
             _getch();
             break;
@@ -144,7 +143,7 @@ int Fight(Hero* character,Monstr* mob)
             razn_c=hp_prev_c-character->Get_HP();
             hp_prev_c=character->Get_HP();
             razn_m=0;
-            prior+=1; // Смена приоритета
+            prior+=1; // смена приоритета
             prior%=2; //
             if (mob->Get_HP()<0) {
                 mob->Set_Life(false);
@@ -182,7 +181,8 @@ int Fight(Hero* character,Monstr* mob)
             prior%=2;
             if (character->Get_HP()<0) {
                 character->Set_Life(false);
-                cout << "Вы погибли...Игра окончена";
+                cout << "Поражение .. вскоре вы воскреснете.";
+                Sleep(2000);
                 character->Lose_EXP(mob->Get_exp_reward()*5);
                 break;
             }

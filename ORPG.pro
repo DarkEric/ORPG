@@ -20,8 +20,9 @@ SOURCES += main.cpp \
     Field.cpp \
     CreateCritter.cpp \
     Consol.cpp \
+    Dungeon.cpp \
+    controller.cpp
     dragon.cpp \
-    Dungeon.cpp
 
 
 include(deployment.pri)
@@ -55,6 +56,6 @@ HEADERS += \
     CheckMob.h \
     CreateCritter.h \
     Dungeon.h \
+    controller.h
     dragon.h
-
 
