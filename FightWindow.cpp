@@ -139,7 +139,7 @@ void printMob(char** mobp,int a2, int b2){
 
 int Fight(Hero* character,Monstr* mob)
 {
-    system("mode con cols=91 lines=50");
+//    system("mode con cols=91 lines=50");
     srand(time(NULL));
     int prior=1;
     string n1=character->Get_name();
