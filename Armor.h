@@ -12,7 +12,7 @@ private :
     int type_stat;
     int m_resist;
 public:
-    Armor();
+    Armor(){}
     Armor(std::string name, int type,int p_resist,int m_resist,int type_stat, int stat,int color) : items(name,type,color)
 	{
 		this->p_resist = p_resist;

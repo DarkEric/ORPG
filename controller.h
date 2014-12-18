@@ -10,6 +10,7 @@
 #include "FightWindow.h"
 #include "berserk.h"
 
+
 class Controller
 {
 public:

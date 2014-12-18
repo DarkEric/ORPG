@@ -267,3 +267,8 @@ int Controller::PositionHero(){
         }else if (c==32) DungeonMap("Map.txt",Player);
         c = getch();
     }*/
+
+Controller::Controller()
+{
+}
+

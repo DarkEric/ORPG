@@ -27,11 +27,3 @@ void CreateTroll(int d, Monstr **Trolls, int** troll){
         Trolls[i]->Set_y(troll[i][2]);
     }
 }
-Dragon* CreateDragon(int d, Dragon* Drag, int** dragon){
-    Drag=new Dragon[d+1];
-    for (int i=1;i<=d;i++){
-        Drag[i].Set_x(dragon[i][1]);
-        Drag[i].Set_y(dragon[i][2]);
-    }
-    return Drag;
-}
