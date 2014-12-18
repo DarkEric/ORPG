@@ -1,3 +1,5 @@
+#ifndef ARMOR_H
+#define ARMOR_H
 #include "items.h"
 
 
@@ -10,6 +12,7 @@ private :
     int type_stat;
     int m_resist;
 public:
+    Armor();
     Armor(std::string name, int type,int p_resist,int m_resist,int type_stat, int stat,int color) : items(name,type,color)
 	{
 		this->p_resist = p_resist;
@@ -24,3 +27,4 @@ public:
     void Set_p_m_stat(int a,int b,int c){p_resist=a;m_resist=b;stat=c;}
 };
 
+#endif

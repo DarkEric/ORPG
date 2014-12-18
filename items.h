@@ -10,7 +10,7 @@ private:
     int type;
     int color;
 public:
-
+    items(){}
     items(std::string name, int type, int color)
 	{
         for(int i=0;i<30;i++)this->name[i]='\0';

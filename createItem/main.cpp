@@ -38,7 +38,8 @@ int main()
             int type=1;
             int color=1;
             cout<<"\nName: ";
-            cin>>name;
+            cin.ignore(1,'\n');
+            getline(cin,name);
             cout<<"\n׃נמם: ";
             cin>>dmg;
             cout<<"\nType ";
@@ -97,7 +98,8 @@ int main()
             int type=1;
             int color=1,p_resist=1,m_resist=1,type_stat=0,stat=0;
             cout<<"\nName: ";
-            cin>>name;
+            cin.ignore(1,'\n');
+            getline(cin,name);
             cout<<"\nType ";
             cin>>type;
             cout<<"\nColor ";
