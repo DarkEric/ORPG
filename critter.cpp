@@ -6,7 +6,7 @@ Critter::Critter(std::string name, int type, int MAX_HP, int dmg, int p_resist, 
     this->energy=MAX_energy;
     this->m_resist=m_resist;
     this->type=type;
-    this->name=name;
+    name.copy(this->name,name.length());
     this->HP=MAX_HP;
     this->MAX_HP=MAX_HP;
     this->dmg=dmg;
