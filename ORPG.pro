@@ -16,10 +16,7 @@ SOURCES += main.cpp \
     NPC.cpp \
     QNPC.cpp \
     FightWindow.cpp \
-    CheckMob.cpp \
-    CreateCritter.cpp \
     Consol.cpp \
-    Dungeon.cpp \
     controller.cpp \
     dragon.cpp \
     Game.cpp
@@ -53,9 +50,6 @@ HEADERS += \
     CreateHero.h \
     FightWindow.h \
     Weapon.h \
-    CheckMob.h \
-    CreateCritter.h \
-    Dungeon.h \
     controller.h \
     dragon.h \
     Game.h

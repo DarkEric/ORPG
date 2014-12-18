@@ -1,8 +1,9 @@
 #include <iostream>
 #include <fstream>
-//#include "Menu.h"
+#include "Menu.h"
 #include "Weapon.h"
 #include "Armor.h"
+#include "hero.h"
 int Kweapon,Karmor;
 Weapon Mweapon[100];
 Armor Marmor[100];
@@ -24,12 +25,6 @@ int main()
         in.read((char*)&Marmor[i],sizeof(Armor));
     }
     in.close();
-    std::setlocale(LC_ALL,"rus_rus.866");
-    std::cout<<Mweapon[0].Get_name();
-    std::cout<<Marmor[0].Get_name();
-    std::setlocale(LC_ALL,"Russian_Russia.1251");
-//    system("mode con cols=80 lines=40");
-//    MENU();
-
+    MENU();
     return 0;
 }

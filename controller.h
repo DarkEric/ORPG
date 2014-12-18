@@ -14,7 +14,7 @@
 class Controller
 {
 public:
-    Controller();
+    Controller(){}
     void Create();
     static void GlobalMap();
     static void FieldMap();

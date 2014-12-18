@@ -1,4 +1,4 @@
-#include "CreateCritter.h"
+
 
 QNPC *CreateQuest(int d,QNPC* Quest,int** quest){
     Quest=new QNPC[d+2];

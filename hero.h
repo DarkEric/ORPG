@@ -7,6 +7,7 @@
 class Hero:public Critter
 {
 public:
+    Hero(){}
     Hero(std::string name,int type,int MAX_HP, int dmg, int p_resist, int x, int y,int MAX_energy,int m_resist):Critter(name,type,MAX_HP,dmg,p_resist,x,y,1,MAX_energy,m_resist)
     {
         this->EXP=0;

@@ -44,8 +44,8 @@ void Controller::ReadMap(string Mname){
     freopen(Mname.c_str(),"r",stdin);
     int x,y;
     scanf("%d %d",&x,&y);
-    //Maplen_x=x;
-    //Maplen_y=y;
+    Maplen_x=x;
+    Maplen_y=y;
     for (int i=1;i<=x;i++)
         for(int j=1;j<=y;j++){
             char c;
@@ -125,6 +125,7 @@ int Controller::FiendCreate(int x,int y){
     default:
         break;
     }
+    return 0;
 }
 
 void Controller::GlobalMap(){
@@ -143,132 +144,7 @@ void Controller::AmendMap(int n,int i,int j,int x,int y){
     }
 }
 int Controller::PositionHero(){
-
+    return 0;
 }
-/*    char c = getch();
-    while (c != 27){
-        if (c == 72){
-            if (x - 1 > 1 && Map[x - 1][y] != '#'){
-                if (Map[x - 1][y]=='Q'){
-                    system("cls");
-                    int numQuest=FindQuest(x-1,y,Quest,q);
-                    Quest[numQuest].Dialog(numQuest);
-                    system("cls");
-                    WriteMap(x, y);
-                }else if (Map[x - 1][y]=='C'){
-                    system("cls");
-                    int numBum=FindBum(x-1,y,Bum,s);
-                    Bum[numBum].Dialog(numBum);
-                    system("cls");
-                    WriteMap(x, y);
-                }else if (Map[x - 1][y]=='T'){
-                    system("cls");
-                    int numTroll=FindTroll(x-1,y,Trolls,t);
-                    Fight(Player,Trolls[numTroll]);
-                    system("cls");
-                    WriteMap(x, y);
-                }else if (Map[x - 1][y]=='D'){
-                    system("cls");
-                    int numDrag=FindDrag(x-1,y,Trolls,50);
-                    Fight(Player,Drag[numDrag]);
-                    system("cls");
-                    WriteMap(x, y);
-                }else{
-                    system("cls");
-                    Map[x--][y] = ' ';
-                    Map[x][y] = 'H';
-                    WriteMap(x, y);
-                }
-            }
-        }
-        else if (c == 75){
-            if (y - 1 > 1 && Map[x][y - 1] != '#'){
-                if (Map[x][y - 1]=='Q'){
-                    system("cls");
-                    int numQuest=FindQuest(x,y-1,Quest,q);
-                    Quest[numQuest].Dialog(numQuest);
-                    system("cls");
-                    WriteMap(x, y);
-                }else if (Map[x][y - 1]=='C'){
-                    system("cls");
-                    int numBum=FindBum(x,y-1,Bum,s);
-                    Bum[numBum].Dialog(numBum);
-                    system("cls");
-                    WriteMap(x, y);
-                }else if (Map[x][y - 1]=='T'){
-                    system("cls");
-                    int numTroll=FindTroll(x,y-1,Trolls,t);
-                    Fight(Player,Trolls[numTroll]);
-                    system("cls");
-                    WriteMap(x, y);
-                }else {
-                    system("cls");
-                    Map[x][y--] = ' ';
-                    Map[x][y] = 'H';
-                    WriteMap(x, y);
-                }
-            }
-        }
-        else if (c == 80){
-            if (x + 1 > 1 && Map[x + 1][y] != '#'){
-                if (Map[x + 1][y]=='Q'){
-                    system("cls");
-                    int numQuest=FindQuest(x+1,y,Quest,q);
-                    Quest[numQuest].Dialog(numQuest);
-                    system("cls");
-                    WriteMap(x, y);
-                }else if (Map[x + 1][y]=='C'){
-                    system("cls");
-                    int numBum=FindBum(x+1,y,Bum,s);
-                    Bum[numBum].Dialog(numBum);
-                    system("cls");
-                    WriteMap(x, y);
-                }else if (Map[x + 1][y]=='T'){
-                    system("cls");
-                    int numTroll=FindTroll(x+1,y,Trolls,t);
-                    Fight(Player,Trolls[numTroll]);
-                    system("cls");
-                    WriteMap(x, y);
-                }else{
-                    system("cls");
-                    Map[x++][y] = ' ';
-                    Map[x][y] = 'H';
-                    WriteMap(x, y);
-                }
-            }
-        }
-        else if (c == 77){
-            if (y + 1 > 1 && Map[x][y + 1] != '#'){
-                if (Map[x][y + 1]=='Q'){
-                    system("cls");
-                    int numQuest=FindQuest(x,y+1,Quest,q);
-                    Quest[numQuest].Dialog(numQuest);
-                    system("cls");
-                    WriteMap(x, y,n,m);
-                }else if (Map[x][y+1]=='C'){
-                    system("cls");
-                    int numBum=FindBum(x,y+1,Bum,s);
-                    Bum[numBum].Dialog(numBum);
-                    system("cls");
-                    WriteMap(x, y);
-                }else if (Map[x][y + 1]=='T'){
-                    system("cls");
-                    int numTroll=FindTroll(x,y+1,Trolls,t);
-                    Fight(Player,Trolls[numTroll]);
-                    system("cls");
-                    WriteMap(x, y);
-                }else{
-                    system("cls");
-                    Map[x][y++] = ' ';
-                    Map[x][y] = 'H';
-                    WriteMap(x, y);
-                }
-            }
-        }else if (c==32) DungeonMap("Map.txt",Player);
-        c = getch();
-    }*/
 
-Controller::Controller()
-{
-}
 
