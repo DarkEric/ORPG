@@ -17,11 +17,12 @@ SOURCES += main.cpp \
     QNPC.cpp \
     FightWindow.cpp \
     CheckMob.cpp \
-    Field.cpp \
     CreateCritter.cpp \
     Consol.cpp \
     Dungeon.cpp \
-    controller.cpp
+    controller.cpp \
+    dragon.cpp \
+    Game.cpp
     dragon.cpp \
 
 
@@ -43,7 +44,6 @@ HEADERS += \
     Plate.h \
     Robe.h \
     Weapon.h \
-    Field.h \
     Menu.h \
     BUM.h \
     COMPOTE.h \
@@ -56,6 +56,8 @@ HEADERS += \
     CheckMob.h \
     CreateCritter.h \
     Dungeon.h \
-    controller.h
+    controller.h \
+    dragon.h \
+    Game.h
     dragon.h
 

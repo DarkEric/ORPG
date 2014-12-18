@@ -1,8 +1,8 @@
 #ifndef CREATEHERO_H
 #define CREATEHERO_H
 #include "berserk.h"
-#include "Field.h"
 #include "Consol.h"
+#include "Game.h"
 
 Hero* NewHero(int n,std::string name){
     Hero* a;
@@ -117,7 +117,7 @@ void CreateHero(){
     Hero* Player=NewHero(a,b);
     SetConsoleFont(6);
     system("mode con cols=120 lines=50");
-    MoveHero("City.txt",Player);
+    Game(Player);
 }
 
 
