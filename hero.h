@@ -3,14 +3,16 @@
 #include "critter.h"
 #include "Weapon.h"
 #include "Armor.h"
+#include "monstr.h"
 class Hero:public Critter
 {
 public:
+    Hero(){}
     Hero(std::string name,int type,int MAX_HP, int dmg, int p_resist, int x, int y,int MAX_energy,int m_resist):Critter(name,type,MAX_HP,dmg,p_resist,x,y,1,MAX_energy,m_resist)
     {
         this->EXP=0;
     }
-
+    void SearchMob(Monstr **mob , int n, char** Field);
     void Set_EXP(int n);
     int Get_EXP()const;
     void Add_EXP(int n);

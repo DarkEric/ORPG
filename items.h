@@ -6,14 +6,15 @@
 class items
 {
 private:
-	std::string name;
+    char name[30];
     int type;
     int color;
 public:
-
+    items(){}
     items(std::string name, int type, int color)
 	{
-		this->name = name;
+        for(int i=0;i<30;i++)this->name[i]='\0';
+        name.copy(this->name,name.length());
 		this->type = type;
         this->color = color;
     }
@@ -21,6 +22,7 @@ public:
     std::string Get_name(){ return name; }
     int Get_type(){ return type; }
     int Get_color(){return color;}
+    void Set_name(std::string name){name.copy(this->name,name.length());}
 
 };
 

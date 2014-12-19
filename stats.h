@@ -2,6 +2,8 @@
 #define STATS_H
 // Stats.h
 
+
+
 static const int ID_TYPE_BERSERK=21;
 static const int ID_TYPE_TROLL=84;
 static const int ID_TYPE_DRAGON=68;

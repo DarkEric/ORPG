@@ -1,6 +1,6 @@
 #include "Dungeon.h"
 #include "Dungeon.h"
-#include "CreateCritter.h"
+
 #include "Consol.h"
 #include <conio.h>
 

@@ -1,3 +1,5 @@
+#ifndef ARMOR_H
+#define ARMOR_H
 #include "items.h"
 
 
@@ -7,10 +9,11 @@ class Armor :
 private :
 	int p_resist;
 	int stat;
-	std::string type_stat;
+    int type_stat;
     int m_resist;
 public:
-    Armor(std::string name, int type,int p_resist,int m_resist,std::string type_stat, int stat,int color) : items(name,type,color)
+    Armor(){}
+    Armor(std::string name, int type,int p_resist,int m_resist,int type_stat, int stat,int color) : items(name,type,color)
 	{
 		this->p_resist = p_resist;
 		this->stat = stat;
@@ -18,8 +21,10 @@ public:
         this->m_resist = m_resist;
 	}
     int Get_armor(){ return p_resist; }
-    std::string Get_type_stat(){ return type_stat; }
+    int Get_type_stat(){ return type_stat; }
     int Get_stat(){ return stat; }
     int Get_m_resist(){return m_resist;}
+    void Set_p_m_stat(int a,int b,int c){p_resist=a;m_resist=b;stat=c;}
 };
 
+#endif

@@ -6,6 +6,7 @@
 class Critter
 {
 public:
+    Critter(){}
     Critter(std::string name,int type,int MAX_HP,int dmg,int p_resist,int x,int y,int Level,int MAX_energy,int m_resist); //конструктор существа
 
     void Set_HP(int n); //установка здоровья на определённый уровень(чит)
@@ -37,7 +38,7 @@ public:
     void Set_y(int n);
     int Get_y()const;
 
-    void Set_name(std::string n){name=n;}
+    void Set_name(std::string n){n.copy(this->name,n.length());}
     std::string Get_name()const{return name;}
 
     bool Status_Life()const;
@@ -49,13 +50,13 @@ public:
     void Set_Level(int n);
     int Get_Level()const;
 
-    void Set_name_SP(int n,std::string name){name_SP[n]=name;}
+    void Set_name_SP(int n,std::string name){name.copy(this->name_SP[n],name.length());}
     std::string Get_name_SP(int n)const{return name_SP[n];}
 
     void Set_energy_coast(int n,int a){energy_coast[n]=a;}
     int Get_energy_coast(int n)const{return energy_coast[n];}
 
-    void Set_filename(std::string n){filename=n;}
+    void Set_filename(std::string n){n.copy(this->filename,n.length());}
     std::string Get_filename()const{return filename;}
 
     virtual void LevelUp();
@@ -75,11 +76,11 @@ private:
         p_resist,
         x,y;
     bool life;
-    std::string name;
+    char name[20];
     int type;
     int energy,MAX_energy;
-    std::string name_SP[8];
-    std::string filename;
+    char name_SP[20][8];
+    char filename[20];
     int energy_coast[8];
 };
 
