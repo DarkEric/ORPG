@@ -16,7 +16,7 @@ Critter::Critter(std::string name, int type, int MAX_HP, int dmg, int p_resist, 
     this->Level=Level;
     this->life=true;
 }
-//void Hero::Set_m_resist(int n)const{m_resist=n;}
+void Critter::Set_m_resist(int n){m_resist=n;}
 void Critter::Set_p_resist(int n){p_resist=n;}
 int Critter::Get_HP()const{return HP;}
 int Critter::Get_x()const{return x;}

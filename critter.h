@@ -3,6 +3,7 @@
 #include <string>
 #include <stdlib.h>
 #include <stats.h>
+#include <ID.h>
 class Critter
 {
 public:
