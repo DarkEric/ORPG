@@ -27,7 +27,7 @@ public:
     void ReadMap(std::string );
 
 private:
-   int Map[300][300];
+   char Map[300][300];
    int Maplen_x;
    int Maplen_y;
    QNPC Quest[10];

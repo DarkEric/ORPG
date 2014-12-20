@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include "controller.h"
+#include <fstream>
 using std::string;
 
 void Controller::Create(){
@@ -41,38 +42,56 @@ void Controller::Create(){
 }
 
 void Controller::ReadMap(string Mname){
+    //std::ifstream in(Mname.c_str());
     freopen(Mname.c_str(),"r",stdin);
     int x,y;
     scanf("%d %d",&x,&y);
     Maplen_x=x;
     Maplen_y=y;
-    for (int i=1;i<=x;i++)
-        for(int j=1;j<=y;j++){
-            char c;
-            scanf("%c",&c);
-            Map[i][j]=c;
-        }
-    fclose(stdin);
     Create();
+
+    for (int i=1;i<=x;i++){
+        for(int j=1;j<=y;j++){
+            char c=getchar();
+            if (c=='\n')Map[i][j]=' ';
+            else Map[i][j]=c;
+        }
+    }
+    fclose(stdin);
+    freopen("0.txt","w",stdout);
+    for (int i=1;i<=x;i++){
+        printf("\n");
+        for(int j=1;j<=y;j++)
+            printf("%c",Map[i][j]);
+    }
+    printf("\n\n");
+    fclose(stdout);
 }
 void Controller::WriteMap(int x,int y){
 
-    for (int j = 1; j <= 119; j++)printf("*");
-    printf("\n");
-    for (int i=x-8;i<=x+30;i++){
-        printf("*");
-        for (int j=y-8;j+110;j++)
+    for (int j = 1; j <= 119; j++)std::cout<<"*";//printf("*");
+    std::cout<<"\n";//printf("\n");
+    for (int i=x-8;i<=x+20;i++){
+        std::cout<<"*";
+        int j=0;
+        for (j=y-8; j<=y+100;j++)
             if (Map[i][j]=='H'){
                 SetConsoleText(4);
-                printf("%c", Map[i][j]);
+                std::cout<<Map[i][j];
+
+
+                //printf("%c", Map[i][j]);
                 SetConsoleText(3);
             }else{
-            printf("%c", Map[i][j]);
+            std::cout<<Map[i][j];
+            //printf("%c", Map[i][j]);
             }
-        printf("*\n");
+        std::cout<<"*\n";
+        //printf("*\n");
     }
-    for (int j = 1; j <= 119; j++)printf("*");
-    printf("\n");
+    for (int j = 1; j <= 119; j++)std::cout<<"*";//printf("*");
+    std::cout<<"\n";
+    //printf("\n");
     return;
 }
 char Controller::Get(int i,int j){
