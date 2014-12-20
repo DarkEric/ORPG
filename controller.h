@@ -18,13 +18,15 @@ public:
     void Create();
     static void GlobalMap();
     static void FieldMap();
-    static int PositionHero();
+    static int PositionHero(int,int);
     void TalkCreate(int , int , Hero *);
     int FiendCreate(int,int);
-    void WriteMap(int,int);
+    void WriteMap();
     char Get(int,int);
     void AmendMap(int,int,int,int,int);
     void ReadMap(std::string );
+    int Get_PositionHero_x();
+    int Get_PositionHero_y();
 
 private:
    char Map[300][300];

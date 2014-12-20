@@ -67,8 +67,9 @@ void Controller::ReadMap(string Mname){
     printf("\n\n");
     fclose(stdout);
 }
-void Controller::WriteMap(int x,int y){
-
+void Controller::WriteMap(){
+    int x=PosHero_x,
+        y=PosHero_y;
     for (int j = 1; j <= 119; j++)std::cout<<"*";//printf("*");
     std::cout<<"\n";//printf("\n");
     for (int i=x-8;i<=x+20;i++){
@@ -156,14 +157,25 @@ void Controller::AmendMap(int n,int i,int j,int x,int y){
     switch(n){
     case 1:
         std::swap(Map[i][j],Map[x][y]);
+        PosHero_x=x;
+        PosHero_y=y;
         break;
     case 2:
-
+        Map[x][y]=Map[i][j];
+        Map[i][j]=' ';
+        PosHero_x=x;
+        PosHero_y=y;
         break;
     }
 }
-int Controller::PositionHero(){
-    return 0;
+void Controller::Set_PositionHero(int x, int y){
+    PosHero_x=x;
+    PosHero_y=y;
+    return;
 }
-
-
+int Controller::Get_PositionHero_x(){
+    return PosHero_x;
+}
+int Controller::Get_PositionHero_y(){
+    return PosHero_y;
+}
