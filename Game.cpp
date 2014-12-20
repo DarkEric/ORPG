@@ -1,8 +1,8 @@
 #include "Game.h"
 
 void Game(Hero* Player){
-   Controller Map[10];
-   int i=15;int j=15;
+   Controller Map[2];
+   int i=19;int j=18;
    Map[1].ReadMap("LES1.txt");
    Map[1].WriteMap(i,j);
 
@@ -39,8 +39,8 @@ void Game(Hero* Player){
            default:
                break;
            }
-           c=_getch();
-       }
 
+       }
+        c=_getch();
    }
 }
