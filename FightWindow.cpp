@@ -103,7 +103,9 @@ void SkillChoice(Hero* character,Monstr* mob,string n1,string n2,int razn_c,int 
 
 int Fight(Hero* character,Monstr* mob)
 {
+
     srand(time(NULL));
+    character->Start_Battle();
     int prior=1;
     string n1=character->Get_name();
     string n2=mob->Get_name();
@@ -114,6 +116,7 @@ int Fight(Hero* character,Monstr* mob)
         if (mob->Get_name_SP(i)=="1")
             chance_SP[0]++;
         else break;
+    character->Set_Life(true);
     while ((character->Status_Life())&&(mob->Status_Life())){
 //    char** herop,mobp;
 //    int a1,b1,a2,b2;
@@ -181,7 +184,7 @@ int Fight(Hero* character,Monstr* mob)
             prior+=1;
             prior%=2;
             if (character->Get_HP()<0) {
-                character->Set_Life(false);
+                //character->Set_Life(false);
                 cout << "Поражение .. вскоре вы воскреснете.";
                 _getch();
                 //Sleep(2000);
