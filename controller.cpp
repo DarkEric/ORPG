@@ -9,6 +9,8 @@ using std::string;
 void Controller::Create(){
     int x,y;
     scanf("%d %d",&PosHero_x,&PosHero_y);
+    Reset_x=PosHero_x;
+    Reset_y=PosHero_y;
     int n,l=1;
     scanf("%d",&n);
     for (int i=1;i<=n;i++){
@@ -48,6 +50,8 @@ void Controller::Create(){
 
 void Controller::ReadMap(string Mname){
     //std::ifstream in(Mname.c_str());]
+    if (Flag==1)return;
+    Flag=1;
     freopen(Mname.c_str(),"r",stdin);
     int x,y;
     scanf("%d %d",&x,&y);
@@ -71,14 +75,14 @@ void Controller::WriteMap(){
     Map[x][y]='H';
     if (Maplen_x<40&&Maplen_y<120){
         x=16;
-        y=61;
+        y=16;
     }
     for (int j = 1; j <= 119; j++)std::cout<<"*";
     std::cout<<"\n";
     for (int i=x-15;i<=x+15;i++){
         std::cout<<"*";
         int j=0;
-        for (j=y-60; j<=y+50;j++)
+        for (j=y-55; j<=y+55;j++)
             if (Map[i][j]=='H'){
                 SetConsoleText(4);
                 std::cout<<Map[i][j];;
@@ -93,7 +97,7 @@ void Controller::WriteMap(){
 char Controller::Get(int i,int j){
     return Map[i][j];
 }
-void Controller::TalkCreate(int c,int num,Hero* Player){
+int Controller::TalkCreate(int c,int num,Hero* Player){
     switch(c){
     case 1:
         Npc[num].Dialog(1);
@@ -102,7 +106,12 @@ void Controller::TalkCreate(int c,int num,Hero* Player){
         Quest[num].Dialog(1);
         break;
     case 3 :
-        Fight(Player,&Trolls[num]);
+        if (Fight(Player,&Trolls[num])){
+            Map[PosHero_x][PosHero_y]=' ';
+            PosHero_x=Reset_x;
+            PosHero_y=Reset_y;
+            return 0;
+        }return 1;
         break;
     case 4:
         Fight(Player,&Drag[num]);
@@ -124,12 +133,12 @@ int Controller::FiendCreate(int x,int y,int n){
         break;
     case 'Q':
         for (int i=1;i<=10;i++)
-            if (x==Quest[i].Get_x()&&y==Quest[i].Get_y())
+            if (x==Quest[i].Get_x()&&y==Quest[i].Get_y()+1)
                 return i;
         break;
     case 'T':
         for (int i=1;i<=50;i++)
-            if (x==Trolls[i].Get_x()&&y==Trolls[i].Get_y())
+            if (x==Trolls[i].Get_x()&&y==Trolls[i].Get_y()+1)
                 return i;
         break;
     case 'D':
@@ -201,4 +210,10 @@ std::string Controller::NextMap(){
 }
 std::string Controller::BreakMap(){
   return breakMap;
+}
+int Controller::Get_Reset_x(){
+    return Reset_x;
+}
+int Controller::Get_Reset_y(){
+    return Reset_y;
 }
