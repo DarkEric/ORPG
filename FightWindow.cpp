@@ -110,6 +110,7 @@ void SkillChoice(Hero* character,Monstr* mob,string n1,string n2,int razn_c,int 
 
 int Fight(Hero* character,Monstr* mob)
 {
+
     srand(time(NULL));
     character->Start_Battle();
     int prior=1;
@@ -195,7 +196,7 @@ int Fight(Hero* character,Monstr* mob)
             if (character->Get_HP()<=0) {
                 system("cls");
                 infoPrint(character,mob,n1,n2,razn_c,razn_m);
-                cout << "Поражение .. игра окончена.";
+                cout << "Поражение .. вскоре вы воскреснете.";
                 Sleep(2000);
                 character->Lose_EXP(mob->Get_exp_reward()*5);
                 //exit(0);
