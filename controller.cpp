@@ -75,7 +75,7 @@ void Controller::WriteMap(){
     Map[x][y]='H';
     if (Maplen_x<40&&Maplen_y<120){
         x=16;
-        y=16;
+        y=56;
     }
     for (int j = 1; j <= 119; j++)std::cout<<"*";
     std::cout<<"\n";
