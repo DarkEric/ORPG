@@ -111,6 +111,7 @@ void SkillChoice(Hero* character,Monstr* mob,string n1,string n2,int razn_c,int 
 int Fight(Hero* character,Monstr* mob)
 {
     srand(time(NULL));
+    character->Start_Battle();
     int prior=1;
     string n1=character->Get_name();
     string n2=mob->Get_name();
@@ -121,6 +122,7 @@ int Fight(Hero* character,Monstr* mob)
         if (mob->Get_name_SP(i)=="1")
             chance_SP[0]++;
         else break;
+    character->Set_Life(true);
     while ((character->Status_Life())&&(mob->Status_Life())){
 //    char** herop,mobp;
 //    int a1,b1,a2,b2;
@@ -158,6 +160,7 @@ int Fight(Hero* character,Monstr* mob)
                 infoPrint(character,mob,n1,n2,razn_c,razn_m);
                 cout << mob->Get_name() << " побежден!!";
                 character->Add_EXP(mob->Get_exp_reward());
+                Sleep(2000);
                 return 0;
             }
         }
@@ -190,7 +193,6 @@ int Fight(Hero* character,Monstr* mob)
             prior%=2;
             Sleep(1500);
             if (character->Get_HP()<=0) {
-                character->Set_Life(false);
                 system("cls");
                 infoPrint(character,mob,n1,n2,razn_c,razn_m);
                 cout << "Поражение .. игра окончена.";
