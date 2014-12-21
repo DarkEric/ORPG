@@ -1,4 +1,4 @@
-#include "hero.h"
+﻿#include "hero.h"
 
 int Hero::Get_EXP()const{return EXP;}
 void Hero::Set_EXP(int n){EXP=n;}
@@ -242,7 +242,9 @@ bool Visible(Hero* hero,Monstr* mob,char** Field){
              else {
 				 if (m == 0){
 					 if (n == 1){
-                         if (Field[minii + 1][maxj] != ' '){
+
+                         if (Field[mini + 1][maxj] != ' '){
+
 							 next_x = 0;
 							 next_y = 0;
 							 return 0;
