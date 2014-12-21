@@ -191,7 +191,7 @@ void Fight(Hero* character,Monstr* mob)
             Sleep(1500);
             if (character->Get_HP()<=0) {
                 character->Set_Life(false);
-                sysytem("cls");
+                system("cls");
                 infoPrint(character,mob,n1,n2,razn_c,razn_m);
                 cout << "Поражение .. игра окончена.";
                 if (mob->Get_Level()<character->Get_Level())
