@@ -28,6 +28,11 @@ public:
     virtual int Get_weapon()const{return ID_Weapon;}
     virtual void Set_weapon(int Weap);
     virtual void Unset_weapon(int Weap);
+    virtual void Start_Battle(){
+        this->Set_energy(this->Get_MAX_energy());
+        this->Set_HP(this->Get_MAX_HP());
+    }
+
 private:
     int EXP;
     int ID_Armor;
