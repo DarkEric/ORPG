@@ -8,6 +8,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-int Fight(Hero* character,Monstr* mob);
+void Fight(Hero* character,Monstr* mob);
 
 #endif // FIGHTWINDOW_H

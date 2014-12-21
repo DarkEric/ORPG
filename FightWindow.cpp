@@ -1,6 +1,6 @@
 #include "FightWindow.h"
 #include "Consol.h"
-#include "conio.h"
+#include <conio.h>
 
 using std::endl;
 using std::cout;
@@ -18,7 +18,7 @@ void printPicture(char** mas,int a,int b){
 
 void infoPrint(Hero* character,Monstr* mob,string n1,string n2,int razn_c,int razn_m){
 //        printPicture(mobp,a2,b2);
-        cout <<endl<< n2<<endl;
+        cout <<endl<< n2<<" lvl: "<<mob->Get_Level()<<endl;
         cout <<"HP: "<< mob->Get_HP();
         if (razn_m!=0){
             cout<< " ( ";
@@ -30,7 +30,7 @@ void infoPrint(Hero* character,Monstr* mob,string n1,string n2,int razn_c,int ra
         cout<<"Energy: "<< mob->Get_energy()<<endl<<endl;
 
 //        printPicture(herop,a1,b1);
-        cout<<endl<<n1<<endl;
+        cout<<endl<<n1<<" lvl: "<<character->Get_Level()<<endl;
         cout<<"HP: "<< character->Get_HP();
         if (razn_c!=0){
             cout<< " ( ";
@@ -44,18 +44,20 @@ void infoPrint(Hero* character,Monstr* mob,string n1,string n2,int razn_c,int ra
 
 
 void SkillChoice(Hero* character,Monstr* mob,string n1,string n2,int razn_c,int razn_m){
-    std::string mas[6];
+    int n=0;
+    for (int i=1;i<=2;i++) if (character->Get_energy()>=character->Get_energy_coast(i)) n++;
+    string *mas= new string [n+2];
     setlocale(LC_ALL, "rus");
 //    int status[6];
 //    for(int i=1;i<=5;i++)status[i]=0;
-    string s="Атака";
-    mas[1]=s;
-    for(int i=2;i<=4;i++)mas[i]=character->Get_name_SP(i-1);
+//    string s=;
+    mas[1]="Атака";
+    for(int i=2;i<=n+1;i++)mas[i]=character->Get_name_SP(i-1);
     infoPrint(character,mob,n1,n2,razn_c,razn_m);
     SetConsoleText(1);
     cout<<mas[1]<<"\n";
     SetConsoleText(2);
-    for (int i=2;i<=5;i++)cout<<mas[i]<<"\n";
+    for (int i=2;i<=n+1;i++)cout<<mas[i]<<"\n";
     int f=1,ff=0;
     char c=_getch();
     while(1){
@@ -68,14 +70,19 @@ void SkillChoice(Hero* character,Monstr* mob,string n1,string n2,int razn_c,int 
             }
             break;
         case 80:
-            if (f!=4){
+            if (f!=n){
                 f++;
                 ff=1;
             }
             break;
         case 13:
             SetConsoleText(3);
-            cout<<"использован скилл "<<f;
+            switch (f){
+            case 1:{character->Attack(mob);break;}
+            case 2:{character->SP1(mob);break;}
+            case 3:{character->SP2(mob);break;}
+            }
+
             return;
             _getch();
             break;
@@ -87,7 +94,7 @@ void SkillChoice(Hero* character,Monstr* mob,string n1,string n2,int razn_c,int 
             SetConsoleText(3);
             infoPrint(character,mob,n1,n2,razn_c,razn_m);
             SetConsoleText(2);
-        for (int i=1;i<=5;i++)
+        for (int i=1;i<=n+1;i++)
             if (f==i){
                 SetConsoleText(1);
                 cout<<mas[i]<<"\n";
@@ -101,7 +108,7 @@ void SkillChoice(Hero* character,Monstr* mob,string n1,string n2,int razn_c,int 
 
 }
 
-int Fight(Hero* character,Monstr* mob)
+void Fight(Hero* character,Monstr* mob)
 {
     srand(time(NULL));
     int prior=1;
@@ -139,21 +146,23 @@ int Fight(Hero* character,Monstr* mob)
 
 
             SkillChoice(character,mob,n1,n2,razn_c,razn_m);
-            character->Attack(mob);
+//            character->Attack(mob);
             razn_c=hp_prev_c-character->Get_HP();
             hp_prev_c=character->Get_HP();
             razn_m=0;
             prior+=1; // смена приоритета
             prior%=2; //
-            if (mob->Get_HP()<0) {
+            if (mob->Get_HP()<=0) {
                 mob->Set_Life(false);
+                system("cls");
+                infoPrint(character,mob,n1,n2,razn_c,razn_m);
                 cout << mob->Get_name() << " побежден!!";
                 character->Add_EXP(mob->Get_exp_reward());
-                break;
+                return;
             }
         }
         else if (prior==0){
-
+            infoPrint(character,mob,n1,n2,razn_c,razn_m);
             int r=rand()%chance_SP[chance_SP[0]];
             for (int i=1;i<=chance_SP[0];i++){
                 if (mob->Get_energy_coast(i)>mob->Get_energy()){
@@ -179,15 +188,21 @@ int Fight(Hero* character,Monstr* mob)
             razn_c=0;
             prior+=1;
             prior%=2;
-            if (character->Get_HP()<0) {
+            Sleep(1500);
+            if (character->Get_HP()<=0) {
                 character->Set_Life(false);
-                cout << "Поражение .. вскоре вы воскреснете.";
+                sysytem("cls");
+                infoPrint(character,mob,n1,n2,razn_c,razn_m);
+                cout << "Поражение .. игра окончена.";
+                if (mob->Get_Level()<character->Get_Level())
+                    cout<<endl<<"Днище, иди руки выпрямляй.";
                 Sleep(2000);
                 character->Lose_EXP(mob->Get_exp_reward()*5);
-                break;
+                exit(0);
+                return;
             }
         }
     }
         
-    return 0;
+    return;
 }
