@@ -26,6 +26,14 @@ public:
     void ReadMap(std::string );
     int Get_PositionHero_x();
     int Get_PositionHero_y();
+    int Get_Enter_x();
+    int Get_Enter_y();
+    int Get_Exit_x();
+    int Get_Exit_y();
+    void Set_Exit(int,int);
+    void Set_Enter(int,int);
+    std::string NextMap();
+    std::string BreakMap();
 
 private:
    char Map[300][300];
@@ -38,6 +46,12 @@ private:
    int Flag;
    int PosHero_x;
    int PosHero_y;
+   int Enter_x;
+   int Enter_y;
+   int Exit_x;
+   int Exit_y;
+   std::string nextMap;
+   std::string breakMap;
 };
 
 #endif // CONTROLLER_H

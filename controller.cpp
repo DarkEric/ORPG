@@ -8,9 +8,7 @@ using std::string;
 
 void Controller::Create(){
     int x,y;
-    scanf("%d %d",&x,&y);
-    PosHero_x=x;
-    PosHero_y=y;
+    scanf("%d %d",&PosHero_x,&PosHero_y);
     int n,l=1;
     scanf("%d",&n);
     for (int i=1;i<=n;i++){
@@ -39,6 +37,12 @@ void Controller::Create(){
         Drag[l].Set_x(x);
         Drag[l++].Set_y(y);
     }
+    scanf("%d %d",&Enter_x,&Enter_y);
+    scanf("%d %d",&Exit_x,&Exit_y);
+    std::cin>>breakMap>>nextMap;
+    //std::cout<<breakMap<<nextMap;
+    //_getch();
+    //scanf("%s %s",&breakMap,&nextMap);
     return;
 }
 
@@ -59,42 +63,31 @@ void Controller::ReadMap(string Mname){
         }
     }
     fclose(stdin);
-
-//    freopen("0.txt","w",stdout);
-//    for (int i=1;i<=x;i++){
-//        printf("\n");
-//        for(int j=1;j<=y;j++)
-//            printf("%c",Map[i][j]);
-//    }
-//    printf("\n\n");
-//    fclose(stdout);
 }
 void Controller::WriteMap(){
     system("cls");
     int x=PosHero_x,
         y=PosHero_y;
     Map[x][y]='H';
-    for (int j = 1; j <= 119; j++)std::cout<<"*";//printf("*");
-    std::cout<<"\n";//printf("\n");
-    for (int i=x-8;i<=x+20;i++){
+    if (Maplen_x<40&&Maplen_y<120){
+        x=16;
+        y=61;
+    }
+    for (int j = 1; j <= 119; j++)std::cout<<"*";
+    std::cout<<"\n";
+    for (int i=x-15;i<=x+15;i++){
         std::cout<<"*";
         int j=0;
-        for (j=y-8; j<=y+108;j++)
+        for (j=y-60; j<=y+50;j++)
             if (Map[i][j]=='H'){
                 SetConsoleText(4);
-                std::cout<<Map[i][j];
-                //printf("%c", Map[i][j]);
+                std::cout<<Map[i][j];;
                 SetConsoleText(3);
-            }else{
-            std::cout<<Map[i][j];
-            //printf("%c", Map[i][j]);
-            }
+            }else std::cout<<Map[i][j];
         std::cout<<"*\n";
-        //printf("*\n");
     }
-    for (int j = 1; j <= 119; j++)std::cout<<"*";//printf("*");
+    for (int j = 1; j <= 119; j++)std::cout<<"*";
     std::cout<<"\n";
-    //printf("\n");
     return;
 }
 char Controller::Get(int i,int j){
@@ -125,10 +118,6 @@ int Controller::FiendCreate(int x,int y,int n){
     case ' ':
         break;
     case 'C':
-//        if (n==1)x=x+1;
-//        else if(n==2)x=x-1;
-//        else if (n==3)y=y+1;
-//        else if (n==4)y=y-1;
         for (int i=1;i<=10;i++)
             if (x==Npc[i].Get_x()&&y==Npc[i].Get_y()+1)
                 return i;
@@ -179,9 +168,37 @@ void Controller::Set_PositionHero(int x, int y){
     PosHero_y=y;
     return;
 }
+void Controller::Set_Exit(int x, int y){
+    Exit_x=x;
+    Exit_y=y;
+    return;
+}
+void Controller::Set_Enter(int x, int y){
+    Enter_x=x;
+    Enter_y=y;
+    return;
+}
 int Controller::Get_PositionHero_x(){
     return PosHero_x;
 }
 int Controller::Get_PositionHero_y(){
     return PosHero_y;
+}
+int Controller::Get_Exit_x(){
+    return Exit_x;
+}
+int Controller::Get_Exit_y(){
+    return Exit_y;
+}
+int Controller::Get_Enter_x(){
+    return Enter_x;
+}
+int Controller::Get_Enter_y(){
+    return Enter_y;
+}
+std::string Controller::NextMap(){
+  return nextMap;
+}
+std::string Controller::BreakMap(){
+  return breakMap;
 }

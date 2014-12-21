@@ -4,6 +4,6 @@
 #include "berserk.h"
 #include "conio.h"
 
-void Game(Hero* Player);
+void Game(Hero*,std::string,int);
 
 #endif // GAME_H

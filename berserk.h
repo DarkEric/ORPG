@@ -12,10 +12,16 @@ public:
         this->Set_name_SP(1,"скил1");
         this->Set_name_SP(2,"скил2");
         this->Set_name_SP(3,"скил3");
+        this->Set_energy_coast(1,50);
+        this->Set_energy_coast(2,100);
     }
     void Attack(Critter *whom);
     void SP1(Critter *whom);
-    void SP2(Critter *whom){}
+    void SP2(Critter *whom);
+    void Start_Battle(){
+        this->Set_energy(0);
+        this->Set_HP(this->Get_MAX_HP());
+    }
 
 };
 
