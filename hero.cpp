@@ -125,33 +125,54 @@ bool Visible(Hero* hero,Monstr* mob,char** Field){
                  maxj = jm;
              }
              if (n < m) {
-                 if (n == 0){
-                     for (int w = minj + 1; w <= maxj / 2 + 1; w++){
-                         if (Field[mini+1][w]!=' '){
-                             next_x=0;
-                             next_y=0;
-                             return 0;
-                         }
-                         if(!flag){
-                             next_x=mini+1;
-                             next_y=w;
-                         }
-                         next1_x=mini+1;
-                         next1_y=w;
-                     }
-                     for (int w = maxj / 2 + 1; w < maxj; w++){
-                         if (Field[mini][w]!=' '){
-                             next_x=0;
-                             next_y=0;
-                             return 0;
-                         }
-                         if(!flag){
-                             next_x=mini;
-                             next_y=w;
-                         }
-                         next1_x=mini;
-                         next1_y=w;
-                     }
+                 if (n == 0){ 
+					 if (m == 1){
+						 if (Field[maxi - 1][minj] != ' '){
+							 next_x = 0;
+							 next_y = 0;
+							 return 0;
+						 }
+						 if (!flag){
+							 next_x = maxi - 1;
+							 next_y = minj;
+						 }
+						 if (Field[maxi - 1][minj + 1] != ' '){
+							 next_x = 0;
+							 next_y = 0;
+							 return 0;
+						 }
+						 next1_x = maxi-1;
+						 next1_y = minj+1;
+
+					 }
+					 else{
+						 for (int w = minj + 1; w <= maxj / 2 + 1; w++){
+							 if (Field[mini + 1][w] != ' '){
+								 next_x = 0;
+								 next_y = 0;
+								 return 0;
+							 }
+							 if (!flag){
+								 next_x = mini + 1;
+								 next_y = w;
+							 }
+							 next1_x = mini + 1;
+							 next1_y = w;
+						 }
+						 for (int w = maxj / 2 + 1; w < maxj; w++){
+							 if (Field[mini][w] != ' '){
+								 next_x = 0;
+								 next_y = 0;
+								 return 0;
+							 }
+							 if (!flag){
+								 next_x = mini;
+								 next_y = w;
+							 }
+							 next1_x = mini;
+							 next1_y = w;
+						 }
+					 }
                  }
                  else{
                      k = m / n;
@@ -186,7 +207,7 @@ bool Visible(Hero* hero,Monstr* mob,char** Field){
                              next1_x=i;
                              next1_y=j--;
                          }
-                         if (maxi - i - mini < kk / 2 - 1){
+                         if (maxi - i - mini <= kk / 2 - 1 && kk != 0){
                              if(Field[i][j]!=' '){
                                  next_x=0;
                                  next_y=0;
@@ -219,34 +240,55 @@ bool Visible(Hero* hero,Monstr* mob,char** Field){
                  }
              }
              else {
-                 if (m == 0){
-                     for (int w = mini + 1; w <= maxi / 2 + 1; w++){
-                         if (Field[w][minj+1]!=' '){
-                             next_x=0;
-                             next_y=0;
-                             return 0;
-                         }
-                         if(!flag){
-                             next_x=w;
-                             next_y=minj+1;
-                         }
-                         next1_x=w;
-                         next1_y=minj+1;
-                     }
-                     for (int w = maxi / 2 + 1; w < maxi; w++){
-                         if (Field[w][minj]!=' '){
-                             next_x=0;
-                             next_y=0;
-                             return 0;
-                         }
-                         if(!flag){
-                             next_x=w;
-                             next_y=minj;
-                         }
-                         next1_x=w;
-                         next1_y=minj;
-                     }
-                 }
+				 if (m == 0){
+					 if (n == 1){
+						 if (Field[minii + 1][maxj] != ' '){
+							 next_x = 0;
+							 next_y = 0;
+							 return 0;
+						 }
+						 if (!flag){
+							 next_x = mini + 1;
+							 next_y = maxj;
+						 }
+						 if (Field[mini + 1][maxj - 1] != ' '){
+							 next_x = 0;
+							 next_y = 0;
+							 return 0;
+						 }
+						 next1_x = mini + 1;
+						 next1_y = maxj - 1;
+
+					 }
+					 else{
+						 for (int w = mini + 1; w <= maxi / 2 + 1; w++){
+							 if (Field[w][minj + 1] != ' '){
+								 next_x = 0;
+								 next_y = 0;
+								 return 0;
+							 }
+							 if (!flag){
+								 next_x = w;
+								 next_y = minj + 1;
+							 }
+							 next1_x = w;
+							 next1_y = minj + 1;
+						 }
+						 for (int w = maxi / 2 + 1; w < maxi; w++){
+							 if (Field[w][minj] != ' '){
+								 next_x = 0;
+								 next_y = 0;
+								 return 0;
+							 }
+							 if (!flag){
+								 next_x = w;
+								 next_y = minj;
+							 }
+							 next1_x = w;
+							 next1_y = minj;
+						 }
+					 }
+				 }
                  else{
                      k = n / m;
                      kk = n - k*m;
@@ -280,7 +322,7 @@ bool Visible(Hero* hero,Monstr* mob,char** Field){
                              next1_x=i++;
                              next1_y=j;
                          }
-                         if (maxj - j - minj < kk / 2 - 1){
+                         if (maxj - j - minj <= kk / 2 - 1 && kk != 0){
                              if(Field[i][j]!=' '){
                                  next_x=0;
                                  next_y=0;
@@ -340,34 +382,55 @@ bool Visible(Hero* hero,Monstr* mob,char** Field){
                  maxj = jh;
              }
                  if (n < m) {
-                     if (n == 0){
-                         for (int w = minj + 1; w <= maxj / 2+1; w++){
-                             if (Field[mini][w]!=' '){
-                                 next_x=0;
-                                 next_y=0;
-                                 return 0;
-                             }
-                             if(!flag){
-                                 next_x=mini;
-                                 next_y=w;
-                             }
-                             next1_x=mini;
-                             next1_y=w;
-                         }
-                         for (int w = maxj/2+1; w < maxj; w++){
-                             if (Field[mini+1][w]!=' '){
-                                 next_x=0;
-                                 next_y=0;
-                                 return 0;
-                             }
-                             if(!flag){
-                                 next_x=mini+1;
-                                 next_y=w;
-                             }
-                             next1_x=mini+1;
-                             next1_y=w;
-                         }
-                     }
+					 if (n == 0){
+						 if (m == 1){
+							 if (Field[maxi][minj] != ' '){
+								 next_x = 0;
+								 next_y = 0;
+								 return 0;
+							 }
+							 if (!flag){
+								 next_x = maxi;
+								 next_y = minj;
+							 }
+							 if (Field[maxi][minj + 1] != ' '){
+								 next_x = 0;
+								 next_y = 0;
+								 return 0;
+							 }
+							 next1_x = maxi;
+							 next1_y = minj + 1;
+
+						 }
+						 else{
+							 for (int w = minj + 1; w <= maxj / 2 + 1; w++){
+								 if (Field[mini][w] != ' '){
+									 next_x = 0;
+									 next_y = 0;
+									 return 0;
+								 }
+								 if (!flag){
+									 next_x = mini;
+									 next_y = w;
+								 }
+								 next1_x = mini;
+								 next1_y = w;
+							 }
+							 for (int w = maxj / 2 + 1; w < maxj; w++){
+								 if (Field[mini + 1][w] != ' '){
+									 next_x = 0;
+									 next_y = 0;
+									 return 0;
+								 }
+								 if (!flag){
+									 next_x = mini + 1;
+									 next_y = w;
+								 }
+								 next1_x = mini + 1;
+								 next1_y = w;
+							 }
+						 }
+					 }
                      else{
                          if (Field[i-1][j]!=' '){
                              next_x=0;
@@ -402,7 +465,7 @@ bool Visible(Hero* hero,Monstr* mob,char** Field){
                                  next1_x=i;
                                  next1_y=j++;
                              }
-                             if (maxi - i - mini < kk / 2 - 1){
+                             if (maxi - i - mini <= kk / 2 - 1 && kk != 0){
                                  if (Field[i][j]!=' '){
                                      next_x=0;
                                      next_y=0;
@@ -435,34 +498,55 @@ bool Visible(Hero* hero,Monstr* mob,char** Field){
                      }
                  }
                  else {
-                     if (m == 0){
-                         for (int w = mini + 1; w <= maxi / 2 + 1; w++){
-                             if (Field[w][minj]!=' '){
-                                 next_x=0;
-                                 next_y=0;
-                                 return 0;
-                             }
-                             if(!flag){
-                                 next_x=w;
-                                 next_y=minj;
-                             }
-                             next1_x=w;
-                             next1_y=minj;
-                         }
-                         for (int w = maxi / 2 + 1; w < maxi; w++){
-                             if (Field[w][minj+1]!=' '){
-                                 next_x=0;
-                                 next_y=0;
-                                 return 0;
-                             }
-                             if(!flag){
-                                 next_x=w;
-                                 next_y=minj+1;
-                             }
-                             next1_x=w;
-                             next1_y=minj+1;
-                         }
-                     }
+					 if (m == 0){
+						 if (n == 1){
+							 if (Field[mini + 1][maxj - 1] != ' '){
+								 next_x = 0;
+								 next_y = 0;
+								 return 0;
+							 }
+							 if (!flag){
+								 next_x = mini + 1;
+								 next_y = maxj - 1;
+							 }
+							 if (Field[mini + 1][maxj] != ' '){
+								 next_x = 0;
+								 next_y = 0;
+								 return 0;
+							 }
+							 next1_x = mini + 1;
+							 next1_y = maxj;
+
+						 }
+						 else{
+							 for (int w = mini + 1; w <= maxi / 2 + 1; w++){
+								 if (Field[w][minj] != ' '){
+									 next_x = 0;
+									 next_y = 0;
+									 return 0;
+								 }
+								 if (!flag){
+									 next_x = w;
+									 next_y = minj;
+								 }
+								 next1_x = w;
+								 next1_y = minj;
+							 }
+							 for (int w = maxi / 2 + 1; w < maxi; w++){
+								 if (Field[w][minj + 1] != ' '){
+									 next_x = 0;
+									 next_y = 0;
+									 return 0;
+								 }
+								 if (!flag){
+									 next_x = w;
+									 next_y = minj + 1;
+								 }
+								 next1_x = w;
+								 next1_y = minj + 1;
+							 }
+						 }
+					 }
                      else {
                          if (Field[i][j-1]!=' '){
                              next_x=0;
@@ -497,7 +581,7 @@ bool Visible(Hero* hero,Monstr* mob,char** Field){
                                  next1_x=i++;
                                  next1_y=j;
                              }
-                             if (maxj - j - minj < kk / 2 - 1){
+                             if (maxj - j - minj <= kk / 2 - 1 && kk != 0){
                                  if (Field[i][j]!=' '){
                                      next_x=0;
                                      next_y=0;
