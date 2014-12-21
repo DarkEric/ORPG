@@ -3,7 +3,6 @@
 #include "controller.h"
 #include "CreateCritter.h"
 #include "Consol.h"
-#include "QNPC.h"
 #include "NPC.h"
 #include "dragon.h"
 #include "troll.h"
@@ -18,9 +17,9 @@ public:
     void Create();
     static void GlobalMap();
     static void FieldMap();
-    static int PositionHero(int,int);
+    void Set_PositionHero(int,int);
     void TalkCreate(int , int , Hero *);
-    int FiendCreate(int,int);
+    int FiendCreate(int, int, int);
     void WriteMap();
     char Get(int,int);
     void AmendMap(int,int,int,int,int);
@@ -33,7 +32,7 @@ private:
    int Maplen_x;
    int Maplen_y;
    QNPC Quest[10];
-   NPC Npc[10];
+   BUM Npc[10];
    Monstr Drag[50];
    Troll Trolls[50];
    int Flag;

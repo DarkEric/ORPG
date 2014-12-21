@@ -2,6 +2,7 @@
 
 void Game(Hero* Player){
    Controller Map[1];
+
    //создание карты 1-го леса
    Map[0].ReadMap("LES1.txt");
    Map[0].WriteMap();
@@ -28,39 +29,39 @@ void Game(Hero* Player){
                break;
            case 'C':
                if (c==72){
-                   Num=Map[0].FiendCreate(i-1,j);
-                   Map[0].AmendMap(2,i,j,i-1,j);
+                   Num=Map[0].FiendCreate(i-1,j,1);
+                   //Map[0].AmendMap(2,i,j,i-1,j);
                }
                else if (c==75){
-                   Num=Map[0].FiendCreate(i,j-1);
-                   Map[0].AmendMap(2,i,j,i,j-1);
+                   Num=Map[0].FiendCreate(i,j-1,3);
+                   //Map[0].AmendMap(2,i,j,i,j-1);
                }
                else if (c==80){
-                   Num=Map[0].FiendCreate(i+1,j);
-                   Map[0].AmendMap(2,i,j,i+1,j);
+                   Num=Map[0].FiendCreate(i+1,j,2);
+                   //Map[0].AmendMap(2,i,j,i+1,j);
                }
                else if (c==77){
-                   Num=Map[0].FiendCreate(i,j+1);
-                   Map[0].AmendMap(2,i,j,i,j+1);
+                   Num=Map[0].FiendCreate(i,j+1,4);
+                   //Map[0].AmendMap(1,i,j,i,j+1);
                }
                Map[0].TalkCreate(1,Num,Player);
                //проиграл или выиграл
                Map[0].WriteMap();
                break;
            case 'Q':
-               if (c==72)Num=Map[0].FiendCreate(i-1,j);
-               else if (c==75)Num=Map[0].FiendCreate(i,j-1);
-               else if (c==80)Num=Map[0].FiendCreate(i+1,j);
-               else if (c==77)Num=Map[0].FiendCreate(i,j+1);
+               if (c==72)Num=Map[0].FiendCreate(i-1,j,1);
+               else if (c==75)Num=Map[0].FiendCreate(i,j-1,3);
+               else if (c==80)Num=Map[0].FiendCreate(i+1,j,2);
+               else if (c==77)Num=Map[0].FiendCreate(i,j+1,4);
                Map[0].TalkCreate(2,Num,Player);
                //проиграл или выиграл
                Map[0].WriteMap();
                break;
            case 'T':
-               if (c==72)Num=Map[0].FiendCreate(i-1,j);
-               else if (c==75)Num=Map[0].FiendCreate(i,j-1);
-               else if (c==80)Num=Map[0].FiendCreate(i+1,j);
-               else if (c==77)Num=Map[0].FiendCreate(i,j+1);
+               if (c==72)Num=Map[0].FiendCreate(i-1,j,1);
+               else if (c==75)Num=Map[0].FiendCreate(i,j-1,3);
+               else if (c==80)Num=Map[0].FiendCreate(i+1,j,2);
+               else if (c==77)Num=Map[0].FiendCreate(i,j+1,4);
                Map[0].TalkCreate(3,Num,Player);
                break;
            case 'D':
@@ -71,6 +72,8 @@ void Game(Hero* Player){
            }
 
        }
+       i=Map[0].Get_PositionHero_x();
+       j=Map[0].Get_PositionHero_y();
         c=_getch();
    }
 }

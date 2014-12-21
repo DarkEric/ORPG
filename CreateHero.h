@@ -117,6 +117,7 @@ void CreateHero(){
     Hero* Player=NewHero(a,b);
     SetConsoleFont(6);
     system("mode con cols=120 lines=50");
+
     Game(Player);
 }
 

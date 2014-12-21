@@ -3,6 +3,7 @@
 #include <iostream>
 #include "controller.h"
 #include <fstream>
+#include "conio.h"
 using std::string;
 
 void Controller::Create(){
@@ -42,7 +43,7 @@ void Controller::Create(){
 }
 
 void Controller::ReadMap(string Mname){
-    //std::ifstream in(Mname.c_str());
+    //std::ifstream in(Mname.c_str());]
     freopen(Mname.c_str(),"r",stdin);
     int x,y;
     scanf("%d %d",&x,&y);
@@ -58,29 +59,30 @@ void Controller::ReadMap(string Mname){
         }
     }
     fclose(stdin);
-    freopen("0.txt","w",stdout);
-    for (int i=1;i<=x;i++){
-        printf("\n");
-        for(int j=1;j<=y;j++)
-            printf("%c",Map[i][j]);
-    }
-    printf("\n\n");
-    fclose(stdout);
+
+//    freopen("0.txt","w",stdout);
+//    for (int i=1;i<=x;i++){
+//        printf("\n");
+//        for(int j=1;j<=y;j++)
+//            printf("%c",Map[i][j]);
+//    }
+//    printf("\n\n");
+//    fclose(stdout);
 }
 void Controller::WriteMap(){
+    system("cls");
     int x=PosHero_x,
         y=PosHero_y;
+    Map[x][y]='H';
     for (int j = 1; j <= 119; j++)std::cout<<"*";//printf("*");
     std::cout<<"\n";//printf("\n");
     for (int i=x-8;i<=x+20;i++){
         std::cout<<"*";
         int j=0;
-        for (j=y-8; j<=y+100;j++)
+        for (j=y-8; j<=y+108;j++)
             if (Map[i][j]=='H'){
                 SetConsoleText(4);
                 std::cout<<Map[i][j];
-
-
                 //printf("%c", Map[i][j]);
                 SetConsoleText(3);
             }else{
@@ -101,7 +103,7 @@ char Controller::Get(int i,int j){
 void Controller::TalkCreate(int c,int num,Hero* Player){
     switch(c){
     case 1:
-        Npc[num].Dialog();
+        Npc[num].Dialog(1);
         break;
     case 2:
         Quest[num].Dialog(1);
@@ -117,14 +119,18 @@ void Controller::TalkCreate(int c,int num,Hero* Player){
     }
 }
 
-int Controller::FiendCreate(int x,int y){
+int Controller::FiendCreate(int x,int y,int n){
     char ch=Map[x][y];
     switch(ch){
     case ' ':
         break;
     case 'C':
+//        if (n==1)x=x+1;
+//        else if(n==2)x=x-1;
+//        else if (n==3)y=y+1;
+//        else if (n==4)y=y-1;
         for (int i=1;i<=10;i++)
-            if (x==Npc[i].Get_x()&&y==Npc[i].Get_y())
+            if (x==Npc[i].Get_x()&&y==Npc[i].Get_y()+1)
                 return i;
         break;
     case 'Q':

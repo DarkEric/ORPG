@@ -21,6 +21,7 @@ int main()
         in.read((char*)&Marmor[i],sizeof(Armor));
     }
     in.close();
+
     MENU();
     return 0;
 }
