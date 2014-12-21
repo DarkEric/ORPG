@@ -1,12 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include "Menu.h"
-#include "Weapon.h"
-#include "Armor.h"
 #include "hero.h"
-int Kweapon,Karmor;
-Weapon Mweapon[100];
-Armor Marmor[100];
+#include "ID.h"
 
 int main()
 {
@@ -25,6 +21,7 @@ int main()
         in.read((char*)&Marmor[i],sizeof(Armor));
     }
     in.close();
+
     MENU();
     return 0;
 }

@@ -8,7 +8,6 @@ SOURCES += main.cpp \
     hero.cpp \
     critter.cpp \
     monstr.cpp \
-    warrior.cpp \
     berserk.cpp \
     BUM.cpp \
     troll.cpp \
@@ -29,7 +28,6 @@ qtcAddDeployment()
 HEADERS += \
     hero.h \
     critter.h \
-    warrior.h \
     stats.h \
     monstr.h \
     berserk.h \
@@ -52,6 +50,7 @@ HEADERS += \
     Weapon.h \
     controller.h \
     dragon.h \
-    Game.h
+    Game.h \
+    ID.h
     dragon.h
 

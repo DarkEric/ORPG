@@ -11,7 +11,27 @@ void Hero::Add_EXP(int n){
 
 }
 
+void Hero::Set_armor(int Arm){
+    this->Set_p_resist(this->Get_p_resist()+Marmor[Arm].Get_armor());
+    this->Set_stat(this->Get_stat()+Marmor[Arm].Get_stat());
+    this->Set_m_resist(this->Get_m_resist()+Marmor[Arm].Get_m_resist());
+}
 
+void Hero::Unset_armor(int Arm){
+    this->Set_p_resist(this->Get_p_resist()-Marmor[Arm].Get_armor());
+    this->Set_stat(this->Get_stat()-Marmor[Arm].Get_stat());
+    this->Set_m_resist(this->Get_m_resist()-Marmor[Arm].Get_m_resist());
+}
+
+void Hero::Set_weapon(int Weap){
+    this->Set_attack(this->Get_attack()+Mweapon[Weap].Attack());
+}
+
+void Hero::Unset_weapon(int Weap){
+    this->Set_attack(this->Get_attack()-Mweapon[Weap].Attack());
+}
+
+//====================================================
 using namespace std;
 
 int next_x=0; // первый шаг
