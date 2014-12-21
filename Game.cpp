@@ -34,10 +34,10 @@ void Game(Hero* Player,std::string MapName,int n){
                break;
            case 'C':
                if (c==72)Num=Map[n].FiendCreate(i-1,j,1);
-               else if (c==75)Num=Map[n].FiendCreate(i,j-1,3);
+               else if (c==75) Num=Map[n].FiendCreate(i,j-1,3);
                else if (c==80)Num=Map[n].FiendCreate(i+1,j,2);
                else if (c==77)Num=Map[n].FiendCreate(i,j+1,4);
-               Map[n].TalkCreate(1,Num,Player);
+                Map[n].TalkCreate(1,Num,Player);
                //проиграл или выиграл
                Map[n].WriteMap();
                break;
@@ -51,11 +51,23 @@ void Game(Hero* Player,std::string MapName,int n){
                Map[n].WriteMap();
                break;
            case 'T':
-               if (c==72)Num=Map[n].FiendCreate(i-1,j,1);
-               else if (c==75)Num=Map[n].FiendCreate(i,j-1,3);
-               else if (c==80)Num=Map[n].FiendCreate(i+1,j,2);
-               else if (c==77)Num=Map[n].FiendCreate(i,j+1,4);
-               Map[n].TalkCreate(3,Num,Player);
+               if (c==72){
+                   Num=Map[n].FiendCreate(i-1,j,1);
+                   if (Map[n].TalkCreate(3,Num,Player))Map[n].AmendMap(2,i,j,i-1,j-1);
+               }
+               else if (c==75){
+                   Num=Map[n].FiendCreate(i,j-1,3);
+                   if (Map[n].TalkCreate(3,Num,Player))Map[n].AmendMap(2,i,j,i,j-1);
+               }
+               else if (c==80){
+                   Num=Map[n].FiendCreate(i+1,j,2);
+                   if (Map[n].TalkCreate(3,Num,Player))Map[n].AmendMap(2,i,j,i+1,j);
+               }
+               else if (c==77){
+                   Num=Map[n].FiendCreate(i,j+1,4);
+                   if (Map[n].TalkCreate(3,Num,Player))Map[n].AmendMap(2,i,j,i,j+1);
+               }
+               Map[n].WriteMap();
                break;
            case 'D':
 

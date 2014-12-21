@@ -149,6 +149,7 @@ int Fight(Hero* character,Monstr* mob)
                 mob->Set_Life(false);
                 cout << mob->Get_name() << " побежден!!";
                 character->Add_EXP(mob->Get_exp_reward());
+                return 0;
                 break;
             }
         }
@@ -182,8 +183,10 @@ int Fight(Hero* character,Monstr* mob)
             if (character->Get_HP()<0) {
                 character->Set_Life(false);
                 cout << "ѕоражение .. вскоре вы воскреснете.";
-                Sleep(2000);
+                _getch();
+                //Sleep(2000);
                 character->Lose_EXP(mob->Get_exp_reward()*5);
+                return 1;
                 break;
             }
         }
