@@ -10,7 +10,7 @@ public:
     Critter(){}
     Critter(std::string name,int type,int MAX_HP,int dmg,int p_resist,int x,int y,int Level,int MAX_energy,int m_resist); //конструктор существа
 
-    void Set_HP(int n); //установка здоровья на определённый уровень(чит)
+    void Set_HP(int n){HP=n;} //установка здоровья на определённый уровень(чит)
     int Get_HP()const; //вернуть текущее здоровье
     void Get_dmg(int n);//получить урон
     void Heal(int n);//излечение
