@@ -18,7 +18,7 @@ public:
     static void GlobalMap();
     static void FieldMap();
     void Set_PositionHero(int,int);
-    void TalkCreate(int , int , Hero *);
+    int TalkCreate(int , int , Hero *);
     int FiendCreate(int, int, int);
     void WriteMap();
     char Get(int,int);
@@ -34,6 +34,8 @@ public:
     void Set_Enter(int,int);
     std::string NextMap();
     std::string BreakMap();
+    int Get_Reset_x();
+    int Get_Reset_y();
 
 private:
    char Map[300][300];
@@ -43,7 +45,6 @@ private:
    BUM Npc[10];
    Monstr Drag[50];
    Troll Trolls[50];
-   int Flag;
    int PosHero_x;
    int PosHero_y;
    int Enter_x;
@@ -52,6 +53,9 @@ private:
    int Exit_y;
    std::string nextMap;
    std::string breakMap;
+   int Reset_x;
+   int Reset_y;
+   int Flag;
 };
 
 #endif // CONTROLLER_H

@@ -108,7 +108,7 @@ void SkillChoice(Hero* character,Monstr* mob,string n1,string n2,int razn_c,int 
 
 }
 
-void Fight(Hero* character,Monstr* mob)
+int Fight(Hero* character,Monstr* mob)
 {
     srand(time(NULL));
     int prior=1;
@@ -158,7 +158,7 @@ void Fight(Hero* character,Monstr* mob)
                 infoPrint(character,mob,n1,n2,razn_c,razn_m);
                 cout << mob->Get_name() << " побежден!!";
                 character->Add_EXP(mob->Get_exp_reward());
-                return;
+                return 0;
             }
         }
         else if (prior==0){
@@ -194,15 +194,13 @@ void Fight(Hero* character,Monstr* mob)
                 system("cls");
                 infoPrint(character,mob,n1,n2,razn_c,razn_m);
                 cout << "ѕоражение .. игра окончена.";
-                if (mob->Get_Level()<character->Get_Level())
-                    cout<<endl<<"ƒнище, иди руки выпр€мл€й.";
                 Sleep(2000);
                 character->Lose_EXP(mob->Get_exp_reward()*5);
-                exit(0);
-                return;
+                //exit(0);
+                return 1;
             }
         }
     }
         
-    return;
+    return 0;
 }
