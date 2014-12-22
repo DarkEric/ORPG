@@ -119,7 +119,7 @@ void CreateHero(){
     SetConsoleFont(6);
     system("mode con cols=120 lines=50");
 
-    Game(Player,"LES1.txt",0);
+    Game(Player,"LES1",0);
 }
 
 
