@@ -8,6 +8,7 @@
 #include "troll.h"
 #include "FightWindow.h"
 #include "berserk.h"
+#include "quest.h"
 
 
 class Controller
@@ -36,12 +37,14 @@ public:
     std::string BreakMap();
     int Get_Reset_x();
     int Get_Reset_y();
+    void Dialog(Quest *);
 
 private:
    char Map[300][300];
    int Maplen_x;
    int Maplen_y;
-   QNPC Quest[10];
+   QNPC QuestNpc[10];
+   Quest* Mquest[20];
    BUM Npc[10];
    Monstr Drag[50];
    Troll Trolls[50];

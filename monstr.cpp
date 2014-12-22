@@ -18,7 +18,7 @@ void Monstr::Move(char mas[300][300]){
     if (this->heroin==0) {
         int h=1;
         int mob_x=this->Get_x(),mob_y=this->Get_y();
-        while (h>0){
+        /*while (h>0){
             int r=rand()%4;
             switch (r){
                 case 0:{if (mas[mob_x+1][mob_y]==' ') {mob_x++; h--;} break;}
@@ -26,7 +26,7 @@ void Monstr::Move(char mas[300][300]){
                 case 2:{if (mas[mob_x][mob_y+1]==' ') {mob_y++; h--;} break;}
                 case 3:{if (mas[mob_x][mob_y-1]==' ') {mob_y--; h--;} break;}
             }
-        }
+        }*/
         Set_next_step(mob_x,mob_y);
     }
     mas[this->Get_x()][this->Get_y()]=' ';

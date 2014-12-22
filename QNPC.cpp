@@ -1,8 +1,8 @@
- 
+#include <iostream>
+#include <fstream>
 #include "QNPC.h"
 #include <time.h>
 #include <stdlib.h>
-#include <iostream>
 #include <conio.h>
 QNPC::QNPC(){
     status=false;
@@ -23,12 +23,28 @@ void QNPC::Set_y(int n){
 int QNPC::Get_y(){
     return y;
 }
+void QNPC::Set_Id(int n){
+    Id = n;
+}
+int QNPC::Get_Id(){
+    return Id;
+}
 bool QNPC::Dialog(int n){
 
 
-    char file[20]={'q','u','e','s','t',n+48,'.','t','x','t',0};
-    freopen(file,"r",stdin);
-    char mas[4][30];
+    char file[20]={'q','u','e','s','t',n+48,0};
+    std::ifstream in("quest1",std::ios::in);
+    char mas[30][150];
+    char c;
+    while(1){
+        c=getchar();
+        while(c!='\n'){
+            c=getchar();
+            std::cout<<c;
+        }
+        getch();
+    }
+
     for (int i=1;i<=4;i++) gets(mas[i]);
 
     if (status==false){

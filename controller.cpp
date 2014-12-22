@@ -17,32 +17,33 @@ void Controller::Create(){
     for (int i=1;i<=n;i++){
         scanf("%d %d",&x,&y);
         Map[x][y]='Q';
-        Quest[l].Set_x(x);
-        Quest[l++].Set_y(y);
+        QuestNpc[i].Set_x(x);
+        QuestNpc[i].Set_y(y);
+        QuestNpc[i].Set_Id(i);
     }
     l=1;
     scanf("%d",&n);
     for (int i=1;i<=n;i++){
         scanf("%d %d",&x,&y);
         Map[x][y]='C';
-        Npc[l].Set_x(x);
-        Npc[l++].Set_y(y);
+        Npc[i].Set_x(x);
+        Npc[i].Set_y(y);
     }
     l=1;
     scanf("%d",&n);
     for (int i=1;i<=n;i++){
         scanf("%d %d",&x,&y);
         Map[x][y]='T';
-        Trolls[l].Set_x(x);
-        Trolls[l++].Set_y(y);
+        Trolls[i].Set_x(x);
+        Trolls[i].Set_y(y);
     }
     l=1;
     scanf("%d",&n);
     for (int i=1;i<=n;i++){
         scanf("%d %d",&x,&y);
         Map[x][y]='D';
-        Drag[l].Set_x(x);
-        Drag[l++].Set_y(y);
+        Drag[i].Set_x(x);
+        Drag[i].Set_y(y);
     }
     scanf("%d %d",&Enter_x,&Enter_y);
     scanf("%d %d",&Exit_x,&Exit_y);
@@ -113,7 +114,7 @@ int Controller::TalkCreate(int c,int num,Hero* Player){
         Npc[num].Dialog(1);
         break;
     case 2:
-        Quest[num].Dialog(1);
+        QuestNpc[num].Dialog(1);
         break;
     case 3 :
         if (Fight(Player,&Trolls[num])){
@@ -143,7 +144,7 @@ int Controller::FiendCreate(int x,int y,int n){
         break;
     case 'Q':
         for (int i=1;i<=10;i++)
-            if (x==Quest[i].Get_x()&&y==Quest[i].Get_y()+1)
+            if (x==QuestNpc[i].Get_x()&&y==QuestNpc[i].Get_y()+1)
                 return i;
         break;
     case 'T':
@@ -164,8 +165,9 @@ int Controller::FiendCreate(int x,int y,int n){
 
 void Controller::BotMap(Hero* Player){
     for (int i=1;i<=2;i++){
-        Player->SearchMob(Trolls,1,Map);
-        for (int j=1;j<=1;j++){
+        Player->SearchMob(Trolls,2,Map);
+        for (int j=1;j<=7;j++){
+            if(!Trolls[j].Status_Life())continue;
             Trolls[j].Move(Map);
             if (Map[PosHero_x-1][PosHero_y]=='T'||
                 Map[PosHero_x-1][PosHero_y-1]=='T'||
@@ -179,6 +181,9 @@ void Controller::BotMap(Hero* Player){
                     Map[PosHero_x][PosHero_y]=' ';
                     PosHero_x=Reset_x;
                     PosHero_y=Reset_y;
+                }else {
+                    Trolls[j].Set_Life(false);
+                    Map[Trolls[j].Get_x()][Trolls[j].Get_y()]=' ';
                 }
         }
     }
@@ -245,4 +250,15 @@ int Controller::Get_Reset_x(){
 }
 int Controller::Get_Reset_y(){
     return Reset_y;
+}
+void Controller::Dialog(Quest* N){
+    switch(N->Choos()){
+    case 1:{if (N->Get_Choose1()==NULL)return;
+        Dialog(N->Get_Choose1());break;}
+    case 2:{if (N->Get_Choose1()==NULL)return;
+        Dialog(N->Get_Choose2());break;}
+    case 3:{if (N->Get_Choose1()==NULL)return;
+        Dialog(N->Get_Choose3());break;}
+    case 4:return;
+    }
 }

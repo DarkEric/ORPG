@@ -10,8 +10,11 @@ public:
     int Get_x();
     void Set_y(int n);
     int Get_y();
+    void Set_Id(int n);
+    int Get_Id();
     ~QNPC();
 private:
+    int Id;
     int x;
     int y;
     bool status;
