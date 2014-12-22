@@ -91,7 +91,7 @@ void Controller::WriteMap(){
     for (int i=x-15;i<=x+15;i++){
         std::cout<<"*";
         int j=0;
-        for (j=y-55; j<=y+55;j++)
+        for (j=y-55; j<=y+61;j++)
             if (Map[i][j]=='H'){
                 SetConsoleText(4);
                 std::cout<<Map[i][j];;
