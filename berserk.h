@@ -9,9 +9,9 @@ public:
                                    HERO_START_POS_X,HERO_START_POS_Y,WARRIOR_ENERGY_MAX,WARRIOR_DEFENSE_1,
                                    WARRIOR_START_STR,BERSERK_START_ID_ARMOR,BERSERK_START_ID_WEAPON){
         Set_energy(0);
-        this->Set_name_SP(1,"скил1\0");
-        this->Set_name_SP(2,"скил2\0");
-        this->Set_name_SP(3,"скил3\0");
+        this->Set_name_SP(1,"Неистовый удар");
+        this->Set_name_SP(2,"Жажда крови");
+      //  this->Set_name_SP(3,"скил3\0");
         this->Set_energy_coast(1,50);
         this->Set_energy_coast(2,100);
     }
