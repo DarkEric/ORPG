@@ -15,6 +15,7 @@ void Controller::Create(){
     scanf("%d",&n);
     for (int i=1;i<=n;i++){
         scanf("%d %d",&x,&y);
+        Map[x][y]='Q';
         Quest[l].Set_x(x);
         Quest[l++].Set_y(y);
     }
@@ -22,6 +23,7 @@ void Controller::Create(){
     scanf("%d",&n);
     for (int i=1;i<=n;i++){
         scanf("%d %d",&x,&y);
+        Map[x][y]='C';
         Npc[l].Set_x(x);
         Npc[l++].Set_y(y);
     }
@@ -29,6 +31,7 @@ void Controller::Create(){
     scanf("%d",&n);
     for (int i=1;i<=n;i++){
         scanf("%d %d",&x,&y);
+        Map[x][y]='T';
         Trolls[l].Set_x(x);
         Trolls[l++].Set_y(y);
     }
@@ -36,6 +39,7 @@ void Controller::Create(){
     scanf("%d",&n);
     for (int i=1;i<=n;i++){
         scanf("%d %d",&x,&y);
+        Map[x][y]='D';
         Drag[l].Set_x(x);
         Drag[l++].Set_y(y);
     }
@@ -52,13 +56,13 @@ void Controller::ReadMap(string Mname){
     //std::ifstream in(Mname.c_str());]
     if (Flag==1)return;
     Flag=1;
+
+
     freopen(Mname.c_str(),"r",stdin);
     int x,y;
     scanf("%d %d",&x,&y);
     Maplen_x=x;
     Maplen_y=y;
-    Create();
-
     for (int i=1;i<=x;i++){
         for(int j=1;j<=y;j++){
             char c=getchar();
@@ -66,6 +70,11 @@ void Controller::ReadMap(string Mname){
             else Map[i][j]=c;
         }
     }
+    fclose(stdin);
+    std::string Mnameinfo=Mname.operator +=("info");
+    std::cout<<Mname;
+    freopen(Mnameinfo.c_str(),"r",stdin);
+    Create();
     fclose(stdin);
 }
 void Controller::WriteMap(){
