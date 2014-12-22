@@ -23,6 +23,7 @@ std::string EnterName(){
     SetConsoleText(1);
     std::getline(std::cin,name);
     SetConsoleText(3);
+    name.operator +=("\0");
     return name;
 }
 

@@ -11,7 +11,7 @@ void Troll::Attack(Critter *whom){
 void Troll::SP1(Critter *whom){
     if(whom->Status_Life()==true){
         int damage=(this->Get_attack())+(this->Get_attack())/2-whom->Get_p_resist();
-        damage+=floor(damage*(float)(rand()%10+95)/100);
+        damage+=floor(damage*((float)(rand()%10+95)/100));
         whom->Get_dmg(damage);
         this->Set_energy(this->Get_energy()-this->Get_energy_coast(1));
     }
@@ -20,7 +20,7 @@ void Troll::SP1(Critter *whom){
 void Troll::SP2(Critter *whom){
     if(whom->Status_Life()==true){
         int damage=floor((float)(this->Get_attack())*2.5)-whom->Get_p_resist();
-        damage+=floor(damage*(float)(rand()%30+95)/100);
+        damage+=floor(damage*((float)(rand()%30+95)/100));
         whom->Get_dmg(damage);
         this->Set_energy(this->Get_energy()-this->Get_energy_coast(2));
     }
