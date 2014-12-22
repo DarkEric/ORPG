@@ -13,6 +13,7 @@ void Monstr::Change_heroin(){
     heroin%=2;
 }
 int Monstr::Get_heroin(){return heroin;}
+
 void Monstr::Move(char** mas){
     if (this->heroin==0) {
         int h=3;
@@ -26,19 +27,11 @@ void Monstr::Move(char** mas){
                 case 3:{if (mob_y-1==' ') {mob_y--; h--;} break;}
             }
         }
-        mas[this->Get_x()][this->Get_y()]=' ';
-        mas[mob_x][mob_y]=this->Get_type();
+        Set_next_step(mob_x,mob_y);
     }
+    mas[this->Get_x()][this->Get_y()]=' ';
+    mas[next_x][next_y]=this->Get_type();
 }
-/*    else{
-        BFS(this->Get_x(),this->Get_y()); Нужно найти кротчайший путь до героя
-        PATH();   восстановить его
-        на каждом шаге сначала смотреть не стал ли герой находиться
-        ближе в данном маршруте, если да, то обрезать путь, если нет,
-        то осмотреть соседние клетки от конечной(т.к. шаг перса 1).
-    }
-
-}*/
 
 void Monstr::Set_exp_reward(int n){
     exp_reward=n;
