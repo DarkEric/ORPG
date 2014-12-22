@@ -51,7 +51,7 @@ public:
     void Set_Level(int n);
     int Get_Level()const;
 
-    void Set_name_SP(int n,std::string name){name.copy(this->name_SP[n],name.length());}
+    void Set_name_SP(int n,std::string name){name.copy(this->name_SP[n],name.length()); name.operator +=('\0');}
     std::string Get_name_SP(int n)const{return name_SP[n];}
 
     void Set_energy_coast(int n,int a){energy_coast[n]=a;}
@@ -80,7 +80,7 @@ private:
     char name[20];
     int type;
     int energy,MAX_energy;
-    char name_SP[20][8];
+    char name_SP[8][20];
     char filename[20];
     int energy_coast[8];
 };

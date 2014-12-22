@@ -70,7 +70,7 @@ void SkillChoice(Hero* character,Monstr* mob,string n1,string n2,int razn_c,int 
             }
             break;
         case 80:
-            if (f!=n){
+            if (f!=n+1){
                 f++;
                 ff=1;
             }
@@ -149,7 +149,6 @@ int Fight(Hero* character,Monstr* mob)
 
 
             SkillChoice(character,mob,n1,n2,razn_c,razn_m);
-//            character->Attack(mob);
             razn_c=hp_prev_c-character->Get_HP();
             hp_prev_c=character->Get_HP();
             razn_m=0;
@@ -159,7 +158,8 @@ int Fight(Hero* character,Monstr* mob)
                 mob->Set_Life(false);
                 system("cls");
                 infoPrint(character,mob,n1,n2,razn_c,razn_m);
-                cout << mob->Get_name() << " побежден!!";
+                cout << mob->Get_name() << " побежден!!"<<endl;
+                cout << "Получено " << mob->Get_exp_reward() << " опыта.";
                 character->Add_EXP(mob->Get_exp_reward());
                 Sleep(2000);
                 return 0;
@@ -196,10 +196,10 @@ int Fight(Hero* character,Monstr* mob)
             if (character->Get_HP()<=0) {
                 system("cls");
                 infoPrint(character,mob,n1,n2,razn_c,razn_m);
-                cout << "Поражение .. вскоре вы воскреснете.";
+                cout << "Поражение .. вскоре вы воскреснете."<<endl;
+                cout << "Потеряно "<< mob->Get_exp_reward()*5 << " опыта.";
                 Sleep(2000);
                 character->Lose_EXP(mob->Get_exp_reward()*5);
-                //exit(0);
                 return 1;
             }
         }
