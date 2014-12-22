@@ -15,7 +15,7 @@ class Controller
 public:
     Controller(){}
     void Create();
-    static void GlobalMap();
+    void BotMap(Hero *);
     static void FieldMap();
     void Set_PositionHero(int,int);
     int TalkCreate(int , int , Hero *);

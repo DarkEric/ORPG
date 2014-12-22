@@ -19,7 +19,7 @@ public:
     int Get_next_x();//вывести x шага
     int Get_next_y();//вывести у шага
 
-    void Move(char** mas); //передвинуть моба
+    void Move(char mas[300][300]); //передвинуть моба
 
     void Set_exp_reward(int n); //назначить опыт за убийство моба
     int Get_exp_reward();//вывести опыт за убийство моба

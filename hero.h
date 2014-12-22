@@ -15,7 +15,7 @@ public:
         this->stat=stat;
         this->EXP=0;
     }
-    void SearchMob(Monstr **mob , int n, char** Field);
+    void SearchMob(Monstr *mob , int n, char Field[300][300]);
     void Set_EXP(int n);
     int Get_EXP()const;
     void Add_EXP(int n);

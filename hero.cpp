@@ -39,7 +39,7 @@ int next_y=0;
 int next1_x=0; // последний шаг
 int next1_y=0;
 
-bool Visible(Hero* hero,Monstr* mob,char** Field){
+bool Visible(Hero* hero,Monstr mob,char Field[300][300]){
       next_x=0; // первый шаг
       next_y=0;
       next1_x=0; // последний шаг
@@ -50,8 +50,8 @@ bool Visible(Hero* hero,Monstr* mob,char** Field){
      int n, m;
      int ih=hero->Get_x();
      int jh=hero->Get_y();
-     int im=mob->Get_x();
-     int jm=mob->Get_y();
+     int im=mob.Get_x();
+     int jm=mob.Get_y();
      int k=0;
      int kk=0;
 
@@ -621,22 +621,22 @@ bool Visible(Hero* hero,Monstr* mob,char** Field){
      return 1;
 
  }
-void Hero::SearchMob(Monstr** mob ,int n,char** Field){
+void Hero::SearchMob(Monstr* mob , int n, char Field[300][300]){
     for(int i=1;i<=n;i++){
-        if ((mob[i]->Get_x()-this->Get_x())*(mob[i]->Get_x()-this->Get_x())+(mob[i]->Get_y()-this->Get_y())*(mob[i]->Get_y()-this->Get_y()) <=10){
+        if ((mob[i].Get_x()-this->Get_x())*(mob[i].Get_x()-this->Get_x())+(mob[i].Get_y()-this->Get_y())*(mob[i].Get_y()-this->Get_y()) <=100){
              if (Visible(this,mob[i],Field)){
-                 if (!mob[i]->Get_heroin()) mob[i]->Change_heroin();// героин = 1
-                 if ((abs(next_x-mob[i]->Get_x())<=1)&&(abs(next_y-mob[i]->Get_y())<=1)){
-                     mob[i]->Set_next_step(next_x,next_y);
+                 if (!mob[i].Get_heroin()) mob[i].Change_heroin();// героин = 1
+                 if ((abs(next_x-mob[i].Get_x())<=1)&&(abs(next_y-mob[i].Get_y())<=1)){
+                     mob[i].Set_next_step(next_x,next_y);
                  }
-                 if ((abs(next1_x-mob[i]->Get_x())<=1)&&(abs(next1_y-mob[i]->Get_y())<=1)){
-                     mob[i]->Set_next_step(next1_x,next1_y);
+                 if ((abs(next1_x-mob[i].Get_x())<=1)&&(abs(next1_y-mob[i].Get_y())<=1)){
+                     mob[i].Set_next_step(next1_x,next1_y);
                  }
              }
         }
         else {
-            if(mob[i]->Get_heroin()){
-                mob[i]->Change_heroin(); // героин =0;
+            if(mob[i].Get_heroin()){
+                mob[i].Change_heroin(); // героин =0;
             }
     }
 

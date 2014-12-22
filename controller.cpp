@@ -4,6 +4,7 @@
 #include "controller.h"
 #include <fstream>
 #include "conio.h"
+#include "hero.h"
 using std::string;
 
 void Controller::Create(){
@@ -161,8 +162,26 @@ int Controller::FiendCreate(int x,int y,int n){
     return 0;
 }
 
-void Controller::GlobalMap(){
-
+void Controller::BotMap(Hero* Player){
+    for (int i=1;i<=2;i++){
+        Player->SearchMob(Trolls,1,Map);
+        for (int j=1;j<=1;j++){
+            Trolls[j].Move(Map);
+            if (Map[PosHero_x-1][PosHero_y]=='T'||
+                Map[PosHero_x-1][PosHero_y-1]=='T'||
+                Map[PosHero_x-1][PosHero_y+1]=='T'||
+                Map[PosHero_x][PosHero_y-1]=='T'||
+                Map[PosHero_x][PosHero_y+1]=='T'||
+                Map[PosHero_x+1][PosHero_y]=='T'||
+                Map[PosHero_x+1][PosHero_y-1]=='T'||
+                Map[PosHero_x+1][PosHero_y+1]=='T')
+                if (Fight(Player,&Trolls[j])){
+                    Map[PosHero_x][PosHero_y]=' ';
+                    PosHero_x=Reset_x;
+                    PosHero_y=Reset_y;
+                }
+        }
+    }
 
 }
 
@@ -172,6 +191,7 @@ void Controller::AmendMap(int n,int i,int j,int x,int y){
         std::swap(Map[i][j],Map[x][y]);
         PosHero_x=x;
         PosHero_y=y;
+
         break;
     case 2:
         Map[x][y]=Map[i][j];
