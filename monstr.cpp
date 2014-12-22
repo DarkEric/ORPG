@@ -29,8 +29,8 @@ void Monstr::Move(char** mas){
         }
         Set_next_step(mob_x,mob_y);
     }
-    mas[this->Get_x()][this->Get_y()]=' ';
-    mas[next_x][next_y]=this->Get_type();
+//    mas[this->Get_x()][this->Get_y()]=' ';
+//    mas[next_x][next_y]=this->Get_type();
 }
 
 void Monstr::Set_exp_reward(int n){

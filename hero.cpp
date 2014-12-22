@@ -4,11 +4,19 @@ int Hero::Get_EXP()const{return EXP;}
 void Hero::Set_EXP(int n){EXP=n;}
 
 void Hero::Lose_EXP(int n){
-    EXP=EXP-n;
+    if (EXP>=n)
+        EXP-=n;
+    else
+        EXP=0;
+
 }
 void Hero::Add_EXP(int n){
-    EXP=EXP+n;
-
+    if (EXP+n>=EXP_to_lvl){
+        n=(EXP+n)-EXP_to_lvl;
+        this->LevelUp();
+        EXP_to_lvl+=EXP_to_lvl*2;
+    }
+    EXP+=n;
 }
 
 void Hero::Set_armor(int Arm){
