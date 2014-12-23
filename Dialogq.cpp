@@ -10,8 +10,6 @@ void Dialog::Set_Npc(std::string){
 
 }
 
-void Quest::set_flag(int n){Flag=n;}
-int Quest::get_flag(){return Flag;}
 int Dialog::Choos(){
     system("cls");
     std::cout<<Say_Npc()<<"\n";
