@@ -9,6 +9,8 @@ std::string Quest::Say_Npc(){}
 void Quest::Set_Npc(std::string){
 
 }
+void Quest::set_flag(int n){Flag=n;}
+int Quest::get_flag(){return Flag;}
 int Quest::Choos(){
     system("cls");
     std::cout<<Say_Npc()<<"\n";

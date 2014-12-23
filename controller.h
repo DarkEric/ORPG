@@ -37,7 +37,7 @@ public:
     std::string BreakMap();
     int Get_Reset_x();
     int Get_Reset_y();
-    void Dialog(Quest *);
+    int Dialog(Quest *);
 
 private:
    char Map[300][300];

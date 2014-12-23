@@ -24,6 +24,8 @@ public:
     Quest *Get_Choose1();
     Quest *Get_Choose2();
     Quest *Get_Choose3();
+    void set_flag(int n);
+    int get_flag();
 private:
     std::string Npc;
     std::string Hero1;
