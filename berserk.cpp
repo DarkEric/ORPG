@@ -10,7 +10,7 @@ void Berserk::SP1(Critter *whom){
     if(whom->Status_Life()==true){
         whom->Get_dmg(floor(this->Get_MAX_HP()-this->Get_HP()));
         this->Get_dmg(this->Get_HP()*0.5);
-        this->Set_energy(this->Get_energy()-50);
+        this->Set_energy(this->Get_energy()-40);
     }
 }
 void Berserk::SP2(Critter *whom){
