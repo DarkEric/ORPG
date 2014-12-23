@@ -38,7 +38,6 @@ public:
     int Get_Reset_x();
     int Get_Reset_y();
     void Dialogq(Dialog *);
-
 private:
    char Map[300][300];
    int Maplen_x;

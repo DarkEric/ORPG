@@ -14,9 +14,8 @@ public:
         this->ID_Weapon=ID_Weapon;
         this->stat=stat;
         this->EXP=0;
-//        =======================
         this->EXP_to_lvl=100;
-//        =================
+
     }
     void SearchMob(Monstr *mob , int n, char Field[300][300]);
     void Set_EXP(int n);
@@ -35,15 +34,15 @@ public:
         this->Set_energy(this->Get_MAX_energy());
         this->Set_HP(this->Get_MAX_HP());
     }
-
+    void set_ID_quest(int n,int i){ID_quest[i]=n;}
+    int get_ID_quest(int i){return ID_quest[i];}
 private:
     int EXP;
-//    =======================================
     int EXP_to_lvl;
-//    =================================
     int ID_Armor;
     int ID_Weapon;
     int stat;
+    int ID_quest[10000];
 };
 
 #endif // HERO_H

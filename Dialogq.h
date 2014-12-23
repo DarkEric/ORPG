@@ -1,4 +1,4 @@
-#ifndef QUEST_H
+﻿#ifndef QUEST_H
 #define QUEST_H
 #include <stdlib.h>
 #include <string>
@@ -24,6 +24,8 @@ public:
     Dialog *Get_Choose1();
     Dialog *Get_Choose2();
     Dialog *Get_Choose3();
+    void set_flag(int n);
+    int get_flag();
 private:
     std::string Npc;
     std::string Hero1;

@@ -251,6 +251,7 @@ int Controller::Get_Reset_x(){
 int Controller::Get_Reset_y(){
     return Reset_y;
 }
+
 void Controller::Dialogq(Dialog *N){
     switch(N->Choos()){
     case 1:{if (N->Get_Choose1()==NULL)return ;
@@ -261,4 +262,5 @@ void Controller::Dialogq(Dialog *N){
         Dialogq(N->Get_Choose3());break;}
     case 4:return;
     }
+
 }
