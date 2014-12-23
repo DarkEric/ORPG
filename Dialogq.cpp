@@ -1,15 +1,15 @@
-#include "quest.h"
+#include "Dialogq.h"
 #include <iostream>
 #include <conio.h>
 #include "Consol.h"
 
 
 
-std::string Quest::Say_Npc(){}
-void Quest::Set_Npc(std::string){
+std::string Dialog::Say_Npc(){}
+void Dialog::Set_Npc(std::string){
 
 }
-int Quest::Choos(){
+int Dialog::Choos(){
     system("cls");
     std::cout<<Say_Npc()<<"\n";
     SetConsoleText(2);
@@ -37,10 +37,10 @@ int Quest::Choos(){
         case 13:
             SetConsoleText(3);
             switch (f){
-            case 1:{return 1;break;}
-            case 2:{return 2;break;}
-            case 3:{return 3;break;}
-            case 4:{return 4;break;}
+            case 1:{   return 1;break;}
+            case 2:{   return 2;break;}
+            case 3:{   return 3;break;}
+            case 4:{   return 4;break;}
             }
             _getch();
             break;
@@ -94,15 +94,15 @@ int Quest::Choos(){
     }
 }
 
-void Quest::Set_Hero1(std::string){}
-void Quest::Set_Hero2(std::string){}
-void Quest::Set_Hero3(std::string){}
-void Quest::Set_Choose1(Quest* ){}
-void Quest::Set_Choose2(Quest* ){}
-void Quest::Set_Choose3(Quest* ){}
-std::string Quest::Get_Hero1(){}
-std::string Quest::Get_Hero2(){}
-std::string Quest::Get_Hero3(){}
-Quest* Quest::Get_Choose1( ){}
-Quest* Quest::Get_Choose2( ){}
-Quest* Quest::Get_Choose3( ){}
+void Dialog::Set_Hero1(std::string){}
+void Dialog::Set_Hero2(std::string){}
+void Dialog::Set_Hero3(std::string){}
+void Dialog::Set_Choose1(Dialog* ){}
+void Dialog::Set_Choose2(Dialog* ){}
+void Dialog::Set_Choose3(Dialog* ){}
+std::string Dialog::Get_Hero1(){}
+std::string Dialog::Get_Hero2(){}
+std::string Dialog::Get_Hero3(){}
+Dialog* Dialog::Get_Choose1( ){}
+Dialog* Dialog::Get_Choose2( ){}
+Dialog* Dialog::Get_Choose3( ){}

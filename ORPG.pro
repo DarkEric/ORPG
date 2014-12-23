@@ -19,7 +19,7 @@ SOURCES += main.cpp \
     controller.cpp \
     dragon.cpp \
     Game.cpp \
-    quest.cpp
+    Dialogq.cpp
     dragon.cpp \
 
 
@@ -53,7 +53,7 @@ HEADERS += \
     dragon.h \
     Game.h \
     ID.h \
-    quest.h \
-    dialog.h
+    dialog.h \
+    Dialogq.h
     dragon.h
 

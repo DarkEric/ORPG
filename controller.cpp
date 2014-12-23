@@ -251,14 +251,14 @@ int Controller::Get_Reset_x(){
 int Controller::Get_Reset_y(){
     return Reset_y;
 }
-void Controller::Dialog(Quest* N){
+void Controller::Dialogq(Dialog *N){
     switch(N->Choos()){
     case 1:{if (N->Get_Choose1()==NULL)return ;
-        Dialog(N->Get_Choose1());break;}
-    case 2:{if (N->Get_Choose1()==NULL)return;
-        Dialog(N->Get_Choose2());break;}
-    case 3:{if (N->Get_Choose1()==NULL)return;
-        Dialog(N->Get_Choose3());break;}
+        Dialogq(N->Get_Choose1());break;}
+    case 2:{if (N->Get_Choose2()==NULL)return;
+        Dialogq(N->Get_Choose2());break;}
+    case 3:{if (N->Get_Choose3()==NULL)return;
+        Dialogq(N->Get_Choose3());break;}
     case 4:return;
     }
 }
