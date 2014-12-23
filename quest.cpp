@@ -60,13 +60,13 @@ int Quest::Choos(){
                 ff=0;
             }else if (f==2){
                 std::cout<<Say_Npc()<<"\n";
-            SetConsoleText(2);
-            std::cout<<Hero1<<"\n";
-            SetConsoleText(1);
-            std::cout<<Hero2<<"\n";
-            SetConsoleText(2);
-            std::cout<<Hero3<<"\n";
-            std::cout<<Hero4<<"\n";
+                SetConsoleText(2);
+                std::cout<<Hero1<<"\n";
+                SetConsoleText(1);
+                std::cout<<Hero2<<"\n";
+                SetConsoleText(2);
+                std::cout<<Hero3<<"\n";
+                std::cout<<Hero4<<"\n";
             ff=0;
         }else if (f==3){
                 std::cout<<Say_Npc()<<"\n";

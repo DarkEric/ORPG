@@ -253,7 +253,7 @@ int Controller::Get_Reset_y(){
 }
 void Controller::Dialog(Quest* N){
     switch(N->Choos()){
-    case 1:{if (N->Get_Choose1()==NULL)return;
+    case 1:{if (N->Get_Choose1()==NULL)return ;
         Dialog(N->Get_Choose1());break;}
     case 2:{if (N->Get_Choose1()==NULL)return;
         Dialog(N->Get_Choose2());break;}

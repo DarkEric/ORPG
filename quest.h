@@ -33,6 +33,7 @@ private:
     Quest* Choose1;
     Quest* Choose2;
     Quest* Choose3;
+    int Flag;
 };
 
 #endif // QUEST_H
