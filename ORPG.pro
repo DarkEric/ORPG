@@ -56,13 +56,9 @@ HEADERS += \
     dragon.h \
     Game.h \
     ID.h \
-<<<<<<< HEAD
-    Dialogq.h
-=======
     dialog.h \
     Dialogq.h \
     quest.h \
     readdialog.h
->>>>>>> origin/master
     dragon.h
 
