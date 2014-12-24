@@ -26,6 +26,12 @@ public:
     Dialog *Get_Choose3();
     void set_flag(int n);
     int get_flag();
+    int Get_rIDquest(){return rIDquest;}
+    int Get_IDquest(){return IDquest;}
+    int Get_NeedIDquest(){return NeedIDquest;}
+    void Set_rIDquest(int n){rIDquest=n;}
+    void Set_IDquest(int n){IDquest=n;}
+    void Set_NeedIDquest(int n){NeedIDquest=n;}
 private:
     std::string Npc;
     std::string Hero1;
@@ -36,7 +42,7 @@ private:
     Dialog* Choose2;
     Dialog* Choose3;
     int Flag;
-    int QuestMasMob[10];
+    int rIDquest;
     int IDquest;
     int NeedIDquest;
 };
