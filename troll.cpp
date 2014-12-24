@@ -5,6 +5,7 @@
 void Troll::Attack(Critter *whom){
     if(whom->Status_Life()==true){
         whom->Get_dmg(this->Get_attack()-whom->Get_p_resist());
+        this->Set_energy(this->Get_energy()+2);
     }
 }
 

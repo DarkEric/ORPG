@@ -10,7 +10,7 @@ class Dialog
 public:
     Dialog(){Hero4="До свиданье!";}
     std::string Say_Npc();
-    int Choos();
+    int Choose();
     void Set_Npc(std::string);
     void Set_Hero1(std::string);
     void Set_Hero2(std::string);

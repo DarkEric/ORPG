@@ -3,14 +3,12 @@
 #include <conio.h>
 #include "Consol.h"
 
-
-
 std::string Dialog::Say_Npc(){}
 void Dialog::Set_Npc(std::string){
 
 }
 
-int Dialog::Choos(){
+int Dialog::Choose(){
     system("cls");
     std::cout<<Say_Npc()<<"\n";
     SetConsoleText(2);

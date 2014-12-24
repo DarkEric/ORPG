@@ -20,6 +20,11 @@ void Controller::Create(){
         QuestNpc[i].Set_x(x);
         QuestNpc[i].Set_y(y);
         QuestNpc[i].Set_Id(i);
+        string tmp="qnpc1\0";
+//        tmp.operator +=((char)(i+48));
+//        QuestNpc[i].Set_filename(tmp.operator +=('\0'));
+        QuestNpc[i].Set_filename(tmp);
+        QuestNpc[i].ReadDialog();
     }
     l=1;
     scanf("%d",&n);
@@ -114,7 +119,7 @@ int Controller::TalkCreate(int c,int num,Hero* Player){
         Npc[num].Dialog(1);
         break;
     case 2:
-        QuestNpc[num].Dialog(1);
+        QuestNpc[num].Dialog(Player);
         break;
     case 3 :
         if (Fight(Player,&Trolls[num])){
@@ -165,7 +170,7 @@ int Controller::FiendCreate(int x,int y,int n){
 
 void Controller::BotMap(Hero* Player){
     for (int i=1;i<=2;i++){
-        Player->SearchMob(Trolls,2,Map);
+        Player->SearchMob(Trolls,7,Map);
         for (int j=1;j<=7;j++){
             if(!Trolls[j].Status_Life())continue;
             Trolls[j].Move(Map);
@@ -253,7 +258,7 @@ int Controller::Get_Reset_y(){
 }
 
 void Controller::Dialogq(Dialog *N){
-    switch(N->Choos()){
+    switch(N->Choose()){
     case 1:{if (N->Get_Choose1()==NULL)return ;
         Dialogq(N->Get_Choose1());break;}
     case 2:{if (N->Get_Choose2()==NULL)return;
