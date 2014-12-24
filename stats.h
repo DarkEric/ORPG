@@ -53,7 +53,7 @@ static const int SKELETON_DEFENSE = 1;
 static const int SKELETON_SIGHT_RADIUS = 3;
 static const int SKELETON_EXPERIENCE = 60;
 
-static const int TROLL_PATTACK = 6;
+static const int TROLL_PATTACK = 5;
 static const int TROLL_PDEFENSE = 1;
 static const int TROLL_MDEFENSE = 1;
 static const int TROLL_SIGHT_RADIUS = 3;

@@ -39,7 +39,6 @@ private:
     int QuestMasMob[10];
     int IDquest;
     int NeedIDquest;
-
 };
 
 #endif // QUEST_H

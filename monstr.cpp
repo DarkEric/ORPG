@@ -16,9 +16,9 @@ int Monstr::Get_heroin(){return heroin;}
 
 void Monstr::Move(char mas[300][300]){
     if (this->heroin==0) {
-        int h=1;
+        int h=0;
         int mob_x=this->Get_x(),mob_y=this->Get_y();
-        /*while (h>0){
+        while (h>0){
             int r=rand()%4;
             switch (r){
                 case 0:{if (mas[mob_x+1][mob_y]==' ') {mob_x++; h--;} break;}
@@ -26,7 +26,7 @@ void Monstr::Move(char mas[300][300]){
                 case 2:{if (mas[mob_x][mob_y+1]==' ') {mob_y++; h--;} break;}
                 case 3:{if (mas[mob_x][mob_y-1]==' ') {mob_y--; h--;} break;}
             }
-        }*/
+        }
         Set_next_step(mob_x,mob_y);
     }
     mas[this->Get_x()][this->Get_y()]=' ';
@@ -40,4 +40,13 @@ void Monstr::Set_exp_reward(int n){
 }
 
 int Monstr::Get_exp_reward(){return exp_reward;}
-
+void Monstr::Mob_read(){
+    freopen("mob","r",stdin);
+        for(int i=1;i<=26;i++){
+            for (int j=0;j<=38;j++){
+                char c;
+                scanf("%c",&Mob_Mas[i][j]);
+            }
+            Mob_Mas[i][38]='\0';
+        }
+}

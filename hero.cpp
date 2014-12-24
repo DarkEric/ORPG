@@ -42,16 +42,12 @@ void Hero::Unset_weapon(int Weap){
 //====================================================
 using namespace std;
 
-int next_x=0; // первый шаг
-int next_y=0;
-int next1_x=0; // последний шаг
-int next1_y=0;
+int next_x; // первый шаг
+int next_y;
+int next1_x; // последний шаг
+int next1_y;
 
 bool Visible(Hero* hero,Monstr mob,char Field[300][300]){
-      next_x=0; // первый шаг
-      next_y=0;
-      next1_x=0; // последний шаг
-      next1_y=0;
       int i=0;
       int j=0;
      int flag=0;
@@ -60,6 +56,10 @@ bool Visible(Hero* hero,Monstr mob,char Field[300][300]){
      int jh=hero->Get_y();
      int im=mob.Get_x();
      int jm=mob.Get_y();
+     next_x=im;
+     next1_x=im;
+     next1_y=jm;
+     next_y=jm;
      int k=0;
      int kk=0;
 
@@ -566,3 +566,21 @@ void Hero::SearchMob(Monstr* mob , int n, char Field[300][300]){
 
     }
 }
+
+//========
+void Hero::Hero_read(char MobMas[60][60]){
+    freopen("hero","r",stdin);
+    for(int i=1;i<=26;i++){
+        for (int j=0;j<=42;j++){
+            char c;
+            scanf("%c",&Hero_Mas[i][j]);
+        }
+        Hero_Mas[i][41]='\0';
+    }
+}
+
+void Hero::Hero_write(){
+
+}
+
+//========

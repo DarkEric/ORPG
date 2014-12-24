@@ -20,6 +20,7 @@ void Controller::Create(){
         QuestNpc[i].Set_x(x);
         QuestNpc[i].Set_y(y);
         QuestNpc[i].Set_Id(i);
+
     }
     l=1;
     scanf("%d",&n);
@@ -165,8 +166,8 @@ int Controller::FiendCreate(int x,int y,int n){
 
 void Controller::BotMap(Hero* Player){
     for (int i=1;i<=2;i++){
-        Player->SearchMob(Trolls,2,Map);
-        for (int j=1;j<=7;j++){
+        Player->SearchMob(Trolls,7,Map);
+        for (int j=1;j<=40;j++){
             if(!Trolls[j].Status_Life())continue;
             Trolls[j].Move(Map);
             if (Map[PosHero_x-1][PosHero_y]=='T'||
@@ -260,7 +261,7 @@ void Controller::Dialogq(Dialog *N){
         Dialogq(N->Get_Choose2());break;}
     case 3:{if (N->Get_Choose3()==NULL)return;
         Dialogq(N->Get_Choose3());break;}
-    case 4:return;
+    case 4:return ;
     }
 
 }

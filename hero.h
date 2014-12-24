@@ -36,6 +36,10 @@ public:
     }
     void set_ID_quest(int n,int i){ID_quest[i]=n;}
     int get_ID_quest(int i){return ID_quest[i];}
+    //=====
+    void Hero_read(char Mob_Mas[60][60]);
+    void Hero_write();
+    //=======
 private:
     int EXP;
     int EXP_to_lvl;
@@ -43,6 +47,9 @@ private:
     int ID_Weapon;
     int stat;
     int ID_quest[10000];
+    //===
+    char Hero_Mas[60][60];
+    //=====
 };
 
 #endif // HERO_H

@@ -23,12 +23,16 @@ public:
 
     void Set_exp_reward(int n); //назначить опыт за убийство моба
     int Get_exp_reward();//вывести опыт за убийство моба
+
+    //===
+    void Mob_read();
 private:
     int heroin,
         agrrange,
         exp_reward,
         next_x,
         next_y;
+    char Mob_Mas[60][60];
 };
 
 #endif // MONSTR_H

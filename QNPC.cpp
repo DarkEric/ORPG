@@ -32,44 +32,4 @@ int QNPC::Get_Id(){
 bool QNPC::Dialog(int n){
 
 
-    char file[20]={'q','u','e','s','t',n+48,0};
-    std::ifstream in("quest1",std::ios::in);
-    char mas[30][150];
-    char c;
-    while(1){
-        c=getchar();
-        while(c!='\n'){
-            c=getchar();
-            std::cout<<c;
-        }
-        getch();
-    }
-
-    for (int i=1;i<=4;i++) gets(mas[i]);
-
-    if (status==false){
-        status=true;
-        bool a;
-        std::cout << mas[1] << std::endl;
-        for (int j = 2; j <= 3; j++){
-            std::cout << "\t" << mas[j] << std::endl;
-        }
-        char f =_getch();
-        while (f == '1' || f == '2'){
-            if (f == '1'){
-                a = true;
-                break;
-            }
-            if (f == '2'){
-                a = false;
-                break;
-            }
-        }
-            return a;
-    }else{
-        std::cout<<mas[4];
-        _getch();
-    }
-
-
 }
